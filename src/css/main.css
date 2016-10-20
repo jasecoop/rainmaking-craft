@@ -1,3 +1,11 @@
 @import 'tachyons/tachyons.css';
 
+@import 'modules/colours.css';
+
 @import 'modules/fonts.css';
+@import 'modules/typography.css';
+
+@import 'modules/background.css';
+
+@import 'modules/logo.css';
+@import 'modules/menuToggle.css';

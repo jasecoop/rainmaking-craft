@@ -1,21 +1,21 @@
 body {
-  font-family: var(--graphik-font-family);
+  font-family: undefined;
   font-size: 15px;
   font-weight: 300;
-  color: var(--rm-text);
+  color: undefined;
   line-height: 23px;
 }
 
 .caps-small-f {
   font-size: 12px;
-  font-family: var(--futura-font-family);
+  font-family: undefined;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 
 .caps-xsmall-f {
   font-size: 10px;
-  font-family: var(--futura-font-family);
+  font-family: undefined;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
@@ -26,8 +26,20 @@ body {
   line-height: 1.2em;
 }
 
-.f1, .f2, .f3, .f4 {
-  font-family: var(--graphik-font-family);
+.f1 {
+  font-family: undefined;
+}
+
+.f2 {
+  font-family: undefined;
+}
+
+.f3 {
+  font-family: undefined;
+}
+
+.f4 {
+  font-family: undefined;
 }
 
 .f1 {
@@ -52,18 +64,11 @@ body {
   font-weight: 100;
 }
 
-@media (--breakpoint-large) {
-  .lead {
-    font-size: 20px;
-    line-height: 30px;
-  }
-}
-
 .menuType {
   font-size: 16px;
   line-height: 25px;
   font-weight: 300;
-  color: var(--rm-text);
+  color: undefined;
   text-decoration: none;
   opacity: .6;
 }
@@ -71,7 +76,6 @@ body {
 .menuType:hover {
   opacity: 1;
 }
-
 
 .fadeUnderline {
   position: relative;
@@ -93,9 +97,9 @@ body {
 }
 
 .link {
-  border-bottom: solid 1px var(--rm-blue);
+  border-bottom: undefined;
   text-decoration: none;
-  color: var(--rm-blue);
+  color: undefined;
 }
 
 .greyText {

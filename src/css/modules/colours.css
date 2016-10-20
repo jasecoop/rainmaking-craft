@@ -1,0 +1,10 @@
+:root {
+  --rm-blue: #384BC5;
+  --rm-blue-dark: #2F40AC;
+  --rm-text: #222436;
+  --rm-grey: #EBEDF0;
+}
+
+.rm-grey-bg {
+  background: #EBEDF0;
+}

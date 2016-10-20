@@ -1,0 +1,27 @@
+.menuToggle {
+  width: 60px;
+  height: 60px;
+  background-image: url('/dist/images/menuToggleIcon.png') at-2x;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  cursor: pointer;
+}
+
+.menuToggle-close {
+  background-image: url('/dist/images/menuToggleIconClose.png') at-2x;
+}
+
+.menu {
+  top: -2000px !important;
+  height: 100%;
+  -webkit-transition: all 1000ms linear;
+  -moz-transition: all 1000ms linear;
+  -ms-transition: all 1000ms linear;
+  -o-transition: all 1000ms linear;
+  transition: all 1000ms linear;
+}
+
+.menu.menu-active {
+  top: 0 !important;
+}

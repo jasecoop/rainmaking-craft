@@ -10223,4 +10223,29 @@ return jQuery;
 
 }
 
-},{}]},{},[1]);
+},{}],2:[function(require,module,exports){
+// Define Dependencies
+var jquery = require('./lib/jquery');
+var menu = require('./scripts/menu');
+
+jquery();
+
+menu();
+//
+// // Print success message to console
+// console.log('<head> scripts loaded.')
+
+},{"./lib/jquery":1,"./scripts/menu":3}],3:[function(require,module,exports){
+module.exports = function () {
+
+  $( document ).ready( function() {
+
+    $( 'body' ).on( 'click', '.menuToggle', function(e) {
+      e.preventDefault();
+      $('.menu').toggleClass('menu-active');
+    });
+
+  });
+}
+
+},{}]},{},[2]);

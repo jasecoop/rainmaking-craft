@@ -1,0 +1,29 @@
+.logo {
+  font-size: 1em;
+  letter-spacing: 2.7px;
+  font-family: undefined;
+  text-transform: uppercase;
+}
+
+.logoFace {
+  font-size: 1em;
+  letter-spacing: 2.7px;
+  font-family: undefined;
+  text-transform: uppercase;
+}
+
+.logo {
+  text-decoration: none;
+  color: undefined;
+  cursor: pointer;
+}
+
+.logo-menu {
+  line-height: 60px;
+  margin: 0;
+  padding: 0;
+}
+
+.logoFace-builds {
+  opacity: .5;
+}

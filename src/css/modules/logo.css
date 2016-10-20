@@ -1,0 +1,27 @@
+:root {
+  --logoFontSize: 1em;
+}
+
+.logo,
+.logoFace {
+  font-size: var(--logoFontSize);
+  letter-spacing: 2.7px;
+  font-family: var(--futura-font-family);
+  text-transform: uppercase;
+}
+
+.logo {
+  text-decoration: none;
+  color: var(--rm-text);
+  cursor: pointer;
+}
+
+.logo-menu {
+  line-height: 60px;
+  margin: 0;
+  padding: 0;
+}
+
+.logoFace-builds {
+  opacity: .5;
+}

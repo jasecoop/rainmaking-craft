@@ -1,0 +1,42 @@
+.menuToggle {
+  width: 60px;
+  height: 60px;
+  background-image: url('/dist/images/menuToggleIcon.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  cursor: pointer;
+}
+
+.menuToggle-close {
+  background-image: url('/dist/images/menuToggleIconClose.png');
+}
+
+.menu {
+  top: -2000px !important;
+  height: 100%;
+  -webkit-transition: all 1000ms linear;
+  -moz-transition: all 1000ms linear;
+  -ms-transition: all 1000ms linear;
+  -o-transition: all 1000ms linear;
+  transition: all 1000ms linear;
+}
+
+.menu.menu-active {
+  top: 0 !important;
+}
+
+@media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+
+  .menuToggle {
+    background-image: url('/dist/images/menuToggleIcon@2x.png');
+    background-size: 100%;
+  }
+}
+
+@media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+
+  .menuToggle-close {
+    background-image: url('/dist/images/menuToggleIconClose@2x.png');
+  }
+}
