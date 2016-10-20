@@ -1,0 +1,17 @@
+{% extends (craft.request.isAjax and not craft.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
+{% set title = "Blog" %}
+
+{% block content %}
+  <div class="js-ajax-wrapper">
+  	<h1>News</h1>
+
+  	{% for entry in craft.entries.section('news').find() %}
+  		<article>
+  			<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+  			<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
+  			{{ entry.body.getPage(1) }}
+  			<p><a href="{{ entry.url }}">Continue reading</a></p>
+  		</article>
+  	{% endfor %}
+  </div>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends (craft.request.isAjax and not craft.request.isLivePreview) ? "_ajax-layout" : "_minipageLayout" %}
+{% set title = "Companies" %}
+
+{% block content %}
+  <div class="js-ajax-wrapper">
+    <h1>Companies</h1>
+  </div>
+{% endblock %}

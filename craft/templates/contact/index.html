@@ -1,0 +1,8 @@
+{% extends (craft.request.isAjax and not craft.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
+{% set title = "Contact" %}
+
+{% block content %}
+  <div class="js-ajax-wrapper">
+    <h1>Contact</h1>
+  </div>
+{% endblock %}

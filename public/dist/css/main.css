@@ -5584,11 +5584,34 @@ body {
   -ms-transition: all 1000ms linear;
   -o-transition: all 1000ms linear;
   transition: all 1000ms linear;
+  z-index: 98;
 }
 
 
 .menu.menu-active {
   top: 0 !important;
+}
+
+
+.js-mini {
+  width: 50%;
+  height: 100%;
+  background: #2D2F3C;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  right: -5000px;
+  z-index: 99;
+  -webkit-transition: all 1000ms linear;
+  -moz-transition: all 1000ms linear;
+  -ms-transition: all 1000ms linear;
+  -o-transition: all 1000ms linear;
+  transition: all 1000ms linear;
+}
+
+
+.miniPageOpen .js-mini {
+  right: 0;
 }
 
 

@@ -17,39 +17,6 @@
  # http://craftcms.com/docs/routing
  #}
 
-{% extends "_layout" %}
-
+{% extends (craft.request.isAjax and not craft.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
 {% block content %}
-  <div class="header pa3 overflow-hidden">
-    <a class="logo logo-menu fl" href="/">Rainmaking<a/>
-    <a class="menuToggle fr db rm-grey-bg" href=""></a>
-  </div>
-
-  <div class="menu bg-3x3 fixed top-0 right-0 left-0 pa5 pt0 pr0 overflow-scroll">
-    <div class="header pa3 overflow-hidden">
-      <a class="menuToggle menuToggle-close fr db rm-grey-bg" href=""></a>
-    </div>
-    <div class="mt4">
-      <div class="w-100 w-50-ns fl mb4">
-        <div class="logoFace mb3 mb4-ns">
-          <span>Rainmaking</span>
-          <span class="logoFace-builds">Builds</span>
-        </div>
-
-        <div><a class="dib menuType fadeUnderline mb3 mb4-ns" href="/accelerator">Accelerator</a></div>
-        <div><a class="dib menuType fadeUnderline mb3 mb4-ns" href="/spaces">Spaces</a></div>
-        <div><a class="dib menuType fadeUnderline mb3 mb4-ns" href="/companies">Companies</a></div>
-        <div><a class="dib menuType fadeUnderline mb3 mb4-ns" href="/partnerships">Partnerships</a></div>
-      </div>
-
-      <div class="w-100 w-50-ns fl">
-        <div class="logoFace mb3 mb4-ns">Menu</div>
-        <div><a class="dib menuType fadeUnderline mb3 mb4-ns"  href="/about">Our Story</a></div>
-        <div><a class="dib menuType fadeUnderline mb3 mb4-ns"  href="/who-we-are">Who We Are</a></div>
-        <div><a class="dib menuType fadeUnderline mb3 mb4-ns"  href="/blog">Blog</a></div>
-        <div><a class="dib menuType fadeUnderline mb3 mb4-ns"  href="/events">Events</a></div>
-        <div><a class="dib menuType fadeUnderline mb3 mb4-ns"  href="/contact">Contact</a></div>
-      </div>
-    </div>
-  </div>
 {% endblock %}

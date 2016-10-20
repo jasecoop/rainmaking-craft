@@ -4,21 +4,19 @@
   {% include '_includes/_head.html' %}
 </head>
 
-<body>
+<body class="miniPageOpen">
 	<div id="container">
 
     {% include '_includes/_header.html' %}
 
-    <main class="js-main" role="main">
+    <section class="js-mini">
       {% block content %}
   			<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
   			<p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
   		{% endblock %}
-    </main>
-
-    <section class="js-mini">
     </section>
-	</div>
+
+  </div>
 
   {% include '_includes/_menu.html' %}
 </body>
