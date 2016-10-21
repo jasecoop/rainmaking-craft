@@ -19,4 +19,240 @@
 
 {% extends (craft.request.isAjax and not craft.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
 {% block content %}
+
+<div class="pillarbox pillarbox-accelerators">
+  <div class="pillarbox-mesh"></div>
+  {% set bg1 = entry.acceleratorHoverImage.first() %}
+  <div class="pillarbox-bg" style="background-image: url('{{ bg1.getUrl() }}'); opacity: .6;"></div>
+  <div class="pbc__text w-40-ns">
+    {{ entry.acceleratorIntroduction }}
+  </div>
+</div>
+<div class="pillarbox pillarbox-companies">
+  <div class="pillarbox-mesh"></div>
+  {% set bg2 = entry.companiesHoverImage.first() %}
+  <div class="pillarbox-bg" style="background-image: url('{{ bg2.getUrl() }}')"></div>
+  <div class="pbc__text w-40-ns">
+    {{ entry.companiesIntroduction }}
+  </div>
+</div>
+<div class="pillarbox pillarbox-spaces">
+  <div class="pillarbox-mesh"></div>
+  {% set bg3 = entry.spacesHoverImage.first() %}
+  <div class="pillarbox-bg" style="background-image: url('{{ bg3.getUrl() }}')"></div>
+  <div class="pbc__text w-40-ns">
+    {{ entry.spacesIntroduction }}
+  </div>
+</div>
+<div class="pillarbox pillarbox-partnerships">
+  <div class="pillarbox-mesh"></div>
+  {% set bg4 = entry.partnershipHoverImage.first() %}
+  <div class="pillarbox-bg" style="background-image: url('{{ bg4.getUrl() }}')"></div>
+  <div class="pbc__text w-40-ns">
+    <p>
+      {{ entry.partnershipsIntroduction }}
+    </p>
+  </div>
+</div>
+
+
+<div class="h-100 flex items-center pa5">
+  <div class="home-intro">
+    <div class="logoFace mb3 mb5-ns w-100">
+      <span>Rainmaking</span>
+      <span class="logoFace-builds">Builds</span>
+    </div>
+    <div class="w-40 fl">
+      <div>
+        <div><a class="pillar dib menuType fadeUnderline mb3 mb4-ns" data-type="accelerators" role="minipage" href="/accelerator">Accelerators</a></div>
+        <div><a class="pillar dib menuType fadeUnderline mb3 mb4-ns" data-type="spaces" role="minipage" href="/spaces">Spaces</a></div>
+        <div><a class="pillar dib menuType fadeUnderline mb3 mb4-ns" data-type="companies" role="minipage" href="/companies">Startups</a></div>
+        <div><a class="pillar dib menuType fadeUnderline mb3 mb4-ns" data-type="partnerships" href="/partnerships">Partnerships</a></div>
+      </div>
+    </div>
+    <div class="w-60 fl home-intro-text">
+      <p id="home-intro-text-main" class="lead rm-text-2 mt0">{{ entry.intro}}</div>
+      <p id="home-intro-hover-text"></p>
+    </div>
+  </div>
+</div>
+
+<div class="pa5-ns pa4 fl w-100">
+  <div class="w-100 w-60-ns fr-ns mb5">
+    <div class="lead">
+      {{ entry.secondaryIntroduction }}
+    </div>
+  </div>
+</div>
+
+<div class="pa5-ns pa4">
+  <div class="partnershipTestimonials w-100 fl">
+    <div class="pT mb6 overflow-hidden">
+      <div class="w-100 w-40-ns fl-ns tl-ns tc">
+        <div class="dib br-100 overflow-hidden">
+          <img src="http://placehold.it/300x300" />
+        </div>
+      </div>
+      <div class="w-100 w-60-ns fr-ns">
+        <div class="f1 mb3">
+          Strategically sourcing startups to catapult Castrol’s business forward
+        </div>
+
+        <div class="mb4 lead overflow-hidden">
+          <img class="fl" src="/dist/images/speechmarks.png" />
+          <div class="fl mt2">
+            Alongside our Castrol Innovation Team, Rainmaking helped us increase our deal flow and strenghthen our presence in the global startup community.
+          </div>
+        </div>
+        <div>
+            <div class="w-33 fl border-right-grey">
+              <div>Sumgui Sumnanme</div>
+              <div>Chief Innovation Officer</div>
+            </div>
+            <div class="w-33 fl tc border-right-grey">
+              <img src="http://placehold.it/100x50" />
+            </div>
+            <div class="w-33 fl tc v-mid">
+              <img src="/dist/images/arrow-right-black.png" />
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pT mb6 overflow-hidden">
+      <div class="w-100 w-40-ns fr-ns tr-ns tc">
+        <div class="dib br-100 overflow-hidden">
+          <img src="http://placehold.it/300x300" />
+        </div>
+      </div>
+      <div class="w-100 w-60-ns fl-ns">
+        <div class="f1 mb3">
+          Strategically sourcing startups to catapult Castrol’s business forward
+        </div>
+
+        <div class="mb4 lead overflow-hidden">
+          <img class="fl" src="/dist/images/speechmarks.png" />
+          <div class="fl mt2">
+            Alongside our Castrol Innovation Team, Rainmaking helped us increase our deal flow and strenghthen our presence in the global startup community.
+          </div>
+        </div>
+        <div>
+            <div class="w-33 fl border-right-grey">
+              <div>Sumgui Sumnanme</div>
+              <div>Chief Innovation Officer</div>
+            </div>
+            <div class="w-33 fl tc border-right-grey">
+              <img src="http://placehold.it/100x50" />
+            </div>
+            <div class="w-33 fl tc v-mid">
+              <img src="/dist/images/arrow-right-black.png" />
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pT mb6 overflow-hidden">
+      <div class="w-100 w-40-ns fl-ns tl-ns tc">
+        <div class="dib br-100 overflow-hidden">
+          <img src="http://placehold.it/300x300" />
+        </div>
+      </div>
+      <div class="w-100 w-60-ns fr-ns">
+        <div class="f1 mb3">
+          Strategically sourcing startups to catapult Castrol’s business forward
+        </div>
+
+        <div class="mb4 lead overflow-hidden">
+          <img class="fl" src="/dist/images/speechmarks.png" />
+          <div class="fl mt2">
+            Alongside our Castrol Innovation Team, Rainmaking helped us increase our deal flow and strenghthen our presence in the global startup community.
+          </div>
+        </div>
+        <div>
+            <div class="w-33 fl border-right-grey">
+              <div>Sumgui Sumnanme</div>
+              <div>Chief Innovation Officer</div>
+            </div>
+            <div class="w-33 fl tc border-right-grey">
+              <img src="http://placehold.it/100x50" />
+            </div>
+            <div class="w-33 fl tc v-mid">
+              <img src="/dist/images/arrow-right-black.png" />
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pa5-ns pa4 fl w-100">
+  <div class="mb5 overflow-hidden">
+    <div class="w-100 mb4 overflow-hidden">
+      <div class="w-25-ns tc fl"><img src="http://placehold.it/100x50"></div>
+      <div class="w-25-ns tc fl"><img src="http://placehold.it/100x50"></div>
+      <div class="w-25-ns tc fl"><img src="http://placehold.it/100x50"></div>
+      <div class="w-25-ns tc fl"><img src="http://placehold.it/100x50"></div>
+    </div>
+    <div class="w-100">
+      <div class="w-25-ns tc fl"><img src="http://placehold.it/100x50"></div>
+      <div class="w-25-ns tc fl"><img src="http://placehold.it/100x50"></div>
+      <div class="w-25-ns tc fl"><img src="http://placehold.it/100x50"></div>
+      <div class="w-25-ns tc fl"><img src="http://placehold.it/100x50"></div>
+    </div>
+  </div>
+</div>
+
+<div class="pa5-ns pa4 bg-founder fl w-100">
+  <div>
+    <div class="w-50 fl mt4">
+      <img class="fl" src="/dist/images/speechmarks.png" />
+      <div class="fl mt2">
+        If years of experience have taught us one thing, it’s this: That the best definition of innovation is to find your own. We can help you do that. Collaboratively and confidently. We embed our startup mindset and culture in everything we do — no bluster, no buzzwords. Just plain English. And we’ll make sure it happens. We love results, not presentations. Actions not words.
+      </div>
+    </div>
+    <div class="w-50 tc fl">
+      <div class="dib br-100 overflow-hidden tc">
+        <img src="http://placehold.it/300x300" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="outro tc pt6 pb6 fl w-100">
+  <img src="/dist/images/outro.png" />
+</div>
+
+
+<div class="footer w-100 pl2-m pr2-m pt6 pb4 fl">
+    <div class="w-100">
+      <div class="tc">
+        <a class="logo" href="/">Rainmaking<a/>
+      </div>
+    </div>
+    <div class="w-100">
+      <div class="w-25 tc fl pt5">
+        <div class="caps-small-f">Berlin</div>
+        <div class="text-small">123 Tower Bridge EC1 F3F</div>
+        <div class="text-small">berlin@rainmaking.io</div>
+      </div>
+      <div class="w-25 tc fl pt5">
+        <div class="caps-small-f">London</div>
+        <div class="text-small">123 Tower Bridge EC1 F3F</div>
+        <div class="text-small">berlin@rainmaking.io</div>
+      </div>
+      <div class="w-25 tc fl pt5">
+        <div class="caps-small-f">Singapore</div>
+        <div class="text-small">123 Tower Bridge EC1 F3F</div>
+        <div class="text-small">berlin@rainmaking.io</div>
+      </div>
+      <div class="w-25 tc fl pt5">
+        <div class="caps-small-f">Copenhagen</div>
+        <div class="text-small ">123 Tower Bridge EC1 F3F</div>
+        <div class="text-small">berlin@rainmaking.io</div>
+      </div>
+    </div>
+</div>
+
+
+
 {% endblock %}

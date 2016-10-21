@@ -2,6 +2,8 @@
 
 @import 'modules/colours.css';
 
+@import 'modules/layout.css';
+
 @import 'modules/fonts.css';
 @import 'modules/typography.css';
 
@@ -10,3 +12,5 @@
 @import 'modules/logo.css';
 @import 'modules/menuToggle.css';
 @import 'modules/mini.css';
+@import 'modules/pillarbox.css';
+@import 'modules/borders.css';

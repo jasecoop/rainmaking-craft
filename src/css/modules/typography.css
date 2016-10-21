@@ -47,20 +47,20 @@ body {
 }
 
 .lead {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 25px;
-  font-weight: 100;
+  font-weight: 300;
 }
 
 @media (--breakpoint-large) {
   .lead {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 30px;
   }
 }
 
 .menuType {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 25px;
   font-weight: 300;
   color: var(--rm-text);
@@ -100,4 +100,8 @@ body {
 
 .greyText {
   color: #7E7E7E;
+}
+
+.text-secondary {
+  color:
 }

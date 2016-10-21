@@ -2,9 +2,14 @@
   --rm-blue: #384BC5;
   --rm-blue-dark: #2F40AC;
   --rm-text: #222436;
+  --rm-text-2: #516376;
   --rm-grey: #EBEDF0;
 }
 
 .rm-grey-bg {
   background: #EBEDF0;
+}
+
+.rm-text-2 {
+  color: var(--rm-text-2);
 }

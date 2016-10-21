@@ -1,3 +1,8 @@
 .bg-3x3 {
   background-image: url('/dist/images/bg-3x3.png');
 }
+
+.bg-founder {
+  background-image: url('/dist/images/founder-bg.png');
+  background-position: top;
+}

@@ -59,13 +59,13 @@ body {
 }
 
 .lead {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 25px;
-  font-weight: 100;
+  font-weight: 300;
 }
 
 .menuType {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 25px;
   font-weight: 300;
   color: undefined;
@@ -104,4 +104,8 @@ body {
 
 .greyText {
   color: #7E7E7E;
+}
+
+.text-secondary {
+  color:
 }
