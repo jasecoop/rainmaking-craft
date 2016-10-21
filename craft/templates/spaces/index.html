@@ -1,8 +1,21 @@
 {% extends (craft.request.isAjax and not craft.request.isLivePreview) ? "_ajax-layout" : "_minipageLayout" %}
 {% set title = "Spaces" %}
 
+
 {% block content %}
   <div class="js-ajax-wrapper">
-    <h1>Spaces</h1>
+    <div class="header header-minipage dn pa3 overflow-hidden fixed w-100 left-0">
+      <a class="btn-menu btn-menu-close minipage-close fr db rm-grey-bg" role="back" href=""></a>
+    </div>
+    {% set i = entry.headerImg.first() %}
+    <div class="minipage-header">
+      <img src="{{ i.getUrl('miniPageHeader') }}" width="{{ i.getWidth('miniPageHeader') }}" height="{{ i.getHeight('miniPageHeader') }}">
+    </div>
+    <div class="pa4">
+      <h1 class="f1 mt0">
+        {{ entry.pageTitle }}
+      </h1>
+      {{ entry.body }}
+    </div>
   </div>
 {% endblock %}

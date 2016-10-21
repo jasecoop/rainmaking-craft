@@ -4,7 +4,7 @@ module.exports = function () {
 
     $( 'body' ).on( 'click', '.menuToggle', function(e) {
       e.preventDefault();
-      $('.menu').toggleClass('menu-active');
+      $('.menu').addClass('menu-active');
     });
 
     $( 'body' ).on( 'click', '.menuToggle-close', function(e) {
@@ -14,7 +14,9 @@ module.exports = function () {
 
     $( '.menu' ).on( 'click', 'a', function(e) {
       e.preventDefault();
-      $('.menu').removeClass('menu-active');
+      if ( $(this).attr('role') !== 'minipage' ) {
+        $('.menu').removeClass('menu-active');
+      }
     });
 
   });

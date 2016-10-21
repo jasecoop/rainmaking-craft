@@ -3,6 +3,15 @@
 
 {% block content %}
   <div class="js-ajax-wrapper">
-    <h1>Companies</h1>
+    {% set i = entry.headerImg.first() %}
+    <div class="minipage-header">
+      <img src="{{ i.getUrl('miniPageHeader') }}" width="{{ i.getWidth('miniPageHeader') }}" height="{{ i.getHeight('miniPageHeader') }}">
+    </div>
+    <div class="pa4">
+      <h1 class="f1 mt0">
+        {{ entry.pageTitle }}
+      </h1>
+      {{ entry.body }}
+    </div>
   </div>
 {% endblock %}

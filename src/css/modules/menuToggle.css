@@ -1,4 +1,4 @@
-.menuToggle {
+.btn-menu {
   width: 60px;
   height: 60px;
   background-image: url('/dist/images/menuToggleIcon.png') at-2x;
@@ -8,8 +8,9 @@
   cursor: pointer;
 }
 
-.menuToggle-close {
+.btn-menu-close {
   background-image: url('/dist/images/menuToggleIconClose.png') at-2x;
+  z-index: 100;
 }
 
 .menu {
@@ -25,4 +26,10 @@
 
 .menu.menu-active {
   top: 0 !important;
+}
+
+.menu-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
 }

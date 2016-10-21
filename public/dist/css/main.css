@@ -5391,7 +5391,7 @@ body {
   font-size: 15px;
   font-weight: 300;
   color: #222436;
-  line-height: 23px;
+  line-height: 26px;
 }
 
 
@@ -5560,7 +5560,7 @@ body {
 }
 
 
-.menuToggle {
+.btn-menu {
   width: 60px;
   height: 60px;
   background-image: url('/dist/images/menuToggleIcon.png');
@@ -5571,8 +5571,9 @@ body {
 }
 
 
-.menuToggle-close {
+.btn-menu-close {
   background-image: url('/dist/images/menuToggleIconClose.png');
+  z-index: 100;
 }
 
 
@@ -5593,8 +5594,15 @@ body {
 }
 
 
+.menu-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+
 .js-mini {
-  width: 50%;
+  width: 100%;
   height: 100%;
   background: #2D2F3C;
   color: #fff;
@@ -5602,11 +5610,21 @@ body {
   top: 0;
   right: -5000px;
   z-index: 99;
+  overflow-y: scroll;
   -webkit-transition: all 1000ms linear;
   -moz-transition: all 1000ms linear;
   -ms-transition: all 1000ms linear;
   -o-transition: all 1000ms linear;
   transition: all 1000ms linear;
+  -webkit-box-shadow: -10px 0 0 0 rgba(31,37,74,.2);
+  box-shadow: -10px 0 0 0 rgba(31,37,74,.2);
+}
+
+
+@media screen and (min-width: 60em) {
+  .js-mini {
+      width: 50%;
+  }
 }
 
 
@@ -5615,10 +5633,15 @@ body {
 }
 
 
+.js-mini p {
+  color: #CECFD9;
+}
+
+
 @media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
 
 
-  .menuToggle {
+  .btn-menu {
     background-image: url('/dist/images/menuToggleIcon@2x.png');
     background-size: 100%;
   }
@@ -5628,7 +5651,7 @@ body {
 @media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
 
 
-  .menuToggle-close {
+  .btn-menu-close {
     background-image: url('/dist/images/menuToggleIconClose@2x.png');
   }
 }

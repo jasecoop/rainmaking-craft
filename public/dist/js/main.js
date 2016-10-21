@@ -10252,6 +10252,18 @@ module.exports = function () {
     ajaxLoad = function(html) {
       init();
 
+      if ( $('body').hasClass('miniPageOpen') ) {
+        if ( $('.menu').hasClass('menu-active') ) {
+          $('.header-minipage').removeClass('dn');
+        }
+      }
+
+      $( 'body' ).on( 'click', '.minipage-close', function(e) {
+        e.preventDefault();
+        history.back();
+        $('body').removeClass('miniPageOpen');
+      });
+
       /* ----- Here you could maybe add logic to set the HTML title to the new page title ----- */
 
       /* ----- Used for popState event (back/forward browser buttons) ----- */
@@ -10280,8 +10292,10 @@ module.exports = function () {
       if (type === "minipage") {
         var $main = $('.js-mini');
         if ( !$('body').hasClass('miniPageOpen') ) {
-          $('body').addClass('miniPageOpen')
+          $('body').addClass('miniPageOpen');
         }
+      } else if (type === "back") {
+        return;
       } else {
         var $main = $('.js-main');
         if ( $('body').hasClass('miniPageOpen') ) {
@@ -10289,7 +10303,7 @@ module.exports = function () {
         }
       }
 
-      if (href.indexOf(document.domain) > -1 || href.indexOf(':') === -1) {
+      if (href.indexOf(document.domain) > -1 || href.indexOf(':') === -1 && type !== "back") {
         history.pushState({}, '', href);
         loadPage(href, $main);
         return false;
@@ -10299,13 +10313,6 @@ module.exports = function () {
 
 }
 
-// a click
-// if minipage
-    // $main = js-mini
-
-//  if minipage isn't active
-      // toggleClass on minipage
-
 },{}],4:[function(require,module,exports){
 module.exports = function () {
 
@@ -10313,7 +10320,7 @@ module.exports = function () {
 
     $( 'body' ).on( 'click', '.menuToggle', function(e) {
       e.preventDefault();
-      $('.menu').toggleClass('menu-active');
+      $('.menu').addClass('menu-active');
     });
 
     $( 'body' ).on( 'click', '.menuToggle-close', function(e) {
@@ -10323,7 +10330,9 @@ module.exports = function () {
 
     $( '.menu' ).on( 'click', 'a', function(e) {
       e.preventDefault();
-      $('.menu').removeClass('menu-active');
+      if ( $(this).attr('role') !== 'minipage' ) {
+        $('.menu').removeClass('menu-active');
+      }
     });
 
   });
