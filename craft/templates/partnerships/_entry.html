@@ -1,0 +1,62 @@
+{% extends "_layout" %}
+{% set title = "Partnerships" %}
+
+{% block content %}
+  <div class="pageContainer">
+    {% for block in entry.pageContent %}
+      {% if block.type == "soundbyteBlock" %}
+        {% set img = block.image.first() %}
+        <div class="w-100 relative pa6">
+          <span class="f1 fw3 relative z-2">
+            {{ block.text }}
+          </span>
+          <div class="absolute w-100 h-100 bg-3x3 top-0 left-0 z-1"></div>
+          <div class="absolute w-100 h-100 bg-3x3 top-0 left-0 z-0 o-50" style="background-image: url('{{ img.getUrl() }}');"></div>
+        </div>
+
+      {% elseif block.type == "textBlock" %}
+        {% if block.backgroundColour == 'white' %}
+          {% set colour = 'textblock-white' %}
+        {% elseif block.backgroundColour == 'grey' %}
+          {% set colour = 'textblock-grey' %}
+        {% else %}
+         {% set colour = 'textblock-black' %}
+        {% endif %}
+        <div class="w-100 pv5 textBlock {{ colour }}">
+          <div class="w-90 w-60-ns m-auto">
+            <h2 class="f2">{{ block.header }}</h2>
+            <div>
+              {{ block.text }}
+            </div>
+          </div>
+        </div>
+      {% elseif block.type == "textBlockWithImages" %}
+        {% set img = block.image.first() %}
+        {% if block.align == 'left' %}
+          {% set imgAlign = 'order-1' %}
+          {% set textAlign = 'order-0' %}
+        {% else %}
+          {% set imgAlign = 'order-0' %}
+          {% set textAlign = 'order-1' %}
+        {% endif %}
+
+        <div class="w-100 relative">
+          <div class="flex-ns">
+            <div class="db w-100 w-50-ns {{ imgAlign }} cover" style="background-image: url({{ img.getUrl() }});">
+              <img src="{{ img.getUrl() }}" class="dn-ns" />
+            </div>
+            <div class="w-100 w-50-ns pa4 pb5 pa5-ns order-0 {{ textAlign }}">
+              <h2 class="f2">
+                {{ block.header }}
+              </h2>
+              <div>
+                {{ block.text }}
+              </div>
+            </div>
+          </div>
+          <!-- <div class="featurePost__mesh bg-3x3"></div> -->
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endblock %}

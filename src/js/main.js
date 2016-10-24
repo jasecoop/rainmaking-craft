@@ -5,6 +5,7 @@ var menu         = require('./scripts/menu');
 var pillarbox    = require('./scripts/pillarbox');
 var stickyHeader = require('./scripts/stickyHeader');
 var rain         = require('./scripts/rain');
+var grade        = require('./lib/grad');
 
 jquery();
 
@@ -13,3 +14,4 @@ menu();
 pillarbox();
 stickyHeader();
 rain();
+grade();

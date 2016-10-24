@@ -1,8 +1,31 @@
 {% extends (craft.request.isAjax and not craft.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
 {% set title = "Partnerships" %}
+{% set partnerships = craft.entries.section('partnerships') %}
 
 {% block content %}
   <div class="js-ajax-wrapper">
-    <h1>Partnerships</h1>
+
+    <div class="pageContainer">
+
+      <div class="pa5-ns pt6 pa4">
+        {% for entry in craft.entries.section('partnerships').find() %}
+          {% set img = entry.partnershipHeaderImage.first() %}
+          <div class="featurePost mb4">
+            <div class="featurePost__img" style="background-image: url({{ img.getUrl() }});"></div>
+            <div class="featurePost__content">
+              <a class="featurePost__title" href="{{ entry.url }}">{{ entry.title }}</a>
+              <div class="featurePost__arrow">
+                <a class="db fl bg-white pa4 tc" href="{{ entry.url }}">
+                  <img class="db mb0" src="dist/images/arrow-right-black.png" data-rjs="3"/>
+                </a>
+              </div>
+            </div>
+            <div class="featurePost__mesh bg-3x3"></div>
+          </div>
+        {% endfor %}
+      </div>
+
+    </div>
+
   </div>
 {% endblock %}

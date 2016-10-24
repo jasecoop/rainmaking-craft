@@ -951,3 +951,7 @@
     margin-right: var(--spacing-extra-extra-extra-large);
   }
 }
+
+.m-auto {
+  margin: 0 auto;
+}

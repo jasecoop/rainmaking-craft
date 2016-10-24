@@ -2,5 +2,8 @@
   "require": {
      "ext-mbstring": "*",
      "ext-imagick": "*"
+  },
+  "require-dev": {
+    "vlucas/phpdotenv": "^2.4"
   }
 }
