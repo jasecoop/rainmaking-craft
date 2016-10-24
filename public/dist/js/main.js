@@ -10224,23 +10224,23 @@ return jQuery;
 }
 
 },{}],2:[function(require,module,exports){
-// Define Dependencies
-var jquery = require('./lib/jquery');
+var jquery       = require('./lib/jquery');
 
-var craftAjax = require('./scripts/craft-ajax');
-var menu = require('./scripts/menu');
-var pillarbox = require('./scripts/pillarbox');
+var craftAjax    = require('./scripts/craft-ajax');
+var menu         = require('./scripts/menu');
+var pillarbox    = require('./scripts/pillarbox');
+var stickyHeader = require('./scripts/stickyHeader');
+var rain         = require('./scripts/rain');
 
 jquery();
 
 craftAjax();
 menu();
 pillarbox();
-//
-// // Print success message to console
-// console.log('<head> scripts loaded.')
+stickyHeader();
+rain();
 
-},{"./lib/jquery":1,"./scripts/craft-ajax":3,"./scripts/menu":4,"./scripts/pillarbox":5}],3:[function(require,module,exports){
+},{"./lib/jquery":1,"./scripts/craft-ajax":3,"./scripts/menu":4,"./scripts/pillarbox":5,"./scripts/rain":6,"./scripts/stickyHeader":7}],3:[function(require,module,exports){
 module.exports = function () {
 
   $(function() {
@@ -10473,6 +10473,41 @@ module.exports = function () {
 //   });
 //
 // });
+}
+
+},{}],6:[function(require,module,exports){
+module.exports = function () {
+
+  var blob = function(x, y, ran) {
+    var html = '<div class="rain-content-mouse rain-content-mouse-'+ran+' fadeOut" style="top:'+y+'px; left:'+x+'px;"></div>';
+    $(html).appendTo('.rain-content').delay(3000).fadeOut(1);
+  }
+
+  $(window).on('mousemove', function(e) {
+    if ( $('.rain').hasClass('rain-mousemove') ) {
+        var x = e.clientX - 350;
+        var y = e.clientY - 350;
+        console.log(x, y)
+        var ran = Math.floor((Math.random() * 3) + 1);
+        blob(x, y, ran);
+        // var html = '<div class="rain-content-mouse rain-content-mouse-'+ran+' fadeOut" style="top:'+y+'px; left:'+x+'px;"></div>';
+        // $(html).appendTo('.rain-content').delay(3000).fadeOut(1);
+    }
+  });
+
+}
+
+},{}],7:[function(require,module,exports){
+module.exports = function () {
+
+  var $header   = $(".header-belowfold ");
+  var winHeight = $(window).height();
+
+  $(window).on("scroll", function() {
+    var fromTop = $("body").scrollTop();
+    $('.header').toggleClass("header-belowfold-active", (fromTop > winHeight - 500));
+  });
+
 }
 
 },{}]},{},[2]);
