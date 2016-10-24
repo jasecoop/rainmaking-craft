@@ -1,7 +1,5 @@
 {
   "require": {
-     "ext-mbstring": "*",
-     "ext-imagick": "*",
-     "vlucas/phpdotenv": "^2.0"
+     "ext-mbstring": "*"
   }
 }
