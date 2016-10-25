@@ -1,0 +1,13 @@
+.roundPhoto {
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.roundPhoto img {
+  width: 100%;
+}
+
+.roundPhoto-l {
+  width: 200px;
+  height: 200px;
+}

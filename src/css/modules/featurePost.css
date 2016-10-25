@@ -46,7 +46,7 @@
   }
 
   .featurePost {
-    height: 400px;
+    height: 320px;
     background-image: linear-gradient(-217deg, #5B93A2 0%, #E9E4E0 100%);
     position: relative;
   }
@@ -58,7 +58,7 @@
   }
 
   .featurePost__img {
-    height: 400px;
+    height: 320px;
     width: 50%;
     display: block;
     float: right;

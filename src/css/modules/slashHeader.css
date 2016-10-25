@@ -1,0 +1,12 @@
+.slashHeader__bg {
+  display: block;
+  height: auto;
+}
+
+@media (--breakpoint-large) {
+  .slashHeader__bg {
+    height: 500px;
+    -webkit-clip-path: polygon(0 0%, 100% 0%, 100% 500px, 0% 280px);
+    clip-path: polygon(0 0%, 100% 0%, 100% 600px, 0% 340px);
+  }
+}

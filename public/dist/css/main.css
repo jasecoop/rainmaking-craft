@@ -5462,7 +5462,7 @@ body {
 
 
 .f1 {
-  font-weight: 100;
+  font-weight: 200;
   line-height: 2.2rem;
 }
 
@@ -5766,7 +5766,7 @@ transition: all 500ms linear;
 
 
 .border-right-grey {
-  border-right: solid 1px #EBEDF0;
+  border-right: solid 1px #9498A0;
 }
 
 
@@ -5912,7 +5912,7 @@ transition: all 500ms linear;
   }
 
   .featurePost {
-    height: 400px;
+    height: 320px;
     background-image: linear-gradient(-217deg, #5B93A2 0%, #E9E4E0 100%);
     position: relative;
   }
@@ -5924,7 +5924,7 @@ transition: all 500ms linear;
   }
 
   .featurePost__img {
-    height: 400px;
+    height: 320px;
     width: 50%;
     display: block;
     float: right;
@@ -5954,6 +5954,130 @@ transition: all 500ms linear;
 .textblock-black {
   background: #282F37;
   color: #B3BCC5;
+}
+
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.gallery div {
+  flex-grow: 1;
+  min-width: 50%;
+  height: 150px;
+  background-size: cover;
+}
+
+
+@media screen and (min-width: 60em) {
+  .gallery div {
+    min-width: 33.3333%;
+    height: 300px;
+  }
+}
+
+
+.videoBlock__gradient {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#5b93a2+0,adebed+100 */
+background: rgb(91,147,162); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(91,147,162,1) 0%, rgba(173,235,237,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(91,147,162,1) 0%,rgba(173,235,237,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(91,147,162,1) 0%,rgba(173,235,237,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b93a2', endColorstr='#adebed',GradientType=0 ); /* IE6-9 */
+}
+
+
+.videoBlock__wrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+}
+
+
+.videoBlock__wrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+@media screen and (min-width: 60em) {
+  .quoteIntro {
+    margin-top: -80px;
+  }
+  .quoteBlock-photo {
+    margin-top: -80px;
+  }
+}
+
+
+.quoteBlock-photo {
+  display: block;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 999px;
+  border: solid #fff 6px;
+}
+
+
+.quoteBlock-photo img {
+  width: 100%;
+}
+
+
+.slashHeader__bg {
+  display: block;
+  height: auto;
+}
+
+
+@media screen and (min-width: 60em) {
+  .slashHeader__bg {
+    height: 500px;
+    -webkit-clip-path: polygon(0 0%, 100% 0%, 100% 500px, 0% 280px);
+    clip-path: polygon(0 0%, 100% 0%, 100% 600px, 0% 340px);
+  }
+}
+
+
+.speechmarks:before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-image: url('/dist/images/speechmarks.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+}
+
+
+.speechmarks {
+  padding-left: 50px;
+  position: relative;
+}
+
+
+.roundPhoto {
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+
+.roundPhoto img {
+  width: 100%;
+}
+
+
+.roundPhoto-l {
+  width: 200px;
+  height: 200px;
 }
 
 
