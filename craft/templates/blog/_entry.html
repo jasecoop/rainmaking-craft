@@ -1,0 +1,74 @@
+{% extends "_layout" %}
+{% set title = "Rainmaking" %}
+
+{% set nextArticle = entry.getNext(criteria) %}
+
+{% block content %}
+<div class="js-ajax-wrapper">
+
+  <div class="pageContainer">
+
+    <div class="w-100 ph4 slashHeader fl">
+      <div class="slashHeader__bg">
+        {% set img = entry.headerImage.first() %}
+        <img src="{{ img.getUrl('slashHeader') }}" width="{{ img.getWidth('slashHeader') }}" height="{{ img.getHeight('slashHeader') }}" />
+      </div>
+    </div>
+
+    <div class="w-100 ph4 fl">
+      <div class="w-100 w-60-ns fl-ns slashHeader-content-m">
+        <h1 class="f1 mb4">
+          {{ entry.title }}
+        </h1>
+
+        <div class="content">
+          {% set text = entry.post|nl2br  %}
+          {{ text|raw }}
+        </div>
+      </div>
+
+      <div class="w-100 w-40-ns fr-ns fl">
+
+        <div class="ph3">
+          <div class="tc">
+            <h2 class="f2 pb0">Don't miss out!</h2>
+            <p>Sign up to our newsletter and we’ll keep you updated with everything Rainmaking</p>
+          </div>
+          <div>
+            <form action="http://startupbootcampinsurtech.createsend.com/t/i/s/bblui/" method="post" id="subForm">
+              <div class="w-80 m-auto">
+                <div class="mb2">
+                  <input class="caps-small-f w-100 tc" id="fieldName" placeholder="Your name" name="cm-name" type="text" />
+                </div>
+                <div class="mb2">
+                  <input class="caps-small-f w-100 tc" id="fieldEmail" placeholder="Your email address" name="cm-bblui-bblui" type="email" required />
+                </div>
+                <button class="btn btn-small w-100" type="submit">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% set bg = nextArticle.headerImage.first() %}
+    <div class="w-100 pv6 cover relative tc fl mt5" style="background-image: url({{ bg.getUrl() }});">
+      <div class="w-60 z-2 relative m-auto">
+        <div class="caps-small-f">
+          Next article
+        </div>
+        <div class="f1">
+          {{ nextArticle.title }}
+        </div>
+        <div>
+          <a class="btn mt3" href="{{ nextArticle.url }}">
+            Read now
+          </a>
+        </div>
+      </div>
+      <div class="absolute top-0 left-0 w-100 h-100 z-0 bg-3x3"></div>
+      <div class="absolute top-0 left-0 w-100 h-100 z-1 bg-white-to-trans"></div>
+    </div>
+  </div>
+</div>
+{% include '_includes/_footer.html' %}
+{% endblock %}

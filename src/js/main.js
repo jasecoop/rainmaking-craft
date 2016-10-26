@@ -5,7 +5,7 @@ var menu         = require('./scripts/menu');
 var pillarbox    = require('./scripts/pillarbox');
 var stickyHeader = require('./scripts/stickyHeader');
 var rain         = require('./scripts/rain');
-var grade        = require('./lib/grad');
+var colorThief   = require('./lib/colourThief');
 var balancedGallery = require('./lib/balancedGallery');
 
 jquery();
@@ -15,5 +15,10 @@ menu();
 pillarbox();
 stickyHeader();
 rain();
-grade();
+colorThief();
 balancedGallery();
+colorThief();
+
+var colorThief = new ColorThief();
+var c = colorThief.getColor('https://davidwalsh.name/demo/flexbox-twelve/codepen7.png');
+console.log(c);

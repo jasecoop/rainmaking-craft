@@ -9,4 +9,7 @@
     -webkit-clip-path: polygon(0 0%, 100% 0%, 100% 500px, 0% 280px);
     clip-path: polygon(0 0%, 100% 0%, 100% 600px, 0% 340px);
   }
+  .slashHeader-content-m {
+    margin-top: -80px;
+  }
 }

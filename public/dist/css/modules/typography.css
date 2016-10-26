@@ -42,20 +42,40 @@ body {
   font-family: undefined;
 }
 
-.f1 {
+.content h1 {
+  font-family: undefined;
+}
+
+.content h2 {
+  font-family: undefined;
+}
+
+.content h3 {
+  font-family: undefined;
+}
+
+.f1,
+.content h1 {
   font-weight: 200;
   line-height: 2.2rem;
 }
 
-.f2 {
+.f2,
+.content h2 {
   line-height: 2rem;
-  font-weight: 100;
+  font-weight: 200;
 }
 
 .text-small {
   font-size: 10px;
   letter-spacing: 1px;
   line-height: 16px;
+}
+
+.text-xsmall {
+  font-size: 9px;
+  letter-spacing: 1px;
+  line-height: 14px;
 }
 
 .lead {

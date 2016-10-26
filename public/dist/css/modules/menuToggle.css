@@ -14,18 +14,13 @@
 }
 
 .menu {
-  top: -2000px !important;
+  display: none;
   height: 100%;
-  -webkit-transition: all 1000ms linear;
-  -moz-transition: all 1000ms linear;
-  -ms-transition: all 1000ms linear;
-  -o-transition: all 1000ms linear;
-  transition: all 1000ms linear;
   z-index: 98;
 }
 
 .menu.menu-active {
-  top: 0 !important;
+  /*display: block;*/
 }
 
 .menu-container {

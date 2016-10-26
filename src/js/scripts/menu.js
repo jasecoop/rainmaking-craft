@@ -4,12 +4,12 @@ module.exports = function () {
 
     $( 'body' ).on( 'click', '.menuToggle', function(e) {
       e.preventDefault();
-      $('.menu').addClass('menu-active');
+      $('.menu').addClass('menu-active').fadeIn('slow');
     });
 
     $( 'body' ).on( 'click', '.menuToggle-close', function(e) {
       e.preventDefault();
-      $('.menu').removeClass('menu-active');
+      $('.menu').removeClass('menu-active').fadeOut('slow');
     });
 
     $( '.menu' ).on( 'click', 'a', function(e) {

@@ -1,0 +1,73 @@
+.posts {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.posts > div {
+  /*flex: 3;*/
+}
+
+.post:hover .post__img {
+  background-size: 105%;
+}
+
+.post:hover .post__gradient  {
+  background-size: 205%;
+}
+
+.post__img {
+  display: block;
+  width: 100%;
+  height: 200px;
+  background-size: 110%;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  -webkit-transition: all 300ms linear;
+  -moz-transition: all 300ms linear;
+  -ms-transition: all 300ms linear;
+  -o-transition: all 300ms linear;
+  transition: all 300ms linear;
+}
+
+.post__content {
+  background: #fff;
+  min-height: 200px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.post__gradient,
+.post__mesh {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.post__mesh {
+  z-index: 1;
+}
+
+.post__gradient {
+  z-index: 0;
+  background-size: 100%;
+  background-position: center;
+  -webkit-transition: all 3000ms linear;
+  -moz-transition: all 3000ms linear;
+  -ms-transition: all 3000ms linear;
+  -o-transition: all 3000ms linear;
+  transition: all 3000ms linear;
+}
+
+.post__title {
+  font-size: 18px;
+  line-height: 30px;
+  text-decoration: underline;
+  color: undefined;
+}

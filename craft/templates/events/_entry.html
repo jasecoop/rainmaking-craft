@@ -1,0 +1,44 @@
+{% extends "_layout" %}
+{% set title = "Rainmaking" %}
+
+{% block content %}
+<div class="js-ajax-wrapper">
+
+  <div class="pageContainer bg-gradient-grey overflow-hidden">
+
+    <div class="w-100 ph4 slashHeader fl z-0 relative">
+      <div class="slashHeader__bg">
+        {% set img = entry.headerImg.first() %}
+        <img src="{{ img.getUrl('slashHeader') }}" width="{{ img.getWidth('slashHeader') }}" height="{{ img.getHeight('slashHeader') }}" />
+      </div>
+    </div>
+
+    <div class="w-100 ph4 pb5 fl">
+      <div class="w-100 w-60-ns fl-ns slashHeader-content-m">
+        <h1 class="f1 mb4">
+          {{ entry.title }}
+        </h1>
+
+        <div class="content">
+          {% set text = entry.body|nl2br  %}
+          {{ text|raw }}
+        </div>
+      </div>
+
+      <div class="w-100 w-40-ns fr-ns fl">
+        <div class="mh4">
+          <div class="w-100 pa3 bg-white slashHeader-content-m z-1 relative">
+            <a href="{{ eventbriteUrl }}" class="w-100 btn btn-nopad mb3">Get tickets</a>
+            <div class="caps-small-f">When</div>
+            <div class="mb3">{{ entry.timeAndDate|date("F d Y H:i") }}</div>
+            <div class="caps-small-f">Where</div>
+            <div>{{ entry.eventLocation }}</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% include '_includes/_footer.html' %}
+{% endblock %}
