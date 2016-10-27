@@ -1,0 +1,15 @@
+.pT-left .pT__img {
+  float: left;
+}
+
+.pT-right .pT__content {
+  float: right;
+}
+
+.pT-right .pT__img {
+  float: right;
+}
+
+.pT-right .pT__content {
+  float: left;
+}

@@ -30,49 +30,49 @@ body {
 
 .f1 {
   font-family: undefined;
-  font-weight: 200;
+  font-weight: 100;
 }
 
 .f2 {
   font-family: undefined;
-  font-weight: 200;
+  font-weight: 100;
 }
 
 .f3 {
   font-family: undefined;
-  font-weight: 200;
+  font-weight: 100;
 }
 
 .f4 {
   font-family: undefined;
-  font-weight: 200;
+  font-weight: 100;
 }
 
 .content h1 {
   font-family: undefined;
-  font-weight: 200;
+  font-weight: 100;
 }
 
 .content h2 {
   font-family: undefined;
-  font-weight: 200;
+  font-weight: 100;
 }
 
 .content h3 {
   font-family: undefined;
-  font-weight: 200;
+  font-weight: 100;
 }
 
 .f1,
 .content h1 {
-  font-weight: 200;
+  font-weight: 100;
   line-height: 2.2rem;
 }
 
 .f2,
 .content h2 {
   line-height: 2rem;
-  font-weight: 200;
+  font-weight: 100;
 }
 
 .text-small {

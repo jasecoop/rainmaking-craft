@@ -49,9 +49,7 @@
   {% set bg4 = entry.partnershipHoverImage.first() %}
   <div class="pillarbox-bg" style="background-image: url('{{ bg4.getUrl() }}')"></div>
   <div class="pbc__text w-40-ns">
-    <p>
-      {{ entry.partnershipsIntroduction }}
-    </p>
+    {{ entry.partnershipsIntroduction }}
   </div>
 </div>
 
@@ -71,7 +69,7 @@
       </div>
     </div>
     <div class="w-60 fl home-intro-text">
-      <p id="home-intro-text-main" class="lead rm-text-2 mt0 mr5-ns">{{ entry.intro}}</div>
+      <p id="home-intro-text-main" class="f2 mt0 mr2-ns">{{ entry.intro}}</div>
       <p id="home-intro-hover-text"></p>
     </div>
   </div>
@@ -91,101 +89,58 @@
 
 <div class="pa5-ns pa4">
   <div class="partnershipTestimonials w-100 fl">
-    <div class="pT mb6 overflow-hidden">
-      <div class="w-100 w-40-ns fl-ns tl-ns tc">
-        <div class="dib br-100 overflow-hidden">
-          <img src="http://placehold.it/300x300" />
-        </div>
-      </div>
-      <div class="w-100 w-60-ns fr-ns">
-        <div class="f1 mb3">
-          Strategically sourcing startups to catapult Castrol’s business forward
-        </div>
 
-        <div class="mb4 lead overflow-hidden">
-          <img class="fl" src="/dist/images/speechmarks.png" />
-          <div class="fl mt2">
-            Alongside our Castrol Innovation Team, Rainmaking helped us increase our deal flow and strenghthen our presence in the global startup community.
+    {% for entry in craft.entries.section('partnerships').find() %}
+      {% if entry.featurePartnershipOnHomePage %}
+
+        <div class="pT {{ cycle(['pT-left', 'pT-right'], loop.index0) }} mb6 overflow-hidden">
+          <div class="pT__img w-100 w-40-ns fl-ns tl-ns tc">
+            <div class="dib mh4 br-100 overflow-hidden">
+              {% set quotePhoto = entry.partnershipQuotePhoto.first() %}
+              <img src="{{ quotePhoto.getURL('roundPortrait') }}" />
+            </div>
+          </div>
+          <div class="pT__content w-100 w-60-ns fr-ns">
+            <div class="f1 mb3">
+              <a href="{{ entry.url }}">
+                {{ entry.title }}
+                <span><img src="/dist/images/arrow-right-black.png" /></span>
+              </a>
+            </div>
+
+            <div class="speechmarks">
+              <div class="mb4 lead overflow-hidden">
+                <div class="fl mt2">
+                  {{ entry.partnershipQuote }}
+                </div>
+              </div>
+              <div>
+                <div class="w-100 w-50-ns fl border-right-grey h-100 v-mid">
+                  <span class="v-mid dib h-100"></span>
+                  <div class="v-mid dib">
+                    <div class="lh-solid">{{ entry.partnershipQuoteName }}</div>
+                    <div class="caps-small-f">{{ entry.partnershipQuoteJobRole }}</div>
+                  </div>
+                </div>
+                <div class="w-100 w-50-ns fl tc h-100 v-mid">
+                  {% set logo = entry.partnershipLogo.first() %}
+                  <span class="v-mid dib h-100"></span>
+                  <img class="v-mid" width="180" src="{{ logo.getURL() }}" />
+                </div>
+                <!-- <div class="w-33 fl tc v-mid">
+                  <a href="{{ enty.url}}"
+                    <img src="/dist/images/arrow-right-black.png" />
+                  </a>
+                </div> -->
+              </div>
+
+            </div>
           </div>
         </div>
-        <div>
-            <div class="w-33 fl border-right-grey">
-              <div>Sumgui Sumnanme</div>
-              <div>Chief Innovation Officer</div>
-            </div>
-            <div class="w-33 fl tc border-right-grey">
-              <img src="http://placehold.it/100x50" />
-            </div>
-            <div class="w-33 fl tc v-mid">
-              <img src="/dist/images/arrow-right-black.png" />
-            </div>
-        </div>
-      </div>
-    </div>
+      {% endif %}
+    {% endfor %}
 
-    <div class="pT mb6 overflow-hidden">
-      <div class="w-100 w-40-ns fr-ns tr-ns tc">
-        <div class="dib br-100 overflow-hidden">
-          <img src="http://placehold.it/300x300" />
-        </div>
-      </div>
-      <div class="w-100 w-60-ns fl-ns">
-        <div class="f1 mb3">
-          Strategically sourcing startups to catapult Castrol’s business forward
-        </div>
 
-        <div class="mb4 lead overflow-hidden">
-          <img class="fl" src="/dist/images/speechmarks.png" />
-          <div class="fl mt2">
-            Alongside our Castrol Innovation Team, Rainmaking helped us increase our deal flow and strenghthen our presence in the global startup community.
-          </div>
-        </div>
-        <div>
-            <div class="w-33 fl border-right-grey">
-              <div>Sumgui Sumnanme</div>
-              <div>Chief Innovation Officer</div>
-            </div>
-            <div class="w-33 fl tc border-right-grey">
-              <img src="http://placehold.it/100x50" />
-            </div>
-            <div class="w-33 fl tc v-mid">
-              <img src="/dist/images/arrow-right-black.png" />
-            </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="pT mb6 overflow-hidden">
-      <div class="w-100 w-40-ns fl-ns tl-ns tc">
-        <div class="dib br-100 overflow-hidden">
-          <img src="http://placehold.it/300x300" />
-        </div>
-      </div>
-      <div class="w-100 w-60-ns fr-ns">
-        <div class="f1 mb3">
-          Strategically sourcing startups to catapult Castrol’s business forward
-        </div>
-
-        <div class="mb4 lead overflow-hidden">
-          <img class="fl" src="/dist/images/speechmarks.png" />
-          <div class="fl mt2">
-            Alongside our Castrol Innovation Team, Rainmaking helped us increase our deal flow and strenghthen our presence in the global startup community.
-          </div>
-        </div>
-        <div>
-            <div class="w-33 fl border-right-grey">
-              <div>Sumgui Sumnanme</div>
-              <div>Chief Innovation Officer</div>
-            </div>
-            <div class="w-33 fl tc border-right-grey">
-              <img src="http://placehold.it/100x50" />
-            </div>
-            <div class="w-33 fl tc v-mid">
-              <img src="/dist/images/arrow-right-black.png" />
-            </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 

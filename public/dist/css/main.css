@@ -5462,49 +5462,49 @@ body {
 
 .f1 {
   font-family: Futura, 'avenir next', avenir, helvetica, 'helvetica neue', sans-serif;
-  font-weight: 200;
+  font-weight: 100;
 }
 
 
 .f2 {
   font-family: Futura, 'avenir next', avenir, helvetica, 'helvetica neue', sans-serif;
-  font-weight: 200;
+  font-weight: 100;
 }
 
 
 .f3 {
   font-family: Futura, 'avenir next', avenir, helvetica, 'helvetica neue', sans-serif;
-  font-weight: 200;
+  font-weight: 100;
 }
 
 
 .f4 {
   font-family: Futura, 'avenir next', avenir, helvetica, 'helvetica neue', sans-serif;
-  font-weight: 200;
+  font-weight: 100;
 }
 
 
 .content h1 {
   font-family: Futura, 'avenir next', avenir, helvetica, 'helvetica neue', sans-serif;
-  font-weight: 200;
+  font-weight: 100;
 }
 
 
 .content h2 {
   font-family: Futura, 'avenir next', avenir, helvetica, 'helvetica neue', sans-serif;
-  font-weight: 200;
+  font-weight: 100;
 }
 
 
 .content h3 {
   font-family: Futura, 'avenir next', avenir, helvetica, 'helvetica neue', sans-serif;
-  font-weight: 200;
+  font-weight: 100;
 }
 
 
 .f1,
 .content h1 {
-  font-weight: 200;
+  font-weight: 100;
   line-height: 2.2rem;
 }
 
@@ -5512,7 +5512,7 @@ body {
 .f2,
 .content h2 {
   line-height: 2rem;
-  font-weight: 200;
+  font-weight: 100;
 }
 
 
@@ -6292,6 +6292,26 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b93a2', end
 
 .icon:hover {
   opacity: 1;
+}
+
+
+.pT-left .pT__img {
+  float: left;
+}
+
+
+.pT-right .pT__content {
+  float: right;
+}
+
+
+.pT-right .pT__img {
+  float: right;
+}
+
+
+.pT-right .pT__content {
+  float: left;
 }
 
 
