@@ -1,15 +1,15 @@
 {% extends (craft.request.isAjax and not craft.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
 {% set title = "Partnerships" %}
 {% set partnerships = craft.entries.section('partnerships') %}
-
+{% set copy = craft.entries.section('partnershipIndex').first() %}
 {% block content %}
   <div class="js-ajax-wrapper">
 
     <div class="pageContainer bg-gradient-grey">
 
       <div class="pa4-ns pt6 pa4">
-        <div class="w-60-ns mb5">
-          <h1 class="f2">Practising what we preach. Actions not words. Just see for yourself.</h1>
+        <div class="w-60-ns mb5 lead">
+            {{ copy.pageIntroduction }}
         </div>
         {% for entry in craft.entries.section('partnerships').find() %}
           {% set img = entry.partnershipHeaderImage.first() %}
@@ -33,4 +33,5 @@
     </div>
 
   </div>
+{% include '_includes/_footer.html' %}
 {% endblock %}

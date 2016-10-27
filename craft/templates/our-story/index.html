@@ -1,0 +1,24 @@
+{% extends (craft.request.isAjax and not craft.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
+{% set title = "Partnerships" %}
+{% set partnerships = craft.entries.section('partnerships') %}
+
+{% block content %}
+  <div class="js-ajax-wrapper">
+
+    <div class="pageContainer">
+
+      <div class="pa4-ns pt6 pa4">
+        <div class="w-60-ns mb5">
+          <div class="lead">
+            {{ entry.pageIntroduction }}
+          </div>
+        </div>
+      </div>
+
+      {% include '_includes/_content.html' with { 'entry' : entry } %}
+
+    </div>
+
+  </div>
+{% include '_includes/_footer.html' %}
+{% endblock %}

@@ -1,12 +1,25 @@
 @font-face {
   font-family: 'Futura';
-  src: url('../fonts/FuturCEMed.eot');
+  font-weight: 100;
+  src: url('../fonts/FuturaStd-Medium.eot');
  }
 @font-face {
   font-family: 'Futura';
-  src: url('../fonts/FuturCEMed.woff') format('woff'),
-  url('../fonts/FuturCEMed.svg#FuturaCE-Medium') format('svg');
+  font-weight: 100;
+  src: url('../fonts/FuturaStd-Medium.woff') format('woff'),
+  url('../fonts/FuturaStd-Medium.svg#FuturaStd-Medium') format('svg');
  }
+@font-face {
+   font-family: 'Futura';
+   font-weight: 200;
+   src: url('../fonts/FuturaStd-Bold.eot');
+  }
+@font-face {
+   font-family: 'Futura';
+   font-weight: 200;
+   src: url('../fonts/FuturaStd-Bold.woff') format('woff'),
+   url('../fonts/FuturaStd-Medium.svg#FuturaStd-Medium') format('svg');
+  }
 @font-face {
  font-family: 'Graphik';
  font-weight: 400;

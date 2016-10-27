@@ -9,6 +9,7 @@ body {
 .caps-small-f {
   font-size: 12px;
   font-family: undefined;
+  font-weight: 100;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
@@ -16,6 +17,7 @@ body {
 .caps-xsmall-f {
   font-size: 10px;
   font-family: undefined;
+  font-weight: 100;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
@@ -28,30 +30,37 @@ body {
 
 .f1 {
   font-family: undefined;
+  font-weight: 200;
 }
 
 .f2 {
   font-family: undefined;
+  font-weight: 200;
 }
 
 .f3 {
   font-family: undefined;
+  font-weight: 200;
 }
 
 .f4 {
   font-family: undefined;
+  font-weight: 200;
 }
 
 .content h1 {
   font-family: undefined;
+  font-weight: 200;
 }
 
 .content h2 {
   font-family: undefined;
+  font-weight: 200;
 }
 
 .content h3 {
   font-family: undefined;
+  font-weight: 200;
 }
 
 .f1,
@@ -79,9 +88,10 @@ body {
 }
 
 .lead {
+  font-family: undefined;
+  font-weight: 300;
   font-size: 18px;
   line-height: 25px;
-  font-weight: 300;
 }
 
 .menuType {

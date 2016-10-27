@@ -1,0 +1,58 @@
+{% extends (craft.request.isAjax and not craft.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
+{% set title = "Rainmaking" %}
+{% set founders = craft.entries.section('founders') %}
+
+{% block content %}
+  <div class="js-ajax-wrapper">
+
+    <div class="pageContainer bg-gradient-grey overflow-hidden">
+
+      <div class="pa4-ns pt6 pa4">
+        <div class="w-60-ns mb5">
+          <div class="lead">
+            {{ entry.pageIntroduction }}
+          </div>
+        </div>
+      </div>
+
+      <div class="w-100 ph4">
+        {% for entry in craft.entries.section('founders') %}
+          <div class="w-100 relative overflow-hidden mb4">
+
+            <div class="founderPhoto-{{entry.id}} w-100 w-60-ns absolute-ns left-0 top-0 z-0" class="absolute">
+              {% set img = entry.founderPhoto.first() %}
+              <img src="{{ img.getUrl('founder') }}" />
+            </div>
+
+            <div class="w-60-ns fr mt4-ns">
+              <div class="w-100 pa4 bg-white mb4 relative z-1">
+                <h2 class="f2">
+                  {{ entry.title }}
+                </h2>
+                <div>
+                  {{ entry.body }}
+                  <div class="mt3">
+                    {% if entry.twitterUrl %}
+                      <a class="icon mr2" href="{{ entry.twitterUrl }}" target="_blank" >
+                        <img src="dist/images/icon-twitter.png" data-rjs="3" />
+                      </a>
+                    {% endif %}
+                    {% if entry.linkedinUrl %}
+                      <a class="icon" href="{{ entry.linkedinUrl }}" target="_blank">
+                        <img src="dist/images/icon-linkedin.png" data-rjs="3" />
+                      </a>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        {% endfor %}
+      </div>
+
+    </div>
+
+  </div>
+{% include '_includes/_footer.html' %}
+{% endblock %}

@@ -1,17 +1,15 @@
 {% extends (craft.request.isAjax and not craft.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
 {% set title = "Events" %}
-
+{% set copy = craft.entries.section('eventsPageCopy').first() %}
 {% block content %}
 <div class="js-ajax-wrapper">
 
   <div class="pageContainer bg-gradient-grey">
 
     <div class="pa4-ns pt6 pa4">
-      <!-- <h1 class="f1">Practising what we preach</h1> -->
-
-      <p class="f2 w-60-ns mb5">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
+      <div class="w-60-ns mb5 lead">
+          {{ copy.pageIntroduction }}
+      </div>
 
       {% for entry in craft.entries.section('events') if entry.timeAndDate > now %}
         {% set img = entry.headerImg.first() %}

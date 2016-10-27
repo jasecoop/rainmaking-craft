@@ -9,6 +9,7 @@ body {
 .caps-small-f {
   font-size: 12px;
   font-family: var(--futura-font-family);
+  font-weight: 100;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
@@ -16,6 +17,7 @@ body {
 .caps-xsmall-f {
   font-size: 10px;
   font-family: var(--futura-font-family);
+  font-weight: 100;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
@@ -29,7 +31,8 @@ body {
 
 .f1, .f2, .f3, .f4,
 .content h1, .content h2, .content h3 {
-  font-family: var(--graphik-font-family);
+  font-family: var(--futura-font-family);
+  font-weight: 200;
 }
 
 .f1,
@@ -57,9 +60,10 @@ body {
 }
 
 .lead {
+  font-family: var(--graphik-font-family);
+  font-weight: 300;
   font-size: 18px;
   line-height: 25px;
-  font-weight: 300;
 }
 
 @media (--breakpoint-large) {

@@ -70,4 +70,6 @@
   line-height: 30px;
   text-decoration: underline;
   color: var(--rm-text);
+  font-family: var(--futura-font-family);
+  font-weight: 200;
 }

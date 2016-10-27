@@ -5323,15 +5323,32 @@ body, html, main {
 
 @font-face {
   font-family: 'Futura';
-  src: url('../fonts/FuturCEMed.eot');
+  font-weight: 100;
+  src: url('../fonts/FuturaStd-Medium.eot');
  }
 
 
 @font-face {
   font-family: 'Futura';
-  src: url('../fonts/FuturCEMed.woff') format('woff'),
-  url('../fonts/FuturCEMed.svg#FuturaCE-Medium') format('svg');
+  font-weight: 100;
+  src: url('../fonts/FuturaStd-Medium.woff') format('woff'),
+  url('../fonts/FuturaStd-Medium.svg#FuturaStd-Medium') format('svg');
  }
+
+
+@font-face {
+   font-family: 'Futura';
+   font-weight: 200;
+   src: url('../fonts/FuturaStd-Bold.eot');
+  }
+
+
+@font-face {
+   font-family: 'Futura';
+   font-weight: 200;
+   src: url('../fonts/FuturaStd-Bold.woff') format('woff'),
+   url('../fonts/FuturaStd-Medium.svg#FuturaStd-Medium') format('svg');
+  }
 
 
 @font-face {
@@ -5421,6 +5438,7 @@ body {
 .caps-small-f {
   font-size: 12px;
   font-family: Futura, 'avenir next', avenir, helvetica, 'helvetica neue', sans-serif;
+  font-weight: 100;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
@@ -5429,6 +5447,7 @@ body {
 .caps-xsmall-f {
   font-size: 10px;
   font-family: Futura, 'avenir next', avenir, helvetica, 'helvetica neue', sans-serif;
+  font-weight: 100;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
@@ -5442,37 +5461,44 @@ body {
 
 
 .f1 {
-  font-family: Graphik, 'avenir next', avenir, helvetica, 'helvetica neue', sans-serif;
+  font-family: Futura, 'avenir next', avenir, helvetica, 'helvetica neue', sans-serif;
+  font-weight: 200;
 }
 
 
 .f2 {
-  font-family: Graphik, 'avenir next', avenir, helvetica, 'helvetica neue', sans-serif;
+  font-family: Futura, 'avenir next', avenir, helvetica, 'helvetica neue', sans-serif;
+  font-weight: 200;
 }
 
 
 .f3 {
-  font-family: Graphik, 'avenir next', avenir, helvetica, 'helvetica neue', sans-serif;
+  font-family: Futura, 'avenir next', avenir, helvetica, 'helvetica neue', sans-serif;
+  font-weight: 200;
 }
 
 
 .f4 {
-  font-family: Graphik, 'avenir next', avenir, helvetica, 'helvetica neue', sans-serif;
+  font-family: Futura, 'avenir next', avenir, helvetica, 'helvetica neue', sans-serif;
+  font-weight: 200;
 }
 
 
 .content h1 {
-  font-family: Graphik, 'avenir next', avenir, helvetica, 'helvetica neue', sans-serif;
+  font-family: Futura, 'avenir next', avenir, helvetica, 'helvetica neue', sans-serif;
+  font-weight: 200;
 }
 
 
 .content h2 {
-  font-family: Graphik, 'avenir next', avenir, helvetica, 'helvetica neue', sans-serif;
+  font-family: Futura, 'avenir next', avenir, helvetica, 'helvetica neue', sans-serif;
+  font-weight: 200;
 }
 
 
 .content h3 {
-  font-family: Graphik, 'avenir next', avenir, helvetica, 'helvetica neue', sans-serif;
+  font-family: Futura, 'avenir next', avenir, helvetica, 'helvetica neue', sans-serif;
+  font-weight: 200;
 }
 
 
@@ -5505,9 +5531,10 @@ body {
 
 
 .lead {
+  font-family: Graphik, 'avenir next', avenir, helvetica, 'helvetica neue', sans-serif;
+  font-weight: 300;
   font-size: 18px;
   line-height: 25px;
-  font-weight: 300;
 }
 
 
@@ -5608,6 +5635,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   letter-spacing: 2.7px;
   font-family: Futura, 'avenir next', avenir, helvetica, 'helvetica neue', sans-serif;
   text-transform: uppercase;
+  font-weight: 100;
 }
 
 
@@ -5616,6 +5644,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   letter-spacing: 2.7px;
   font-family: Futura, 'avenir next', avenir, helvetica, 'helvetica neue', sans-serif;
   text-transform: uppercase;
+  font-weight: 100;
 }
 
 
@@ -5934,6 +5963,8 @@ transition: all 500ms linear;
 
 
 .featurePost__title {
+  font-family: Futura, 'avenir next', avenir, helvetica, 'helvetica neue', sans-serif;
+  font-weight: 200;
   font-size: 1.2rem;
   line-height: 2rem;
   font-weight: 200;
@@ -6216,6 +6247,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b93a2', end
   line-height: 30px;
   text-decoration: underline;
   color: #222436;
+  font-family: Futura, 'avenir next', avenir, helvetica, 'helvetica neue', sans-serif;
+  font-weight: 200;
 }
 
 
@@ -6249,6 +6282,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b93a2', end
 .btn-nopad {
   padding-left: 0;
   padding-right: 0;
+}
+
+
+.icon {
+  opacity: .6;
+}
+
+
+.icon:hover {
+  opacity: 1;
 }
 
 
