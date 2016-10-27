@@ -3,6 +3,45 @@
 
 {% block content %}
   <div class="js-ajax-wrapper">
-    <h1>Contact</h1>
+
+    <div class="pageContainer">
+
+      <div class="pa4-ns pt6 pa4 pb0">
+        <div class="w-60-ns mb3">
+          <div class="lead">
+            {{ entry.pageIntroduction }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-100 pt4 ph4 overflow-hidden mb5">
+      <div class="w-100 tl fl pt4">
+        <div class="caps-small-f lh-solid">General enquires</div>
+        <div class="rm-text-2 f2">{{ contact.generalEmailAddress }}</div>
+      </div>
+      <div class="w-100 tl fl pt4">
+        <div class="caps-small-f lh-solid">Press enquires</div>
+        <div class="rm-text-2 f2">{{ contact.pressEmailAddress }}</div>
+      </div>
+    </div>
+
+    <div class="w-100 pt4 ph4 overflow-hidden">
+      {% for entry in craft.entries.section('locations') %}
+        <div class="w-25 tl fl pt4">
+          <div class="caps-small-f lh-solid">{{ entry.title }}</div>
+          <div class="text-small rm-text-2 ">{{ entry.address}}</div>
+
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="gallery w-100 pt5">
+      {% for img in entry.image %}
+        <div style="background-image: url('{{ img.getUrl() }}')"></div>
+      {% endfor %}
+    </div>
+
   </div>
+{% include '_includes/_footerSimple.html' %}
 {% endblock %}
