@@ -16,7 +16,7 @@
 .menu {
   display: none;
   height: 100%;
-  z-index: 98;
+  z-index: 999999;
 }
 
 .menu.menu-active {

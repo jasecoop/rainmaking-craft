@@ -4,9 +4,17 @@
   {% include '_includes/_head.html' %}
 </head>
 
-<body>
+  {% if bodyClass is defined %}
+    <body class="{{ bodyClass }}">
+  {% else %}
+    <body>
+  {% endif %}
 
-  {% include '_includes/_header.html' %}
+  {% if headerBelowFold is defined %}
+    {% include '_includes/_header.html' with { 'headerBelowFold' : headerBelowFold }  %}
+  {% else %}
+    {% include '_includes/_header.html' %}
+  {% endif %}
 
   <main class="js-main" role="main">
     {% block content %}

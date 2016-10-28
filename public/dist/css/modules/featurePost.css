@@ -31,10 +31,9 @@
 
 .featurePost__title {
   font-family: undefined;
-  font-weight: 200;
   font-size: 1.2rem;
   line-height: 2rem;
-  font-weight: 200;
+  font-weight: 100;
   text-decoration: none;
   color: undefined;
 }

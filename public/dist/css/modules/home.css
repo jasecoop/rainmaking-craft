@@ -1,15 +1,13 @@
-.pT-left .pT__img {
-  float: left;
+.pT {
+  margin-bottom: 100px;
 }
 
-.pT-right .pT__content {
-  float: right;
+.pT__quotePhoto {
+  margin-left: -50px;
+  top: 30px;
+  border: solid 4px #fff;
 }
 
-.pT-right .pT__img {
-  float: right;
-}
-
-.pT-right .pT__content {
-  float: left;
+.pT__quote {
+  margin-top: -150px;
 }

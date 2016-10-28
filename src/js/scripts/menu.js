@@ -19,5 +19,10 @@ module.exports = function () {
       }
     });
 
+    $( 'body' ).on( 'click', '.fade-menu', function(e) {
+      e.preventDefault();
+      $('.menu').removeClass('menu-active').fadeOut('slow');
+    });
+
   });
 }

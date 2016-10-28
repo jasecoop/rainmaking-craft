@@ -8,14 +8,16 @@
       <a class="btn-menu btn-menu-close minipage-close fr db rm-grey-bg" role="back" href=""></a>
     </div>
     {% set i = entry.headerImg.first() %}
-    <div class="minipage-header">
-      <img src="{{ i.getUrl('miniPageHeader') }}">
+    <div class="minipage-header w-100">
+      <img src="{{ i.getUrl('miniPageHeader') }}" class="w-100">
     </div>
     <div class="pa4">
       <h1 class="f1 mt0">
         {{ entry.pageTitle }}
       </h1>
       {{ entry.body }}
+
+      <a class="btn btn-outline-white w-100 btn-nopad" href="www.rainmakingloft.com">Visit Rainmaking Loft</a>
     </div>
   </div>
 {% endblock %}

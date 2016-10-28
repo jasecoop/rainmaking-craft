@@ -37,6 +37,12 @@ module.exports = function () {
       $('.pillar-active').removeClass('pillar-active');
     });
 
+    $('body').on('click', '#partnershipsScroll', function(e){
+      e.preventDefault();
+      var height = $('.home-intro-container').height() + 200;
+      $("html, body").animate({ scrollTop: height + 'px' });
+    });
+
   });
 
 // var positionLogo = function() {

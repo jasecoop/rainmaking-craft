@@ -6,7 +6,7 @@
   position: fixed;
   top: 0;
   right: -5000px;
-  z-index: 30;
+  z-index: 999999999;
   overflow-y: scroll;
   -webkit-transition: all 1000ms linear;
   -moz-transition: all 1000ms linear;

@@ -7,6 +7,10 @@
   background-position: top;
 }
 
+.bg-grey {
+  background: rgba(242,245,246,1);
+}
+
 .bg-gradient-grey {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+2,f2f5f6+99 */
   background: rgb(255,255,255); /* Old browsers */

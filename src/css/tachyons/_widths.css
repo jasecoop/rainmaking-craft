@@ -55,6 +55,7 @@
 .w-40 {  width:  40%; }
 .w-50 {  width:  50%; }
 .w-60 {  width:  60%; }
+.w-70 {  width:  70%; }
 .w-75 {  width:  75%; }
 .w-80 {  width:  80%; }
 .w-100 { width: 100%; }
@@ -70,11 +71,13 @@
   .w-10-ns { width:  10%; }
   .w-20-ns { width:  20%; }
   .w-25-ns { width:  25%; }
+  .w-30-ns { width:  30%; }
   .w-33-ns { width:  33%; }
   .w-34-ns { width:  34%; }
   .w-40-ns { width:  40%; }
   .w-50-ns { width:  50%; }
   .w-60-ns { width:  60%; }
+  .w-70-ns { width:  70%; }
   .w-75-ns { width:  75%; }
   .w-80-ns { width:  80%; }
   .w-100-ns { width: 100%; }
