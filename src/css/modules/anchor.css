@@ -1,0 +1,12 @@
+.a-plain {
+  text-decoration: none;
+  color: var(--rm-text);
+}
+
+.pointer-none {
+  pointer-events: none;
+}
+
+.pointer-auto {
+  pointer-events: auto;
+}

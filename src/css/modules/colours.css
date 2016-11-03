@@ -1,6 +1,4 @@
 :root {
-  --rm-blue: #384BC5;
-  --rm-blue-dark: #2F40AC;
   --rm-text: #062D40;
   --rm-text-2: #68767C;
   --rm-grey: #EBEDF0;
@@ -20,9 +18,15 @@
 .rm-green  { color: var(--rm-green);  }
 .rm-orange { color: var(--rm-orange); }
 
-.rm-grey-bg { background: var(--rm-grey); }
-.rm-teal    { background: var(--rm-teal); }
-.rm-red     { background: var(--rm-red); }
-.rm-blue    { background: var(--rm-blue); }
-.rm-green   { background: var(--rm-green);  }
-.rm-orange  { background: var(--rm-orange); }
+.rm-teal-hover:hover   { color: var(--rm-teal); }
+.rm-red-hover:hover     { color: var(--rm-red); }
+.rm-blue-hover:hover    { color: var(--rm-blue); }
+.rm-green-hover:hover   { color: var(--rm-green);  }
+.rm-orange-hover:hover  { color: var(--rm-orange); }
+
+.bg-grey { background: var(--rm-grey); }
+.bg-teal    { background: var(--rm-teal); }
+.bg-red     { background: var(--rm-red); }
+.bg-blue    { background: var(--rm-blue); }
+.bg-green   { background: var(--rm-green);  }
+.bg-orange  { background: var(--rm-orange); }

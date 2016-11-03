@@ -93,51 +93,9 @@
 
     {% for entry in craft.entries.section('partnerships').find() %}
       {% if entry.featurePartnershipOnHomePage %}
-        {% set img = entry.partnershipHeaderImage.first() %}
-        <div class="pT mb6">
-          <div class="relative z-0">
-            <a href="{{ entry.url }}" class="w-50 fr h5 dn db-ns cover z-2 relative" style="background-image: url({{ img.getUrl() }});"></a>
-            <div class="w-100 w-50-ns h5 fl relative bg-center pa3 relative" style="background-image: url({{ img.getUrl() }});">
-              <div class="pa3 h-100 relative z-2">
-                <div>
-                  <a class="f1 no-underline rm-text" href="{{ entry.url }}">{{ entry.title }}</a>
-                </div>
-                <!-- <a class="db fl bg-white pa3 mt3 tc" href="{{ entry.url }}">
-                  <img class="db mb0" src="dist/images/arrow-right-black.png" data-rjs="3"/>
-                </a> -->
-              </div>
-              <div class="db w-100 h-100 absolute top-0 left-0 z-1 bg-3x3"></div>
-            </div>
-          </div>
-          <div class="pT__quote mb4 lead w-1 relative z-2 fl">
-            <div class="bg-white pa4 pl0 overflow-hidden w-100">
-              <div class="pT__quotePhoto absolute relative-ns w-100 w-20-ns fl tc">
-                <div class="roundPhoto roundPhoto-100 dib">
-                  {% set quotePhoto = entry.partnershipQuotePhoto.first() %}
-                  <img src="{{ quotePhoto.getURL('roundPortrait') }}" />
-                </div>
-              </div>
-              <div class="w-100 pl3 pt4 pt0-ns pl0-ns w-80-ns fr">
-                <div class="mb3 tc tl-ns">
-                  {{ entry.partnershipQuote }}
-                </div>
-                <div class="relative">
-                  <div class="w-100 fl relative">
-                    <div class="border-right-grey-ns fl mb3 mb0-ns w-100 w-50-ns pr4-ns tc tl-ns">
-                      <div class="mt3 lh-solid w-100">{{ entry.partnershipQuoteName }}</div>
-                      <div class="caps-small-f w-100">{{ entry.partnershipQuoteJobRole }}</div>
-                    </div>
-                    <div class="w-100 w-50-ns fl pl0 pl4-ns h-100 v-mid tc">
-                      {% set logo = entry.partnershipLogo.first() %}
-                      <span class="v-mid dib h-100"></span>
-                      <img class="v-mid mt2" width="150" src="{{ logo.getURL() }}" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        {% set colour = cycle(['teal', 'red', 'blue', 'green', 'orange'], loop.index0) %}
+        {% set align = cycle(['left', 'right'], loop.index0) %}
+        {% include '_includes/_partnershipCardLarge.html' with { 'entry' : entry, 'color' : colour, 'align': align } %}
       {% endif %}
     {% endfor %}
 

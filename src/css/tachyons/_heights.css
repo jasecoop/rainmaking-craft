@@ -16,6 +16,7 @@
 .h4 { height: 8rem; }
 .h5 { height: 12rem; }
 .h6 { height: 16rem; }
+.h7 { height: 19rem; }
 
 /* Height Percentages */
 
@@ -36,6 +37,7 @@
   .h4-ns {  height: 8rem; }
   .h5-ns { height: 12rem; }
   .h6-ns {  height: 16rem; }
+  .h7-ns {  height: 19rem; }
   .h-25-ns { height: 25%; }
   .h-50-ns { height: 50%; }
   .h-75-ns { height: 75%; }

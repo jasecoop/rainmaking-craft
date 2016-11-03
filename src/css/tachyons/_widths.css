@@ -58,6 +58,7 @@
 .w-70 {  width:  70%; }
 .w-75 {  width:  75%; }
 .w-80 {  width:  80%; }
+.w-90 {  width:  90%; }
 .w-100 { width: 100%; }
 
 .w-auto { width: auto; }
@@ -80,6 +81,7 @@
   .w-70-ns { width:  70%; }
   .w-75-ns { width:  75%; }
   .w-80-ns { width:  80%; }
+  .w-90-ns { width:  90%; }
   .w-100-ns { width: 100%; }
   .w-auto-ns { width: auto; }
 }
@@ -100,6 +102,7 @@
   .w-60-m { width:  60%; }
   .w-75-m { width:  75%; }
   .w-80-m { width:  80%; }
+  .w-90-m { width:  90%; }
   .w-100-m { width: 100%; }
   .w-auto-m {    width: auto; }
 }
@@ -120,6 +123,7 @@
   .w-60-l {    width:  60%; }
   .w-75-l {    width:  75%; }
   .w-80-l {    width:  80%; }
+  .w-90-m { width:  90%; }
   .w-100-l {   width: 100%; }
   .w-auto-l {    width: auto; }
 }

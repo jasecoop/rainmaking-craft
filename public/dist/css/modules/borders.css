@@ -1,3 +1,16 @@
 .border-right-grey {
   border-right: solid 1px #9498A0;
 }
+.border-white {
+  border: solid 1px #fff;
+}
+@media screen and (min-width: 48em) {
+  .border-right-grey-ns {
+    border-right: solid 1px #9498A0;
+  }
+}
+.border-teal-hover:hover   { border-color: #69C7D3; }
+.border-red-hover:hover      { border-color: #FF856D; }
+.border-blue-hover:hover     { border-color: #86BFEF; }
+.border-green-hover:hover    { border-color: #83B309;  }
+.border-orange-hover:hover   { border-color: #F99B30; }

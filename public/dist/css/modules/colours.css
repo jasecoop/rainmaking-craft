@@ -12,14 +12,24 @@
 
 .rm-orange { color: #F99B30; }
 
-.rm-grey-bg { background: #EBEDF0; }
+.rm-teal-hover:hover   { color: #69C7D3; }
 
-.rm-teal    { background: #69C7D3; }
+.rm-red-hover:hover     { color: #FF856D; }
 
-.rm-red     { background: #FF856D; }
+.rm-blue-hover:hover    { color: #86BFEF; }
 
-.rm-blue    { background: #86BFEF; }
+.rm-green-hover:hover   { color: #83B309;  }
 
-.rm-green   { background: #83B309;  }
+.rm-orange-hover:hover  { color: #F99B30; }
 
-.rm-orange  { background: #F99B30; }
+.bg-grey { background: #EBEDF0; }
+
+.bg-teal    { background: #69C7D3; }
+
+.bg-red     { background: #FF856D; }
+
+.bg-blue    { background: #86BFEF; }
+
+.bg-green   { background: #83B309;  }
+
+.bg-orange  { background: #F99B30; }

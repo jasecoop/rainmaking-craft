@@ -1,0 +1,47 @@
+{% if align == 'left' %}
+  {% set quoteAlign = 'order-1' %}
+  {% set linkAlign = 'order-2' %}
+{% else %}
+  {% set quoteAlign = 'order-2' %}
+  {% set linkAlign = 'order-1' %}
+{% endif %}
+
+{% set img = entry.partnershipHeaderImage.first() %}
+<div class="w-100 relative flex-ns flex-row-ns items-stretch-ns fl-ns h-auto mv3 bg-white border-white border-{{ colour }}-hover pointer-none">
+  <div class="w-100 w-50-ns fr-ns {{ linkAlign }} pointer-auto">
+    <div class="pa4 w-100 h-100 cover z-1 relative" style="background-image: url({{ img.getUrl() }});">
+      <div class="z-1 relative h-100 flex flex-column justify-between">
+        <div>
+          <a href="{{ entry.url }}" class="f2 db mb4 mb0-ns a-plain rm-{{ colour }}-hover pointer-auto">
+            {{ entry.title }}
+          </a>
+        </div>
+        <div>
+          <a href="{{ entry.url }}" class="btn btn-continue btn-{{ colour }} pointer-auto"></a>
+        </div>
+      </div>
+      <div class="bg-mesh"></div>
+    </div>
+  </div>
+  <div class="w-100 w-50-ns fl-ns {{ quoteAlign }} relative dn db-ns pointer-auto">
+    <div class="w-10 h-100 db fl bg-{{ colour }} tc pt4">
+      <img class="w-60 mt2" src="/dist/images/speechmarks-white.svg" />
+    </div>
+    <div class="w-90 pa4 fl lead h-100">
+      <div class="pb4">
+        {{ entry.partnershipQuote }}
+      </div>
+      <div>
+        <div class="roundPhoto roundPhoto-80 dib fl">
+          {% set quotePhoto = entry.partnershipQuotePhoto.first() %}
+          <img src="{{ quotePhoto.getURL('roundPortrait') }}" />
+        </div>
+        <div class="ml3 fl">
+          <div class="mt3 lh-solid w-100">{{ entry.partnershipQuoteName }}</div>
+          <div class="caps-small-f w-100">{{ entry.partnershipQuoteJobRole }}</div>
+          <div class="caps-small-f w-100">{{ entry.companyName }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

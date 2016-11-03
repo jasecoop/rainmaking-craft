@@ -7,26 +7,18 @@
 
     <div class="pageContainer bg-gradient-grey">
 
-      <div class="pa4-ns pt6 pa4">
+      <div class="pa4-ns pt6 pa4 bg-grey overflow-hidden">
         <div class="w-60-ns mb5 lead">
             {{ copy.pageIntroduction }}
         </div>
         {% for entry in craft.entries.section('partnerships').find() %}
-          {% set img = entry.partnershipHeaderImage.first() %}
-          <div class="featurePost mb4">
-            <a href="{{ entry.url }}" class="featurePost__img" style="background-image: url({{ img.getUrl() }});"></a>
-            <div class="featurePost__content pa3 relative" style="background-image: url({{ img.getUrl() }});">
-              <div class="pa3 h-100 relative z-2">
-                <a class="featurePost__title" href="{{ entry.url }}">{{ entry.title }}</a>
-                <div class="featurePost__arrow">
-                  <a class="db fl bg-white pa4 tc" href="{{ entry.url }}">
-                    <img class="db mb0" src="dist/images/arrow-right-black.png" data-rjs="3"/>
-                  </a>
-                </div>
-              </div>
-              <div class="featurePost__mesh bg-3x3"></div>
-            </div>
-          </div>
+          {% set colour = cycle(['teal', 'red', 'blue', 'green', 'orange'], loop.index0) %}
+          {% if  loop.index % 3 == 0 %}
+            {% include '_includes/_partnershipCardLarge.html' with { 'entry' : entry, 'color' : colour } %}
+          {% else %}
+            {% include '_includes/_partnershipCard.html' with { 'entry' : entry, 'color' : colour } %}
+          {% endif %}
+
         {% endfor %}
       </div>
 

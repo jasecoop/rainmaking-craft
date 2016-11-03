@@ -1,10 +1,11 @@
 .btn {
-  background: #384BC5;
+  /*background: var(--rm-blue);*/
   display: inline-block;
   color: #fff;
   border-radius: 1px;
   font-size: 13px;
   /*font-family: var(--futura-font-family);*/
+  border: solid 1px #fff;
   letter-spacing: 1px;
   text-transform: uppercase;
   text-decoration: none;
