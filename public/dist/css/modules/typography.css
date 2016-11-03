@@ -20,8 +20,9 @@ body {
   text-transform: uppercase;
 }
 .fxl {
-  font-size: 53px;
-  font-weight: 100;
+  font-family: undefined;
+  font-weight: 200;
+  font-size: 43px;
   line-height: 1.2em;
 }
 .f1 {

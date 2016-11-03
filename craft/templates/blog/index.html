@@ -17,21 +17,8 @@
       <div class="flex posts bg-grey">
         {% for entry in craft.entries.section('blog').find() %}
           {% if loop.first %}
-            {% set img = entry.headerImage.first() %}
-            <div class="featurePost mb4 w-100">
-              <a href="{{ entry.url }}" class="featurePost__img" style="background-image: url({{ img.getUrl() }});"></a>
-              <div class="featurePost__content pa3 relative" style="background-image: url({{ img.getUrl() }});">
-                <div class="pa3 h-100 relative z-2">
-                  <a class="featurePost__title" href="{{ entry.url }}">{{ entry.title }}</a>
-                  <div class="featurePost__arrow">
-                    <a class="db fl bg-white pa4 tc" href="{{ entry.url }}">
-                      <img class="db mb0" src="dist/images/arrow-right-black.png" data-rjs="3"/>
-                    </a>
-                  </div>
-                </div>
-                <div class="featurePost__mesh bg-3x3"></div>
-              </div>
-            </div>
+            {% set colour = cycle(['teal', 'red', 'blue', 'green', 'orange'], loop.index0) %}
+            {% include '_includes/_blogPostFeaturedCard.html' with { 'entry' : entry, 'color' : colour } %}
           {% else %}
             {% set colour = cycle(['teal', 'red', 'blue', 'green', 'orange'], loop.index0) %}
             {% include '_includes/_blogPostCard.html' with { 'entry' : entry, 'color' : colour } %}
