@@ -1,3 +1,9 @@
 .border-right-grey {
   border-right: solid 1px #9498A0;
 }
+
+@media (--breakpoint-not-small) {
+  .border-right-grey-ns {
+    border-right: solid 1px #9498A0;
+  }
+}

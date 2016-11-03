@@ -10881,7 +10881,7 @@ module.exports = function () {
 
     $('body').on('click', '#partnershipsScroll', function(e){
       e.preventDefault();
-      var height = $('.home-intro-container').height();
+      var height = $('.home-intro-container').height() + 200;
       $("html, body").animate({ scrollTop: height + 'px' });
     });
 

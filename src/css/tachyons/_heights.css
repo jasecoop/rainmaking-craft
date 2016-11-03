@@ -14,7 +14,8 @@
 .h2 { height: 2rem; }
 .h3 { height: 4rem; }
 .h4 { height: 8rem; }
-.h5 { height: 16rem; }
+.h5 { height: 12rem; }
+.h6 { height: 16rem; }
 
 /* Height Percentages */
 
@@ -33,7 +34,8 @@
   .h2-ns {  height: 2rem; }
   .h3-ns {  height: 4rem; }
   .h4-ns {  height: 8rem; }
-  .h5-ns {  height: 16rem; }
+  .h5-ns { height: 12rem; }
+  .h6-ns {  height: 16rem; }
   .h-25-ns { height: 25%; }
   .h-50-ns { height: 50%; }
   .h-75-ns { height: 75%; }
@@ -47,7 +49,8 @@
   .h2-m { height: 2rem; }
   .h3-m { height: 4rem; }
   .h4-m { height: 8rem; }
-  .h5-m { height: 16rem; }
+  .h5-m { height: 12rem; }
+  .h6-m { height: 16rem; }
   .h-25-m { height: 25%; }
   .h-50-m { height: 50%; }
   .h-75-m { height: 75%; }
@@ -61,7 +64,8 @@
   .h2-l { height: 2rem; }
   .h3-l { height: 4rem; }
   .h4-l { height: 8rem; }
-  .h5-l { height: 16rem; }
+  .h5-l { height: 12rem; }
+  .h6-l { height: 16rem; }
   .h-25-l { height: 25%; }
   .h-50-l { height: 50%; }
   .h-75-l { height: 75%; }

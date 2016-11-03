@@ -1,29 +1,30 @@
 .textblock-white {
   background: #fff;
 }
-
 .textblock-grey {
   background: #E2E6EA;
   color: #282F37;
 }
-
 .textblock-black {
   background: #282F37;
   color: #B3BCC5;
 }
-
 .gallery {
   display: flex;
   flex-wrap: wrap;
 }
-
 .gallery div {
   flex-grow: 1;
   min-width: 50%;
   height: 150px;
   background-size: cover;
 }
-
+@media screen and (min-width: 64em) {
+  .gallery div {
+    min-width: 33.3333%;
+    height: 300px;
+  }
+}
 .videoBlock__gradient {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#5b93a2+0,adebed+100 */
 background: rgb(91,147,162); /* Old browsers */
@@ -32,13 +33,11 @@ background: -webkit-linear-gradient(top,  rgba(91,147,162,1) 0%,rgba(173,235,237
 background: linear-gradient(to bottom,  rgba(91,147,162,1) 0%,rgba(173,235,237,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b93a2', endColorstr='#adebed',GradientType=0 ); /* IE6-9 */
 }
-
 .videoBlock__wrapper {
 	position: relative;
 	padding-bottom: 56.25%; /* 16:9 */
 	padding-top: 25px;
 }
-
 .videoBlock__wrapper iframe {
 	position: absolute;
 	top: 0;
@@ -46,7 +45,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b93a2', end
 	width: 100%;
 	height: 100%;
 }
-
+@media screen and (min-width: 64em) {
+  .quoteIntro {
+    margin-top: -80px;
+  }
+  .quoteBlock-photo {
+    margin-top: -80px;
+  }
+}
 .quoteBlock-photo {
   display: block;
   width: 300px;
@@ -55,7 +61,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b93a2', end
   border-radius: 999px;
   border: solid #fff 6px;
 }
-
 .quoteBlock-photo img {
   width: 100%;
 }

@@ -1,7 +1,11 @@
+@custom-media --breakpoint-not-small screen and (min-width: 48em);
+@custom-media --breakpoint-medium screen and (min-width: 48em) and (max-width: 64em);
+@custom-media --breakpoint-large screen and (min-width: 64em);
+
 body {
   font-family: var(--graphik-font-family);
   font-size: 15px;
-  font-weight: 300;
+  font-weight: 100;
   color: var(--rm-text);
   line-height: 26px;
 }
@@ -32,19 +36,17 @@ body {
 .f1, .f2, .f3, .f4,
 .content h1, .content h2, .content h3 {
   font-family: var(--futura-font-family);
-  font-weight: 100;
+  font-weight: 200;
 }
 
 .f1,
 .content h1 {
-  font-weight: 100;
   line-height: 2.2rem;
 }
 
 .f2,
 .content h2 {
   line-height: 2rem;
-  font-weight: 100;
 }
 
 .text-small {
@@ -61,9 +63,9 @@ body {
 
 .lead {
   font-family: var(--graphik-font-family);
-  font-weight: 300;
+  font-weight: 200;
   font-size: 18px;
-  line-height: 25px;
+  line-height: 31px;
 }
 
 @media (--breakpoint-large) {

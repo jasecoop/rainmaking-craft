@@ -14,6 +14,7 @@
 */
 .cover { background-size: cover; }
 .contain { background-size: contain; }
+.bg-center { background-size: center; }
 @media screen and (min-width: 48em) {
   .cover-ns { background-size: cover; }
   .contain-ns { background-size: contain; }

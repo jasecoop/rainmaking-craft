@@ -1,13 +1,26 @@
+@custom-media --breakpoint-not-small screen and (min-width: 48em);
+@custom-media --breakpoint-medium screen and (min-width: 48em) and (max-width: 64em);
+@custom-media --breakpoint-large screen and (min-width: 64em);
+
 .pT {
   margin-bottom: 100px;
 }
 
-.pT__quotePhoto {
-  margin-left: -50px;
-  top: 30px;
+.pT__quotePhoto > div {
+  /*margin-left: -50px;*/
   border: solid 4px #fff;
 }
 
 .pT__quote {
-  margin-top: -150px;
+  /*margin-top: -120px;*/
+}
+
+.pT__quotePhoto {
+  top: -46px;
+}
+
+@media (--breakpoint-not-small) {
+  .pT__quotePhoto {
+    top: 0px;
+  }
 }

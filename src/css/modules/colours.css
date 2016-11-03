@@ -1,15 +1,28 @@
 :root {
   --rm-blue: #384BC5;
   --rm-blue-dark: #2F40AC;
-  --rm-text: #222436;
-  --rm-text-2: #516376;
+  --rm-text: #062D40;
+  --rm-text-2: #68767C;
   --rm-grey: #EBEDF0;
+  --rm-teal: #69C7D3;
+  --rm-red: #FF856D;
+  --rm-blue: #86BFEF;
+  --rm-green: #83B309;
+  --rm-orange: #F99B30;
 }
 
-.rm-grey-bg {
-  background: #EBEDF0;
-}
+.rm-text { color: var(--rm-text); }
+.rm-text-2 { color: var(--rm-text-2); }
 
-.rm-text-2 {
-  color: var(--rm-text-2);
-}
+.rm-teal   { color: var(--rm-teal); }
+.rm-red    { color: var(--rm-red); }
+.rm-blue   { color: var(--rm-blue); }
+.rm-green  { color: var(--rm-green);  }
+.rm-orange { color: var(--rm-orange); }
+
+.rm-grey-bg { background: var(--rm-grey); }
+.rm-teal    { background: var(--rm-teal); }
+.rm-red     { background: var(--rm-red); }
+.rm-blue    { background: var(--rm-blue); }
+.rm-green   { background: var(--rm-green);  }
+.rm-orange  { background: var(--rm-orange); }
