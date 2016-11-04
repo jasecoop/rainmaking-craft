@@ -47,20 +47,6 @@ module.exports = function () {
     $(document).on('click', 'a', function() {
 
       var href = $(this).attr("href");
-      var type = $(this).attr("role");
-      if (type === "minipage") {
-        var $main = $('.js-mini');
-        if ( !$('body').hasClass('miniPageOpen') ) {
-          $('body').addClass('miniPageOpen');
-        }
-      } else if (type === "back") {
-        return;
-      } else {
-        var $main = $('.js-main');
-        if ( $('body').hasClass('miniPageOpen') ) {
-          $('body').removeClass('miniPageOpen');
-        }
-      }
 
       if (href.indexOf(document.domain) > -1 || href.indexOf(':') === -1 && type !== "back") {
         history.pushState({}, '', href);

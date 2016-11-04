@@ -4,10 +4,8 @@ module.exports = function () {
   var winHeight = $(window).height();
 
   $(window).on("scroll", function() {
-    if ($('.header').hasClass('header-belowfold')) {
-      var fromTop = $("body").scrollTop();
-      $('.header').toggleClass("header-belowfold-active", (fromTop > winHeight - 500));
-    }
+    var fromTop = $("body").scrollTop();
+    $('.header').toggleClass("header-belowfold", (fromTop > winHeight - 500));
   });
 
 }

@@ -1,0 +1,11 @@
+<div class="pillarbox pillarbox-{{ name }}">
+  {% set bg1 = img.first() %}
+  <div class="fixed top-0 w-100 h-100 cover z-1" style="background-image: url('{{ bg1.getUrl() }}');"></div>
+  <div class="pbc__text absolute top-0 left-0 right-0 bottom-0 pointer-none z-5 pa4-ns pt0">
+    <div class="intro-hover-text w-100 w-50-ns fr-ns home-intro-text relative z-4">
+      <div class="w-70 m-auto pa4 bg-white lead bt bw2 border-{{color}}">
+        {{ text }}
+      </div>
+    </div>
+  </div>
+</div>

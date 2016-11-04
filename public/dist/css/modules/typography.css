@@ -25,6 +25,12 @@ body {
   font-size: 43px;
   line-height: 1.2em;
 }
+.fxxl {
+  font-family: undefined;
+  font-weight: 200;
+  font-size: 60px;
+  line-height: 1.2em;
+}
 .f1 {
   font-family: undefined;
   font-weight: 200;

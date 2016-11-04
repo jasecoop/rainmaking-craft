@@ -1,55 +1,46 @@
 {% extends (craft.request.isAjax and not craft.request.isLivePreview) ? "_ajax-layout" : "_minipageLayout" %}
-{% set title = "Companies" %}
+{% set title = "Startups" %}
+{% set bgImage = entry.headerImg %}
+{% set colour = 'blue' %}
 
 {% block content %}
-  <div class="js-ajax-wrapper">
-    {% set i = entry.headerImg.first() %}
-    <div class="minipage-header w-100">
-      <img src="{{ i.getUrl('miniPageHeader') }}" class="w-100">
+  {{ entry.body }}
+
+  <div class="caps-small-f white">Selected Ventures</div>
+
+  <div class="w-100">
+    <div>
+      <a class="relative" href="http://takumi.com/" target="_blank">
+        <img src="https://rm-io-media.s3.amazonaws.com/cases/fb61369d4a6ac84a.jpg" class="w-100 lh-0"/>
+        <div class="absolute left-0 black pa3 ma3 bottom-0 bg-white">
+          Takumi
+        </div>
+      </a>
     </div>
-    <div class="pa4">
-      <h1 class="f1 mt0">
-        {{ entry.pageTitle }}
-      </h1>
-      {{ entry.body }}
-
-      <div class="caps-small-f white">Selected Ventures</div>
-
-      <div class="w-100">
-        <div class="w-50 fl">
-          <a class="relative" href="http://takumi.com/" target="_blank">
-            <img src="https://rm-io-media.s3.amazonaws.com/cases/fb61369d4a6ac84a.jpg" class="w-100 lh-0"/>
-            <div class="absolute left-0 black pa3 ma3 bottom-0 bg-white">
-              Takumi
-            </div>
-          </a>
+    <div>
+      <a target="_blank" class="relative">
+        <img src="https://rm-io-media.s3.amazonaws.com/cases/b3bee7b5d4fadbab.jpg" class="w-100 lh-0"/>
+        <div class="absolute left-0 black pa3 ma3 bottom-0 bg-white">
+          Sendworks
         </div>
-        <div class="w-50 fl">
-          <a target="_blank" class="relative">
-            <img src="https://rm-io-media.s3.amazonaws.com/cases/b3bee7b5d4fadbab.jpg" class="w-100 lh-0"/>
-            <div class="absolute left-0 black pa3 ma3 bottom-0 bg-white">
-              Sendworks
-            </div>
-          </a>
+      </a>
+    </div>
+    <div>
+      <a href="https://proskins.co/" target="_blank" class="relative">
+        <img src="https://rm-io-media.s3.amazonaws.com/cases/47579c40d1a53672.jpg" class="w-100 lh-0"/>
+        <div class="absolute left-0 black pa3 ma3 bottom-0 bg-white">
+          Proskin
         </div>
-        <div class="w-50 fl">
-          <a href="https://proskins.co/" target="_blank" class="relative">
-            <img src="https://rm-io-media.s3.amazonaws.com/cases/47579c40d1a53672.jpg" class="w-100 lh-0"/>
-            <div class="absolute left-0 black pa3 ma3 bottom-0 bg-white">
-              Proskin
-            </div>
-          </a>
+      </a>
+    </div>
+    <div>
+      <a href="http://Prokost.dk" target="_blank" class="relative">
+        <img src="https://rm-io-media.s3.amazonaws.com/cases/eedd42116eee8ea7.jpg" class="w-100 lh-0"/>
+        <div class="absolute left-0 black pa3 ma3 bottom-0 bg-white">
+          Prokost.dk
         </div>
-        <div class="w-50 fl">
-          <a href="http://Prokost.dk" target="_blank" class="relative">
-            <img src="https://rm-io-media.s3.amazonaws.com/cases/eedd42116eee8ea7.jpg" class="w-100 lh-0"/>
-            <div class="absolute left-0 black pa3 ma3 bottom-0 bg-white">
-              Prokost.dk
-            </div>
-          </a>
-        </div>
-        </div>
-      </div>
+      </a>
+    </div>
     </div>
   </div>
 {% endblock %}

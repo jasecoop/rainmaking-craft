@@ -1,10 +1,5 @@
 .rain {
-  height: 100%;
-  width: 100%;
   background-image: url('/dist/images/bg-3x3.png');
-  z-index: 1;
-  position: absolute;
-  top: 0;
 }
 
 .rain-content {

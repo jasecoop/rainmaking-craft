@@ -54,12 +54,12 @@
    url('../fonts/Graphik-RegularItalic.svg#Graphik-RegularItalic') format('svg');
   }
 @font-face {
-  font-family: 'Graphik-Medium';
+  font-family: 'Graphik';
   font-weight: 200;
   src: url('../fonts/Graphik-Medium.eot');
 }
 @font-face {
-  font-family: 'Graphik-Medium';
+  font-family: 'Graphik';
   font-weight: 200;
   src: url('../fonts/Graphik-Medium.woff') format('woff'),
   url('../fonts/Graphik-Medium.svg#Graphik-Medium') format('svg');
