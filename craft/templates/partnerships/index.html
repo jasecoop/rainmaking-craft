@@ -13,8 +13,9 @@
         </div>
         {% for entry in craft.entries.section('partnerships').find() %}
           {% set colour = cycle(['teal', 'red', 'blue', 'green', 'orange'], loop.index0) %}
+          {% set align = cycle(['left', 'right'], loop.index0) %}
           {% if  loop.index % 3 == 0 %}
-            {% include '_includes/_partnershipCardLarge.html' with { 'entry' : entry, 'color' : colour } %}
+            {% include '_includes/_partnershipCardLarge.html' with { 'entry' : entry, 'color' : colour, 'align' : align } %}
           {% else %}
             {% include '_includes/_partnershipCard.html' with { 'entry' : entry, 'color' : colour } %}
           {% endif %}

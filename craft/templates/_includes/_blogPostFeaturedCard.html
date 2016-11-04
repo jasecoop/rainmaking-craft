@@ -1,5 +1,5 @@
 {% set img = entry.headerImage.first() %}
-<div class="w-100 cover" style="background-image: url({{ img.getUrl() }});">
+<div class="w-100 cover mb4" style="background-image: url({{ img.getUrl() }});">
   <div class="ma5 pa4 w-50 fl bg-3x3 border-white border-{{ colour }}-hover pointer-none">
     <div class="mb5">
       <a class="fxl mb5 a-plain rm-{{ colour }}-hover pointer-auto" href="{{ entry.url }}">{{ entry.title }}</a>
@@ -8,15 +8,4 @@
       <a href="{{ entry.url }}" class="btn btn-continue btn-{{ colour }} pointer-auto"></a>
     </div>
   </div>
-  <!-- <div class="featurePost__content pa3 relative" style="background-image: url({{ img.getUrl() }});">
-    <div class="pa3 h-100 relative z-2">
-      <a class="featurePost__title" href="{{ entry.url }}">{{ entry.title }}</a>
-      <div class="featurePost__arrow">
-        <a class="db fl bg-white pa4 tc" href="{{ entry.url }}">
-          <img class="db mb0" src="dist/images/arrow-right-black.png" data-rjs="3"/>
-        </a>
-      </div>
-    </div>
-    <div class="featurePost__mesh bg-3x3"></div>
-  </div> -->
 </div>
