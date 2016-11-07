@@ -7,6 +7,7 @@
   --rm-blue: #86BFEF;
   --rm-green: #83B309;
   --rm-orange: #F99B30;
+  --rm-dark: #151B1E;
 }
 
 .rm-text { color: var(--rm-text); }
@@ -30,3 +31,4 @@
 .bg-blue    { background: var(--rm-blue); }
 .bg-green   { background: var(--rm-green);  }
 .bg-orange  { background: var(--rm-orange); }
+.bg-dark  { background: var(--rm-dark); }

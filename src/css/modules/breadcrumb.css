@@ -1,0 +1,6 @@
+.breadcrumb {
+  line-height: 60px;
+  font-weight: 200;
+  font-family: var(--futura-font-family);
+  font-size: 13px;
+}

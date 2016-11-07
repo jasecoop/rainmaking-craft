@@ -25,8 +25,8 @@
 {% include '_includes/_introHover.html' with { 'name' : 'spaces', color: 'red', 'img' : entry.spacesHoverImage, 'text' : entry.spacesIntroduction } %}
 {% include '_includes/_introHover.html' with { 'name' : 'partnerships', color: 'green', 'img' : entry.partnershipHoverImage, 'text' : entry.partnershipsIntroduction } %}
 
-<div class="h-100 flex items-center pa3 pa4-ns bg-grad-vert-trans-white relative">
-  <div id="intro-home">
+<div class="h-100 flex items-center bg-grad-vert-trans-white relative">
+  <div id="intro-home" class="container-size">
     <div class="w-100 w-40-ns fl mb3">
       <div id="intro-links">
         <div><a class="pillar dib fxxl mb2-ns a-plain rm-text rm-teal-hover" data-type="accelerators" href="/accelerator">Accelerators</a></div>
@@ -36,7 +36,7 @@
       </div>
     </div>
     <div id="home-intro-text" class="w-100 w-50-ns fr-ns home-intro-text relative z-4">
-      <div class="w-70 m-auto pa4 bg-white lead">
+      <div class="w-90 m-auto pa4 bg-white lead">
         {{ entry.intro}}
       </div>
     </div>
@@ -46,27 +46,28 @@
   <div class="rain-content left-0"></div>
 </div>
 
-<div class="ph4-ns ph3 fl w-100 pt0 bg-gradient-grey">
-  <div class="w-100 w-70-ns mb5">
-    <h2 class="f1">{{ entry.partnershipsHeadline }}</h2>
-    <div class="lead rm-text-2 mr5-ns">
-      {{ entry.secondaryIntroduction }}
+<div class="fl w-100 pt0 bg-gradient-grey">
+  <div class="container">
+    <div class="w-100 w-70-ns mb5">
+      <h2 class="f1">{{ entry.partnershipsHeadline }}</h2>
+      <div class="lead rm-text-2 mr5-ns">
+        {{ entry.secondaryIntroduction }}
+      </div>
     </div>
   </div>
 </div>
 
-<div class="pa3 pa4-ns bg-grey overflow-hidden">
-  <div class="partnershipTestimonials w-100 fl">
-
-    {% for entry in craft.entries.section('partnerships').find() %}
-      {% if entry.featurePartnershipOnHomePage %}
-        {% set colour = cycle(['teal', 'red', 'blue', 'green', 'orange'], loop.index0) %}
-        {% set align = cycle(['left', 'right'], loop.index0) %}
-        {% include '_includes/_partnershipCardLarge.html' with { 'entry' : entry, 'color' : colour, 'align': align } %}
-      {% endif %}
-    {% endfor %}
-
-
+<div class="bg-grey">
+  <div class="container overflow-hidden">
+    <div class="partnershipTestimonials w-100 fl">
+      {% for entry in craft.entries.section('partnerships').find() %}
+        {% if entry.featurePartnershipOnHomePage %}
+          {% set colour = cycle(['teal', 'red', 'blue', 'green', 'orange'], loop.index0) %}
+          {% set align = cycle(['left', 'right'], loop.index0) %}
+          {% include '_includes/_partnershipCardLarge.html' with { 'entry' : entry, 'color' : colour, 'align': align } %}
+        {% endif %}
+      {% endfor %}
+    </div>
   </div>
 </div>
 
@@ -91,12 +92,23 @@
   </div>
 </div>
 
-<div class="pa5-ns pa4 bg-founder fl w-100">
+<div class="pa5-ns pa4 fl w-100">
   <div>
     <div class="w-50 fl mt4">
       <div class="fl mt2">
         <div class="speechmarks">
-          {{ entry.outroQuote }}
+          {% for block in founderQuote.textBlock %}
+            {% if block.type == "header2" %}
+              <h2 class="f2">
+                {{ block.headerSmall }}
+              </h2>
+            {% elseif block.type == "body" %}
+              <div>
+                {{ block.bodyText }}
+              </div>
+            {% endif %}
+          {% endfor %}
+
           <div class="mt3 lh-solid">{{ entry.outroQuoteFounderName }}</div>
           <div class="caps-small-f">Rainmaking Founder</div>
         </div>
@@ -111,12 +123,13 @@
   </div>
 </div>
 
-<div class="outro tc pt6 pb6 fl w-100">
-  <div class="w-100">
-    <img src="/dist/images/outro.png" />
+<div class="outro tc pt6 pb6 fl w-100 relative">
+  <div class="w-100 w-60-ns m-auto z-1 fxl tc">
+    {{ outro.body }}
   </div>
-  <a href="" class="contactModal-btn btn mt3">Get in touch</a>
-
+  <a href="" class="contactModal-btn btn mt3 relative z-3">Get in touch</a>
+  <div class="absolute w-100 h-100 bg-2x2 z-2 top-0 left-0"></div>
+  <div class="rain-content left-0"></div>
 </div>
 
 {% include '_includes/_contactModal.html' %}

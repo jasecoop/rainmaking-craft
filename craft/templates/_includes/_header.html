@@ -1,8 +1,30 @@
 <div class="header {% if headerBelowFold is defined %}header-belowfold{% endif %} overflow-hidden fixed left-0 w-100 z-999">
   <div class="container">
     <div class="relative z-1">
-      <a class="logo logo-menu fl" href="/">Rainmaking<a/>
+      <a class="logo logo-menu fl" href="/">Rainmaking</a>
+
       <a class="menuToggle btn-menu fr db rm-grey-bg" href=""></a>
+      <div class="fr breadcrumb mr2 rm-text-2">
+        {% if title == 'Blog' %}
+          <a class="rm-text-2 a-plain" href="/blog">Blog</a>
+        {% elseif title == 'Partnerships' %}
+          <a class="rm-text-2 a-plain" href="/partnerships">Partnerships</a>
+        {% elseif title == 'Startups' %}
+          <a class="rm-text-2 a-plain" href="/startups">Startups</a>
+        {% elseif title == 'Spaces' %}
+          <a class="rm-text-2 a-plain" href="/startups">Spaces</a>
+        {% elseif title == 'Accelerator' %}
+          <a class="rm-text-2 a-plain" href="/startups">Accelerators</a>
+        {% elseif title == 'Contact' %}
+          <a class="rm-text-2 a-plain" href="/contact">Accelerators</a>
+        {% elseif title == 'Events' %}
+          <a class="rm-text-2 a-plain" href="/startups">Events</a>
+        {% elseif title == 'Our Story' %}
+          <a class="rm-text-2 a-plain" href="/startups">Our Story</a>
+        {% elseif title == 'Who We Are' %}
+          <a class="rm-text-2 a-plain" href="/startups">Who We Are</a>
+        {% endif %}
+      </div>
     </div>
   </div>
   <div id="header-bg" class="bg-white position absolute w-100 h-100 z-0"></div>

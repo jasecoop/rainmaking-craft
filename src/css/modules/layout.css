@@ -12,6 +12,12 @@ body, html, main {
   margin: 0 auto;
 }
 
+.container-size {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 2rem;
+}
+
 .container-mobile-padding {
   padding: 0 0;
 }
@@ -21,10 +27,16 @@ body, html, main {
   .container-mobile-padding {
     padding: 0 4rem;
   }
+  .container-size {
+    padding: 0 4rem;
+  }
 }
 
 
-.stickyAside-fixed {
-  position: fixed;
-  top: 0;
+
+@media (--breakpoint-not-small) {
+  .stickyAside-fixed {
+    position: fixed;
+    top: 0;
+  }
 }

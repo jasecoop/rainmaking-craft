@@ -12,11 +12,12 @@ body, html, main {
   margin: 0 auto;
 }
 
-.container-mobile-padding {
-  padding: 0 0;
+.container-size {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 2rem;
 }
 
-.stickyAside-fixed {
-  position: fixed;
-  top: 0;
+.container-mobile-padding {
+  padding: 0 0;
 }

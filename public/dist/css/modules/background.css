@@ -6,6 +6,10 @@
   background-image: url('/dist/images/bg-2x2.png');
 }
 
+.bg-2x2-dark {
+  background-image: url('/dist/images/bg-2x2-dark.png');
+}
+
 .bg-mesh {
   display: block;
   width: 100%;

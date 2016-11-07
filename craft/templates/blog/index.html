@@ -7,14 +7,13 @@
 <div class="js-ajax-wrapper">
 
   <div class="pageContainer bg-grey">
-
-    <div class="pa4-ns pt6 pa4">
+    <div class="container">
       <div class="w-60-ns mb5 lead">
-          {{ copy.pageIntroduction }}
+        {{ copy.pageIntroduction }}
       </div>
 
 
-      <div class="flex posts bg-grey">
+      <div class="flex posts bg-grey pb5">
         {% for entry in craft.entries.section('blog').find() %}
           {% if loop.first %}
             {% set colour = cycle(['teal', 'red', 'blue', 'green', 'orange'], loop.index0) %}
@@ -26,9 +25,7 @@
         {% endfor %}
       </div>
     </div>
-
   </div>
-
 </div>
 {% include '_includes/_footer.html' %}
 {% endblock %}

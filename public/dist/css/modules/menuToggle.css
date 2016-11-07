@@ -4,13 +4,20 @@
   background-image: url('/dist/images/menuToggleIcon.png');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 100%;
+  background-size: 80%;
   cursor: pointer;
 }
 
 .btn-menu-close {
-  background-image: url('/dist/images/menuToggleIconClose.png');
+  background-image: url('/dist/images/menuToggleIconClose-white.png');
   z-index: 100;
+  background-size: 40%;
+}
+
+.btn-menu-close-white {
+  background-image: url('/dist/images/menuToggleIconClose-white.png');
+  z-index: 100;
+  background-size: 40%;
 }
 
 .menu {
@@ -33,13 +40,22 @@
 
   .btn-menu {
     background-image: url('/dist/images/menuToggleIcon@2x.png');
-    background-size: 100%;
+    background-size: 80%;
   }
 }
 
 @media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
 
   .btn-menu-close {
-    background-image: url('/dist/images/menuToggleIconClose@2x.png');
+    background-image: url('/dist/images/menuToggleIconClose-white@2x.png');
+    background-size: 40%;
+  }
+}
+
+@media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+
+  .btn-menu-close-white {
+    background-image: url('/dist/images/menuToggleIconClose-white@2x.png');
+    background-size: 40%;
   }
 }

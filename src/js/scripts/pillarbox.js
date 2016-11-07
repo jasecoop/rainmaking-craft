@@ -20,7 +20,7 @@ module.exports = function () {
 
   $(document).ready(function(){
 
-    if ($('body').hasClass('home')) {
+    if ($('body').hasClass('has-intro-text')) {
 
       var introPos = $('#intro-links').offset();
       var introTop = introPos.top;

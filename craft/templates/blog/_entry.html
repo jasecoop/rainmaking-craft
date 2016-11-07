@@ -1,9 +1,9 @@
 {% extends "_layout" %}
 {% set title = "Rainmaking" %}
-
 {% set nextArticle = entry.getNext(criteria) %}
 {% set colors = ['teal', 'red', 'blue', 'green', 'orange'] %}
 {% set color = shuffle(colors) | first %}
+{% set bodyClass = 'blogpost' %}
 
 {% block content %}
 <div class="js-ajax-wrapper">

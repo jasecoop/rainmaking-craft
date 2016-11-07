@@ -5,9 +5,15 @@
   {% include '_includes/_head.html' %}
 </head>
 
-<body class="cover bg-fixed" style="background-image: url('{{ image.getUrl() }}')">
-    {% include '_includes/_header.html' %}
+  {% if bodyClass is defined %}
+    <body class="cover bg-fixed {{ bodyClass }}" style="background-image: url('{{ image.getUrl() }}')">
+  {% else %}
+    <body class="cover bg-fixed" style="background-image: url('{{ image.getUrl() }}')">
+  {% endif %}
 
+  {% include '_includes/_header.html' %}
+
+  <div class="container h-100 relative">
     {% include '_includes/_pagePillars.html' %}
 
     <div class="w-100 w-50-ns absolute right-0 top-0 fr-ns mb4 z-4">
@@ -20,6 +26,7 @@
         </section>
       </div>
     </div>
+  </div>
 
   <div class="fixed top-0 left-0 w-100 h-100 z-3 bg-2x2 pointer-none"></div>
   {% include '_includes/_menu.html' %}

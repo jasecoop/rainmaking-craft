@@ -5385,6 +5385,9 @@ img { max-width: 100%; }
 .bg-orange  { background: #F99B30; }
 
 
+.bg-dark  { background: #151B1E; }
+
+
 body, html, main {
   height: 100%;
 }
@@ -5402,6 +5405,13 @@ body, html, main {
 }
 
 
+.container-size {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 2rem;
+}
+
+
 .container-mobile-padding {
   padding: 0 0;
 }
@@ -5412,12 +5422,17 @@ body, html, main {
   .container-mobile-padding {
     padding: 0 4rem;
   }
+  .container-size {
+    padding: 0 4rem;
+  }
 }
 
 
-.stickyAside-fixed {
-  position: fixed;
-  top: 0;
+@media screen and (min-width: 48em) {
+  .stickyAside-fixed {
+    position: fixed;
+    top: 0;
+  }
 }
 
 
@@ -5701,6 +5716,11 @@ body {
 }
 
 
+.bg-2x2-dark {
+  background-image: url('/dist/images/bg-2x2-dark.png');
+}
+
+
 .bg-mesh {
   display: block;
   width: 100%;
@@ -5787,14 +5807,22 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   background-image: url('/dist/images/menuToggleIcon.png');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 100%;
+  background-size: 80%;
   cursor: pointer;
 }
 
 
 .btn-menu-close {
-  background-image: url('/dist/images/menuToggleIconClose.png');
+  background-image: url('/dist/images/menuToggleIconClose-white.png');
   z-index: 100;
+  background-size: 40%;
+}
+
+
+.btn-menu-close-white {
+  background-image: url('/dist/images/menuToggleIconClose-white.png');
+  z-index: 100;
+  background-size: 40%;
 }
 
 
@@ -6531,12 +6559,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b93a2', end
 }
 
 
+.breadcrumb {
+  line-height: 60px;
+  font-weight: 200;
+  font-family: Futura, 'avenir next', avenir, helvetica, 'helvetica neue', sans-serif;
+  font-size: 13px;
+}
+
+
 @media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
 
 
   .btn-menu {
     background-image: url('/dist/images/menuToggleIcon@2x.png');
-    background-size: 100%;
+    background-size: 80%;
   }
 }
 
@@ -6545,6 +6581,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b93a2', end
 
 
   .btn-menu-close {
-    background-image: url('/dist/images/menuToggleIconClose@2x.png');
+    background-image: url('/dist/images/menuToggleIconClose-white@2x.png');
+    background-size: 40%;
+  }
+}
+
+
+@media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+
+
+  .btn-menu-close-white {
+    background-image: url('/dist/images/menuToggleIconClose-white@2x.png');
+    background-size: 40%;
   }
 }

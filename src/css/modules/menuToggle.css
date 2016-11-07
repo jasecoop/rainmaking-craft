@@ -4,13 +4,20 @@
   background-image: url('/dist/images/menuToggleIcon.png') at-2x;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 100%;
+  background-size: 80%;
   cursor: pointer;
 }
 
 .btn-menu-close {
-  background-image: url('/dist/images/menuToggleIconClose.png') at-2x;
+  background-image: url('/dist/images/menuToggleIconClose-white.png') at-2x;
   z-index: 100;
+  background-size: 40%;
+}
+
+.btn-menu-close-white {
+  background-image: url('/dist/images/menuToggleIconClose-white.png') at-2x;
+  z-index: 100;
+  background-size: 40%;
 }
 
 .menu {
