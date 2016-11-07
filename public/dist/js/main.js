@@ -10697,15 +10697,16 @@ return jQuery;
 }
 
 },{}],3:[function(require,module,exports){
-var jquery       = require('./lib/jquery');
+var jquery          = require('./lib/jquery');
 
-var craftAjax    = require('./scripts/craft-ajax');
-var menu         = require('./scripts/menu');
-var pillarbox    = require('./scripts/pillarbox');
-var stickyHeader = require('./scripts/stickyHeader');
-var rain         = require('./scripts/rain');
+var craftAjax       = require('./scripts/craft-ajax');
+var menu            = require('./scripts/menu');
+var pillarbox       = require('./scripts/pillarbox');
+var stickyHeader    = require('./scripts/stickyHeader');
+var rain            = require('./scripts/rain');
 var balancedGallery = require('./lib/balancedGallery');
-var contactModal = require('./scripts/contactModal');
+var contactModal    = require('./scripts/contactModal');
+var stickyAside     = require('./scripts/stickyAside');
 
 jquery();
 
@@ -10716,8 +10717,9 @@ stickyHeader();
 rain();
 balancedGallery();
 contactModal();
+stickyAside();
 
-},{"./lib/balancedGallery":1,"./lib/jquery":2,"./scripts/contactModal":4,"./scripts/craft-ajax":5,"./scripts/menu":6,"./scripts/pillarbox":7,"./scripts/rain":8,"./scripts/stickyHeader":9}],4:[function(require,module,exports){
+},{"./lib/balancedGallery":1,"./lib/jquery":2,"./scripts/contactModal":4,"./scripts/craft-ajax":5,"./scripts/menu":6,"./scripts/pillarbox":7,"./scripts/rain":8,"./scripts/stickyAside":9,"./scripts/stickyHeader":10}],4:[function(require,module,exports){
 module.exports = function () {
   $(document).ready( function() {
     $( 'body' ).on( 'click', '.contactModal-btn', function(e) {
@@ -10848,38 +10850,37 @@ module.exports = function () {
 
   $(document).ready(function(){
 
+    if ($('body').hasClass('home')) {
 
-    var introPos = $('#intro-links').offset();
-    // var margin = parseInt($('#home-intro-text').css( "padding-top" ));
-    var introTop = introPos.top;
-    // var top = introTop - margin - margin;
+      var introPos = $('#intro-links').offset();
+      var introTop = introPos.top;
 
-    console.log(introTop)
+      $('body').find('.intro-hover-text').css('margin-top', introTop + 'px')
 
-    $('body').find('.intro-hover-text').css('margin-top', introTop + 'px')
+      $( "#intro-home .pillar" ).hover(
+          function(e){
+            var type = $(this).data('type');
+            var pos = $(this).position();
+            $(e.target).addClass('pillar-active');
+            contentShow(type, pos);
+          },
+          function(e){
+            var type = $(this).data('type');
+            contentHide(type);
+            $(e.target).removeClass('pillar-active');
+          }
+      );
 
-    $( "#intro-home .pillar" ).hover(
-        function(e){
-          var type = $(this).data('type');
-          var pos = $(this).position();
-          $(e.target).addClass('pillar-active');
-          contentShow(type, pos);
-        },
-        function(e){
-          var type = $(this).data('type');
-          contentHide(type);
-          $(e.target).removeClass('pillar-active');
-        }
-    );
+      $( "#page-pillars .pillar, #menu-pillars .pillar" ).hover(
+          function(e){
+            $(e.target).addClass('pillar-active');
+          },
+          function(e){
+            $(e.target).removeClass('pillar-active');
+          }
+      );
 
-    $( "#page-pillars .pillar, #menu-pillars .pillar" ).hover(
-        function(e){
-          $(e.target).addClass('pillar-active');
-        },
-        function(e){
-          $(e.target).removeClass('pillar-active');
-        }
-    );
+    }
 
   });
 
@@ -10907,6 +10908,26 @@ module.exports = function () {
 }
 
 },{}],9:[function(require,module,exports){
+module.exports = function () {
+
+  $(document).ready( function () {
+
+    var $aside      = $('#stickyAside');
+    var asideOffset = $aside.offset();
+    var asideTop    = asideOffset.top;
+    var asideRight  = asideOffset.right;
+    console.log($aside.width() - 32);
+
+    $(window).on("scroll", function() {
+      var fromTop = $("body").scrollTop();
+      $('#stickyAside').toggleClass("stickyAside-fixed", (fromTop > asideTop)).css('right', asideRight);
+    });
+
+  });
+
+}
+
+},{}],10:[function(require,module,exports){
 module.exports = function () {
 
   var $header   = $(".header-belowfold ");

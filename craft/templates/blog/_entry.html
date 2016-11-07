@@ -2,49 +2,48 @@
 {% set title = "Rainmaking" %}
 
 {% set nextArticle = entry.getNext(criteria) %}
+{% set colors = ['teal', 'red', 'blue', 'green', 'orange'] %}
+{% set color = shuffle(colors) | first %}
 
 {% block content %}
 <div class="js-ajax-wrapper">
 
-  <div class="pageContainer">
-
-    <div class="w-100 ph4 slashHeader fl">
-      <div class="slashHeader__bg">
-        {% set img = entry.headerImage.first() %}
-        <img src="{{ img.getUrl('slashHeader') }}" width="{{ img.getWidth('slashHeader') }}" height="{{ img.getHeight('slashHeader') }}" />
-      </div>
+  {% set img = entry.headerImage.first() %}
+  <div class="w-100 h8 fl cover relative z-1" style="background-image: url( '{{img.getUrl('slashHeader') }}' );">
+    <div class="container">
+      <h1 class="fxl mb4 z-1 absolute bottom-0 blogpost-margin-bottom pb4 w-80-ns">
+        {{ entry.title }}
+      </h1>
     </div>
+    <div class="absolute top-0 w-100 h-100 left-0 bg-2x2 z-0"></div>
+  </div>
 
-    <div class="w-100 ph4 fl">
+  <div class="w-100 fl z-3 relative bg-grey">
+    <div class="container container-mobile-padding">
       <div class="w-100 w-60-ns fl-ns slashHeader-content-m">
-        <h1 class="f1 mb4">
-          {{ entry.title }}
-        </h1>
-
-        <div class="content">
-          {% set text = entry.post|nl2br  %}
+        <div class="h1 w-100 bg-{{color}} db"></div>
+        <div class="content bg-white pa4">
+          {% set text = entry.post  %}
           {{ text|raw }}
         </div>
       </div>
 
       <div class="w-100 w-40-ns fr-ns fl">
 
-        <div class="ph3">
-          <div class="tc">
-            <h2 class="f2 pb0">Don't miss out!</h2>
-            <p>Sign up to our newsletter and we’ll keep you updated with everything Rainmaking</p>
-          </div>
-          <div>
+        <div class="ph3 pt4" id="stickyAside">
+          <div class="w-80 m-auto">
+            <div class="tc">
+              <h2 class="f2 pb0">Don't miss out!</h2>
+              <p>Sign up to our newsletter and we’ll keep you updated with everything Rainmaking</p>
+            </div>
             <form action="http://startupbootcampinsurtech.createsend.com/t/i/s/bblui/" method="post" id="subForm">
-              <div class="w-80 m-auto">
-                <div class="mb2">
-                  <input class="caps-small-f w-100 tc" id="fieldName" placeholder="Your name" name="cm-name" type="text" />
-                </div>
-                <div class="mb2">
-                  <input class="caps-small-f w-100 tc" id="fieldEmail" placeholder="Your email address" name="cm-bblui-bblui" type="email" required />
-                </div>
-                <button class="btn btn-small w-100" type="submit">Subscribe</button>
+              <div class="mb2">
+                <input class="caps-small-f w-100 tc" id="fieldName" placeholder="Your name" name="cm-name" type="text" />
               </div>
+              <div class="mb2">
+                <input class="caps-small-f w-100 tc" id="fieldEmail" placeholder="Your email address" name="cm-bblui-bblui" type="email" required />
+              </div>
+              <button class="btn btn-{{color}} btn-small w-100" type="submit">Subscribe</button>
             </form>
           </div>
         </div>
@@ -60,7 +59,7 @@
           {{ nextArticle.title }}
         </div>
         <div>
-          <a class="btn mt3" href="{{ nextArticle.url }}">
+          <a class="btn btn-{{color}} mt3" href="{{ nextArticle.url }}">
             Read now
           </a>
         </div>

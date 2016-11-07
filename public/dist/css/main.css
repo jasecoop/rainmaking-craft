@@ -2208,6 +2208,9 @@ code, .code {
 .h7 { height: 19rem; }
 
 
+.h8 { height: 30rem; }
+
+
 /* Height Percentages */
 
 
@@ -5392,6 +5395,32 @@ body, html, main {
 }
 
 
+.container {
+  max-width: 1200px;
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+
+
+.container-mobile-padding {
+  padding: 0 0;
+}
+
+
+@media screen and (min-width: 48em) {
+  .container,
+  .container-mobile-padding {
+    padding: 0 4rem;
+  }
+}
+
+
+.stickyAside-fixed {
+  position: fixed;
+  top: 0;
+}
+
+
 @font-face {
   font-family: 'Futura';
   font-weight: 100;
@@ -6226,6 +6255,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b93a2', end
   }
   .slashHeader-content-m {
     margin-top: -80px;
+  }
+
+  .blogpost-margin-bottom {
+    margin-bottom: 80px;
   }
 }
 
