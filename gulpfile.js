@@ -113,6 +113,13 @@ gulp.task('build:scripts', function() {
     .pipe(source("srcJsFilesGlob"))
     .pipe(rename('main.js'))
     .pipe(gulp.dest(distJsFiles))
+
+
+  var bundleVideoJs = browserify('src/js/redactorPlugins/video.js').bundle()
+  bundleVideoJs
+    .pipe(source("srcJsFilesGlob"))
+    .pipe(rename('video.js'))
+    .pipe(gulp.dest(distJsFiles))
 });
 
 

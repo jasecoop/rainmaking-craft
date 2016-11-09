@@ -1,48 +1,30 @@
 {% extends (craft.request.isAjax and not craft.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
 {% set title = "Events" %}
 {% set copy = craft.entries.section('eventsPageCopy').first() %}
+{% set events = craft.entries.section('events').order('timeAndDate') %}
 {% block content %}
 <div class="js-ajax-wrapper">
 
-  <div class="pageContainer bg-gradient-grey">
+  <div class="pageContainer bg-gradient-grey pb5">
 
-    <div class="pa4-ns pt6 pa4">
+    <div class="container">
       <div class="w-60-ns mb5 lead">
           {{ copy.pageIntroduction }}
       </div>
 
-      {% for entry in craft.entries.section('events') if entry.timeAndDate > now %}
+      {% for entry in events if entry.timeAndDate > now %}
         {% set img = entry.headerImg.first() %}
-        <div class="featurePost mb4 w-100">
-          <a href="{{ entry.url }}" class="featurePost__img" style="background-image: url({{ img.getUrl() }});"></a>
-          <div class="featurePost__content pa3 relative" style="background-image: url({{ img.getUrl() }});">
-            <div class="pa3 h-100 relative z-2">
-              <a class="featurePost__title" href="{{ entry.url }}">{{ entry.title }}</a>
-              <div class="caps-small-f">{{ entry.timeAndDate|date("F d Y H:i") }}</div>
-              <div class="featurePost__arrow">
-                <a class="db fl bg-white pa4 tc" href="{{ entry.url }}">
-                  <img class="db mb0" src="dist/images/arrow-right-black.png" data-rjs="3"/>
-                </a>
-              </div>
-            </div>
-            <div class="featurePost__mesh bg-3x3"></div>
-          </div>
-        </div>
+        {% set colour = cycle(['teal', 'red', 'blue', 'green', 'orange'], loop.index0) %}
+
+        {% include '_includes/_eventPost.html' with { 'entry' : entry, 'color' : colour } %}
+
       {% endfor %}
 
       <div class="tc caps-small-f">Previous events</div>
       <div class="flex posts">
-        {% for entry in craft.entries.section('events') if entry.timeAndDate > now %}
-          {% set img = entry.headerImg.first() %}
-          <div class="post w-100 w-33-ns pa3-ns mb3 mb0-ns">
-            <a href="{{entry.url}}" class="post__img" style="background-image: url({{ img.getUrl() }});"></a>
-            <div class="post__content pa3">
-              <a class="post__title" href="{{ entry.url }}">{{ entry.title }}</a>
-              <div class="caps-small-f">{{ entry.timeAndDate|date("F d Y H:i") }}</div>
-              <div class="post__gradient" style="background-image: url({{ img.getUrl() }});"></div>
-              <div class="post__mesh bg-3x3"></div>
-            </div>
-          </div>
+        {% for entry in craft.entries.section('events') if entry.timeAndDate < now %}
+          {% set colour = cycle(['teal', 'red', 'blue', 'green', 'orange'], loop.index0) %}
+          {% include '_includes/_eventPostSmall.html' with { 'entry' : entry, 'color' : colour } %}
         {% endfor %}
       </div>
     </div>

@@ -73,3 +73,9 @@
   font-family: var(--futura-font-family);
   font-weight: 100;
 }
+
+@media (--breakpoint-not-small) {
+  .authorPhoto {
+    margin-top: -75px;
+  }
+}

@@ -16,7 +16,7 @@
  # See this page for more details on how Craft routes requests:
  # http://craftcms.com/docs/routing
  #}
-{% set bodyClass = 'home' %}
+{% set bodyClass = 'home has-intro-text' %}
 {% extends (craft.request.isAjax and not craft.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
 {% block content %}
 
@@ -111,6 +111,8 @@
 
           <div class="mt3 lh-solid">{{ entry.outroQuoteFounderName }}</div>
           <div class="caps-small-f">Rainmaking Founder</div>
+
+          <a href="/blog" class="btn btn-small btn-teal mt3">Learn more</a>
         </div>
       </div>
     </div>

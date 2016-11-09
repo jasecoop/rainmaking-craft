@@ -1,3 +1,5 @@
+/* Media Query Variables */
+
 .roundPhoto {
   border-radius: 999px;
   overflow: hidden;
@@ -15,6 +17,11 @@
 .roundPhoto-300 {
   width: 300px;
   height: 300px;
+}
+
+.roundPhoto-200 {
+  width: 200px;
+  height: 200px;
 }
 
 .roundPhoto-150 {
@@ -35,4 +42,100 @@
 .roundPhoto-50 {
   width: 50px;
   height: 50px;
+}
+
+@media screen and (min-width: 48em) {
+  .roundPhoto-300-ns {
+    width: 300px;
+    height: 300px;
+  }
+
+  .roundPhoto-150-ns {
+    width: 150px;
+    height: 150px;
+  }
+
+  .roundPhoto-100-ns {
+    width: 100px;
+    height: 100px;
+  }
+
+  .roundPhoto-200-ns {
+    width: 200px;
+    height: 200px;
+  }
+
+  .roundPhoto-80-ns {
+    width: 80px;
+    height: 80px;
+  }
+
+  .roundPhoto-50-ns {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 48em) and (max-width: 64em) {
+  .roundPhoto-300-m {
+    width: 300px;
+    height: 300px;
+  }
+
+  .roundPhoto-200-m {
+    width: 200px;
+    height: 200px;
+  }
+
+  .roundPhoto-150-m {
+    width: 150px;
+    height: 150px;
+  }
+
+  .roundPhoto-100-m {
+    width: 100px;
+    height: 100px;
+  }
+
+  .roundPhoto-80-m {
+    width: 80px;
+    height: 80px;
+  }
+
+  .roundPhoto-50-m {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .roundPhoto-300-l {
+    width: 300px;
+    height: 300px;
+  }
+
+  .roundPhoto-200-l {
+    width: 200px;
+    height: 200px;
+  }
+
+  .roundPhoto-150-l {
+    width: 150px;
+    height: 150px;
+  }
+
+  .roundPhoto-100-l {
+    width: 100px;
+    height: 100px;
+  }
+
+  .roundPhoto-80-l {
+    width: 80px;
+    height: 80px;
+  }
+
+  .roundPhoto-50-l {
+    width: 50px;
+    height: 50px;
+  }
 }

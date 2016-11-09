@@ -1,0 +1,14 @@
+{% set img = entry.headerImage.first() %}
+<div class="w-100 w-33-ns pa3-ns mb3 mb0-ns">
+  <div class="border-white border-{{ colour }}-hover pointer-none">
+    <a href="{{entry.url}}" class="post__img" style="background-image: url({{ img.getUrl() }});"></a>
+    <div class="post__content pa4 pb0">
+
+      <a class="f4 a-plain rm-text rm-{{ colour }}-hover pointer-auto" href="{{ entry.url }}">{{ entry.title }}</a>
+      <div class="caps-small-f pb3">
+        {{ entry.timeAndDate|date("F d Y H:i") }}
+      </div>
+    </div>
+    <div class="h1 w-100 bg-{{colour}} db"></div>
+  </div>
+</div>

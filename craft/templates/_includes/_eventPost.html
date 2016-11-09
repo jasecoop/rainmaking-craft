@@ -1,0 +1,22 @@
+{% set img = entry.headerImg.first() %}
+<div class="w-100 relative flex-ns flex-row-ns items-stretch-ns fl-ns h6 mb4 bg-white border-white border-{{ colour }}-hover pointer-none">
+  <div class="w-100 w-50-ns fr-ns {{ linkAlign }} pointer-auto">
+    <div class="pa4 w-100 h-100 cover z-1 relative bg-{{colour}}">
+      <div class="z-1 relative h-100 flex flex-column justify-between">
+        <div>
+          <a href="{{ entry.url }}" class="white f3 db mb4 mb0-ns a-plain pointer-auto">
+            {{ entry.title }}
+          </a>
+          <div class="white caps-small-f">{{ entry.timeAndDate|date("F d Y H:i") }}</div>
+        </div>
+        <div>
+          <a href="{{ entry.url }}" class="btn btn-continue btn-{{ colour }} pointer-auto"></a>
+        </div>
+      </div>
+      <!-- <div class="bg-mesh"></div> -->
+    </div>
+  </div>
+
+  <div class="w-100 h-100 w-50-ns fl-ns cover relative dn db-ns pointer-auto" style="background-image: url({{ img.getUrl() }});">
+  </div>
+</div>

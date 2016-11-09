@@ -46,11 +46,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b93a2', end
 	height: 100%;
 }
 @media screen and (min-width: 64em) {
-  .quoteIntro {
-    margin-top: -80px;
-  }
   .quoteBlock-photo {
-    margin-top: -80px;
+    margin-top: -40px;
   }
 }
 .quoteBlock-photo {
