@@ -5,7 +5,8 @@ module.exports = function () {
 
   $(window).on("scroll", function() {
     var fromTop = $("body").scrollTop();
-    $('.header').toggleClass("header-belowfold", (fromTop > winHeight - 500));
+    $('.header').addClass("header-belowfold", (fromTop > winHeight - 700));
+
   });
 
 }
