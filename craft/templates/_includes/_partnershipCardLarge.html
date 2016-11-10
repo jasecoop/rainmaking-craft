@@ -24,23 +24,24 @@
     </div>
   </div>
   <div class="w-100 w-50-ns fl-ns {{ quoteAlign }} relative dn db-ns pointer-auto">
-    <div class="w-10 h-100 db fl bg-{{ colour }} tc pt4">
-      <img class="w-60 mt2" src="/dist/images/speechmarks-white.svg" />
-    </div>
-    <div class="w-90 pa4 fl lead h-100">
-      <div class="pb4">
-        {{ entry.partnershipQuote }}
-      </div>
-      <div>
-        <div class="roundPhoto roundPhoto-80 dib fl">
-          {% set quotePhoto = entry.partnershipQuotePhoto.first() %}
-          <img src="{{ quotePhoto.getURL('roundPortrait') }}" />
+    <div class="w-100 fl pa4 overflow-hidden h-100">
+      <div class="speechmarks speechmarks-{{colour}}">
+
+        <div class="pb4 pl3">
+          {{ entry.partnershipQuote }}
         </div>
-        <div class="ml3 fl">
-          <div class="mt3 lh-solid w-100">{{ entry.partnershipQuoteName }}</div>
-          <div class="caps-small-f w-100">{{ entry.partnershipQuoteJobRole }}</div>
-          <div class="caps-small-f w-100">{{ entry.companyName }}</div>
+        <div class="pl3">
+          <div class="roundPhoto roundPhoto-80 dib fl">
+            {% set quotePhoto = entry.partnershipQuotePhoto.first() %}
+            <img src="{{ quotePhoto.getURL('roundPortrait') }}" />
+          </div>
+          <div class="ml3 fl">
+            <div class="mt3 lh-copy w-100">{{ entry.partnershipQuoteName }}</div>
+            <div class="caps-small-f lh-copy w-100">{{ entry.partnershipQuoteJobRole }}</div>
+            <div class="caps-small-f lh-copy w-100">{{ entry.companyName }}</div>
+          </div>
         </div>
+
       </div>
     </div>
   </div>

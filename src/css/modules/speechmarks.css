@@ -19,6 +19,14 @@
   position: relative;
 }
 
+
+.speechmarks-blue:before { background-image: url('/dist/images/speechmarks-blue.svg');}
+.speechmarks-red:before { background-image: url('/dist/images/speechmarks-red.svg');}
+.speechmarks-orange:before { background-image: url('/dist/images/speechmarks-orange.svg');}
+.speechmarks-teal:before { background-image: url('/dist/images/speechmarks-teal.svg');}
+.speechmarks-green:before { background-image: url('/dist/images/speechmarks-green.svg');}
+
+
 .speechmarks-absolute:before {
   content: "";
   display: block;
