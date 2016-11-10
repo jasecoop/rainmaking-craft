@@ -5406,9 +5406,9 @@ body, html, main {
 
 
 .container-size {
-  width: 100%;
   max-width: 1200px;
   padding: 0 2rem;
+  margin: 0 auto;
 }
 
 
@@ -5419,9 +5419,7 @@ body, html, main {
 
 @media screen and (min-width: 48em) {
   .container,
-  .container-mobile-padding {
-    padding: 0 4rem;
-  }
+  .container-mobile-padding,
   .container-size {
     padding: 0 4rem;
   }
@@ -5830,6 +5828,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   display: none;
   height: 100%;
   z-index: 999999;
+}
+
+
+.menu .header {
+  background: none;
 }
 
 

@@ -26,6 +26,10 @@
   z-index: 999999;
 }
 
+.menu .header {
+  background: none;
+}
+
 .menu.menu-active {
   /*display: block;*/
 }

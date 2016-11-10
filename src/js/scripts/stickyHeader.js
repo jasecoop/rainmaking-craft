@@ -1,11 +1,22 @@
 module.exports = function () {
 
-  var $header   = $(".header-belowfold ");
-  var winHeight = $(window).height();
+  $(document).ready(function() {
 
-  $(window).on("scroll", function() {
-    var fromTop = $("body").scrollTop();
-    $('.header').addClass("header-belowfold", (fromTop > winHeight - 700));
+    var $header   = $(".header-belowfold ");
+    var winHeight = $(window).height();
+
+    $(window).on("scroll", function() {
+      var fromTop = $("body").scrollTop();
+      console.log(winHeight)
+      console.log(fromTop)
+      if (fromTop > winHeight) {
+        $('.header').addClass("header-belowfold");
+        console.log('if')
+      } else {
+        $('.header').removeClass("header-belowfold");
+        console.log('else')
+      }
+    });
 
   });
 
