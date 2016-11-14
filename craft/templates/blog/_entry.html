@@ -1,6 +1,7 @@
 {% extends "_layout" %}
 {% set title = "Rainmaking" %}
-{% set nextArticle = entry.getNext(criteria) %}
+{% set criteria = {section: 'blog', order: 'postDate'} %}
+{% set prev = entry.getPrev(criteria) %}
 {% set colors = ['teal', 'red', 'blue', 'green', 'orange'] %}
 {% set color = shuffle(colors) | first %}
 {% set bodyClass = 'blogpost' %}
@@ -34,8 +35,11 @@
           <div class="authorPhoto roundPhoto roundPhoto-150 dib ba b--white bw2">
             <img src="{{ entry.author.photoUrl(200) }}" />
           </div>
-         <div class="caps-small-f">
-           BY {{ entry.author }}
+         <div class="f4 rm-text-2 mb0">
+           By {{ entry.author.firstName }} {{ entry.author.lastName }}
+         </div>
+         <div class="rm-text-2">
+            {{ entry.author.body }}
          </div>
         </div>
 
@@ -43,19 +47,17 @@
 
       </div>
     </div>
-    {% set bg = nextArticle.headerImage.first() %}
+    {% set bg = prev.headerImage.first() %}
     <div class="w-100 pv6 cover relative tc fl mt5" style="background-image: url({{ bg.getUrl() }});">
       <div class="w-60 z-2 relative m-auto">
         <div class="caps-small-f">
           Next article
         </div>
         <div class="f1">
-          {{ nextArticle.title }}
+          {{ prev.title }}
         </div>
         <div>
-          <a class="btn btn-{{color}} mt3" href="{{ nextArticle.url }}">
-            Read now
-          </a>
+          <a class="btn mt4 btn-continue btn-{{ colour }} pointer-auto" href="{{ prev.url }}"></a>
         </div>
       </div>
       <div class="absolute top-0 left-0 w-100 h-100 z-0 bg-3x3"></div>
