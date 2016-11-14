@@ -66,7 +66,7 @@
       {% for entry in craft.entries.section('partnerships').find() %}
         {% if entry.featurePartnershipOnHomePage %}
           {% set colour = cycle(['teal', 'red', 'blue', 'green', 'orange'], loop.index0) %}
-          {% set align = cycle(['left', 'right'], loop.index0) %}
+          {% set align = cycle(['right', 'left'], loop.index0) %}
           {% include '_includes/_partnershipCardLarge.html' with { 'entry' : entry, 'color' : colour, 'align': align } %}
         {% endif %}
       {% endfor %}
