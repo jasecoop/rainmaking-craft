@@ -32,30 +32,15 @@
 
         <div class="tc mb5">
           <div class="authorPhoto roundPhoto roundPhoto-150 dib ba b--white bw2">
-            <img src="{{ entry.author.photoUrl }}" />
+            <img src="{{ entry.author.photoUrl(200) }}" />
           </div>
          <div class="caps-small-f">
            BY {{ entry.author }}
          </div>
         </div>
 
-        <div class="ph3 pt4" id="stickyAside">
-          <div class="w-80 m-auto">
-            <div class="tc">
-              <h2 class="f2 pb0">Don't miss out!</h2>
-              <p>Sign up to our newsletter and we’ll keep you updated with everything Rainmaking</p>
-            </div>
-            <form action="http://startupbootcampinsurtech.createsend.com/t/i/s/bblui/" method="post" id="subForm">
-              <div class="mb2">
-                <input class="caps-small-f w-100 tc" id="fieldName" placeholder="Your name" name="cm-name" type="text" />
-              </div>
-              <div class="mb2">
-                <input class="caps-small-f w-100 tc" id="fieldEmail" placeholder="Your email address" name="cm-bblui-bblui" type="email" required />
-              </div>
-              <button class="btn btn-{{color}} btn-small w-100" type="submit">Subscribe</button>
-            </form>
-          </div>
-        </div>
+        {% include '_includes/_stickyNewsletter.html' %}
+
       </div>
     </div>
     {% set bg = nextArticle.headerImage.first() %}

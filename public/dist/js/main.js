@@ -10889,12 +10889,13 @@ module.exports = function () {
       var asideOffset = $aside.offset();
       var asideTop    = asideOffset.top;
       var asideRight  = asideOffset.right;
-      console.log($aside.width() - 32);
 
-      if ($(window).width() <= 800){
+      if ($(window).width() > 800){
+        var stickyWidth = $('#stickyAside').width();
         $(window).on("scroll", function() {
           var fromTop = $("body").scrollTop();
           $('#stickyAside').toggleClass("stickyAside-fixed", (fromTop > asideTop)).css('right', asideRight);
+          $('#stickyAside').css('width', stickyWidth + 'px');
         });
       }
     }
