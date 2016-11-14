@@ -8,6 +8,7 @@ var rain            = require('./scripts/rain');
 var balancedGallery = require('./lib/balancedGallery');
 var contactModal    = require('./scripts/contactModal');
 var stickyAside     = require('./scripts/stickyAside');
+var founder         = require('./scripts/founder');
 
 jquery();
 
@@ -19,3 +20,4 @@ rain();
 balancedGallery();
 contactModal();
 stickyAside();
+founder();

@@ -1,5 +1,5 @@
 @import 'tachyons/tachyons.css';
-
+@import 'modules/animate.css';
 @import 'modules/colours.css';
 
 @import 'modules/layout.css';
@@ -27,3 +27,5 @@
 @import 'modules/home.css';
 @import 'modules/anchor.css';
 @import 'modules/breadcrumb.css';
+@import 'modules/gridPad.css';
+@import 'modules/founder.css';

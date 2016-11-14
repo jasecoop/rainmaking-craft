@@ -52,6 +52,15 @@ module.exports = function () {
 
     }
 
+    $('body').on('click', '#arrowDown', function(e) {
+      e.preventDefault();
+      $('html,body').animate({
+          scrollTop: $("#belowFold").offset().top},
+       'slow');
+    });
+
   });
+
+
 
 }

@@ -25,15 +25,15 @@
           <input class="rm-text-2 w-100 mb3 ph2" id="fromName" type="text" name="fromName" value="{% if message is defined %}{{ message.fromName }}{% endif %}">
           {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
 
-          <label class="caps-small-f" for="fromEmail">Your Email</label>
+          <label class="caps-small-f tl white" for="fromEmail">Your Email</label>
           <input class="rm-text-2 w-100 mb3 ph2" id="fromEmail" type="email" name="fromEmail" value="{% if message is defined %}{{ message.fromEmail }}{% endif %}">
           {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
 
-          <label class="caps-small-f" for="subject">Subject</label>
+          <label class="caps-small-f tl white" for="subject">Subject</label>
           <input class="rm-text-2 w-100 mb3 ph2" id="subject" type="text" name="subject" value="{% if message is defined %}{{ message.subject }}{% endif %}">
           {{ message is defined and message ? errorList(message.getErrors('subject')) }}
 
-          <label class="caps-small-f" for="message">Message</label>
+          <label class="caps-small-f tl white" for="message">Message</label>
           <textarea class="rm-text-2 w-100 mb3 ph4" rows="4" cols="10" id="message" name="message">{% if message is defined %}{{ message.message }}{% endif %}</textarea>
           {{ message is defined and message ? errorList(message.getErrors('message')) }}
 

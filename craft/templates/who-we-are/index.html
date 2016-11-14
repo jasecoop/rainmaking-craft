@@ -5,54 +5,52 @@
 {% block content %}
   <div class="js-ajax-wrapper">
 
-    <div class="pageContainer bg-gradient-grey overflow-hidden">
+    <div class="pageContainer bg-gradient-grey pb5 overflow-hidden">
 
-      <div class="pa4-ns pt6 pa4">
+      <div class="container">
         <div class="w-60-ns mb5">
           <div class="lead">
             {{ entry.pageIntroduction }}
           </div>
         </div>
-      </div>
 
-      <div class="w-100 ph4">
-        {% for entry in craft.entries.section('founders') %}
-          <div class="w-100 relative overflow-hidden mb4">
+        <div class="w-100 grid-pad-2-ns">
+          {% for entry in craft.entries.section('founders') %}
+            {% set colour = cycle(['teal', 'red', 'blue', 'green', 'orange'], loop.index0) %}
+            {% set img = entry.founderPhoto.first() %}
+            <div class="founder w-100 w-50-ns relative h-auto h9-ns mb3 mt3 overflow-hidden fl overflow-hidden">
+              <div class="w-100 h-100 relative border-white border-{{ colour }}-hover">
 
-            <div class="founderPhoto-{{entry.id}} w-100 w-60-ns absolute-ns left-0 top-0 z-0" class="absolute">
-              {% set img = entry.founderPhoto.first() %}
-              <img src="{{ img.getUrl('founder') }}" />
-            </div>
-
-            <div class="w-60-ns fr mt4-ns">
-              <div class="w-100 pa4 bg-white mb4 relative z-1">
-                <h2 class="f2">
-                  {{ entry.title }}
-                </h2>
-                <div>
-                  {{ entry.body }}
-                  <div class="mt3">
-                    {% if entry.twitterUrl %}
-                      <a class="icon mr2" href="{{ entry.twitterUrl }}" target="_blank" >
-                        <img src="dist/images/icon-twitter.png" data-rjs="3" />
-                      </a>
-                    {% endif %}
-                    {% if entry.linkedinUrl %}
-                      <a class="icon" href="{{ entry.linkedinUrl }}" target="_blank">
-                        <img src="dist/images/icon-linkedin.png" data-rjs="3" />
-                      </a>
-                    {% endif %}
+                <div class="relative absolute-ns w-100 h8 h-100-ns top-0 left-0 z-0 cover" style="background-image: url({{ img.getUrl() }})">
+                  <div class="absolute w-100 pa4 f3 bottom-0 left-0 z-2 white">
+                    {{ entry.title }}
                   </div>
+                  <div class="absolute w-100 h-100 top-0 left-0 bg-trans-to-black z-1"></div>
                 </div>
+                <div class="founder__about animated fadeInUp relative absolute-ns w-100 h-100-ns top-0 left-0 bg-{{colour}} white z-1 pa4">
+                  <div>
+                    {{ entry.body }}
+                  </div>
+                  {% if entry.twitterUrl %}
+                    <a class="icon mr2" href="{{ entry.twitterUrl }}" target="_blank" >
+                      <img src="dist/images/icon-twitter.png" data-rjs="3" />
+                    </a>
+                  {% endif %}
+                  {% if entry.linkedinUrl %}
+                    <a class="icon" href="{{ entry.linkedinUrl }}" target="_blank">
+                      <img src="dist/images/icon-linkedin.png" data-rjs="3" />
+                    </a>
+                  {% endif %}
+                </div>
+
               </div>
             </div>
+          {% endfor %}
+        </div>
 
-          </div>
-        {% endfor %}
       </div>
 
     </div>
-
   </div>
 {% include '_includes/_footer.html' %}
 {% endblock %}

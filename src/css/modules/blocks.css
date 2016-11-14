@@ -60,7 +60,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b93a2', end
 
 @media (--breakpoint-large) {
   .quoteBlock-photo {
-    margin-top: -40px;
+    margin-top: -90px;
   }
 }
 

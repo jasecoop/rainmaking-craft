@@ -9,24 +9,29 @@
   <div class="js-ajax-wrapper h-100">
 
     {% set bg = homepage.partnershipHoverImage.first() %}
-    <div class="cover fixed w-100 h-100 db top-0 left-0" style="background-image: url('{{ bg.getUrl() }}');"></div>
+    <div>
+      <div class="cover fixed w-100 h-100 db top-0 left-0" style="background-image: url('{{ bg.getUrl() }}');"></div>
+      <div class="fixed top-0 left-0 w-100 h-100 z-3 bg-2x2 pointer-none"></div>
+      <div class="absolute top-50 left-0 w-100 h-50 z-4 pointer-none bg-trans-to-grey"></div>
+    </div>
 
     <div class="w-100 h-100">
       <div class="container h-100 relative">
         {% include '_includes/_pagePillars.html' %}
-        <div class="w-100 w-50-ns absolute right-0 top-0 fr-ns mb4 z-4">
+        <div class="w-100 w-50-ns absolute right-0 top-0 fr-ns mb4 z-5">
           <div class="w-70 m-auto pa4 bg-white intro-hover-text bt bw2 border-green">
+            <h1 class="f2">{{ copy.title }}</h1>
             {{ copy.pageIntroduction }}
+            <div class="mt3">
+              <a id="arrowDown"><img src="dist/images/arrow-down.svg" /></a>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-        <div class="fixed top-0 left-0 w-100 h-100 z-3 bg-2x2 pointer-none"></div>
-
-    <div class="bg-grey relative z-5">
-
-      <div class="pa4-ns pa4 bg-grey overflow-hidden">
+    <div class="bg-grey relative z-5" id="belowFold">
+      <div class="container bg-grey overflow-hidden grid-pad-2x1 pt4">
         {% for entry in craft.entries.section('partnerships').find() %}
           {% set colour = cycle(['teal', 'red', 'blue', 'green', 'orange'], loop.index0) %}
           {% set align = cycle(['left', 'right'], loop.index0) %}
@@ -38,9 +43,17 @@
 
         {% endfor %}
       </div>
-
     </div>
 
+    <div class="outro tc pt6 pb6 fl w-100 relative">
+      <div class="w-100 w-60-ns m-auto z-4 relative fxl tc">
+        {{ outro.body }}
+      </div>
+      <a href="" class="contactModal-btn btn mt3 relative z-3">{{ outro.callToAction }}</a>
+      <div class="absolute w-100 h-100 bg-2x2 z-2 top-0 left-0"></div>
+      <div class="rain-content left-0"></div>
+    </div>
+    {% include '_includes/_contactModal.html' %}
+    {% include '_includes/_footer.html' %}
   </div>
-{% include '_includes/_footer.html' %}
 {% endblock %}

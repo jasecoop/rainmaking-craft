@@ -38,6 +38,9 @@
     <div id="home-intro-text" class="w-100 w-50-ns fr-ns home-intro-text relative z-4">
       <div class="w-90 m-auto pa4 bg-white lead">
         {{ entry.intro}}
+        <div class="mt3">
+          <a id="arrowDown"><img src="dist/images/arrow-down.svg" /></a>
+        </div>
       </div>
     </div>
   </div>
@@ -46,7 +49,7 @@
   <div class="rain-content left-0"></div>
 </div>
 
-<div class="fl w-100 pt0 bg-gradient-grey">
+<div class="fl w-100 pt0 bg-gradient-grey pointer" id="belowFold">
   <div class="container">
     <div class="w-100 w-70-ns mb5">
       <h2 class="f1">{{ entry.partnershipsHeadline }}</h2>
@@ -59,7 +62,7 @@
 
 <div class="bg-grey">
   <div class="container overflow-hidden">
-    <div class="partnershipTestimonials w-100 fl">
+    <div class="partnershipTestimonials w-100 fl grid-pad-1">
       {% for entry in craft.entries.section('partnerships').find() %}
         {% if entry.featurePartnershipOnHomePage %}
           {% set colour = cycle(['teal', 'red', 'blue', 'green', 'orange'], loop.index0) %}
@@ -112,12 +115,12 @@
           <div class="mt3 lh-solid">{{ entry.outroQuoteFounderName }}</div>
           <div class="caps-small-f">Rainmaking Founder</div>
 
-          <a href="/blog" class="btn btn-small btn-teal mt3">Learn more</a>
+          <a href="/blog" class="btn btn-small btn-teal mt3">{{ founderQuote.callToAction }}</a>
         </div>
       </div>
     </div>
     <div class="w-50 tc fl">
-      <div class="roundPhoto roundPhoto-300 dib">
+      <div class="roundPhoto roundPhoto-400 dib">
         {% set outroImg = entry.outroQuotePhoto.first() %}
         <img src="{{ outroImg.getUrl('roundPortrait')}}" />
       </div>
@@ -126,10 +129,10 @@
 </div>
 
 <div class="outro tc pt6 pb6 fl w-100 relative">
-  <div class="w-100 w-60-ns m-auto z-3 fxl tc">
+  <div class="w-100 w-60-ns m-auto z-4 relative fxl tc">
     {{ outro.body }}
   </div>
-  <a href="" class="contactModal-btn btn mt3 relative z-3">Get in touch</a>
+  <a href="" class="contactModal-btn btn mt3 relative z-3">{{ outro.callToAction }}</a>
   <div class="absolute w-100 h-100 bg-2x2 z-2 top-0 left-0"></div>
   <div class="rain-content left-0"></div>
 </div>

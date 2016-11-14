@@ -10707,6 +10707,7 @@ var rain            = require('./scripts/rain');
 var balancedGallery = require('./lib/balancedGallery');
 var contactModal    = require('./scripts/contactModal');
 var stickyAside     = require('./scripts/stickyAside');
+var founder         = require('./scripts/founder');
 
 jquery();
 
@@ -10718,8 +10719,9 @@ rain();
 balancedGallery();
 contactModal();
 stickyAside();
+founder();
 
-},{"./lib/balancedGallery":1,"./lib/jquery":2,"./scripts/contactModal":4,"./scripts/craft-ajax":5,"./scripts/menu":6,"./scripts/pillarbox":7,"./scripts/rain":8,"./scripts/stickyAside":9,"./scripts/stickyHeader":10}],4:[function(require,module,exports){
+},{"./lib/balancedGallery":1,"./lib/jquery":2,"./scripts/contactModal":4,"./scripts/craft-ajax":5,"./scripts/founder":6,"./scripts/menu":7,"./scripts/pillarbox":8,"./scripts/rain":9,"./scripts/stickyAside":10,"./scripts/stickyHeader":11}],4:[function(require,module,exports){
 module.exports = function () {
   $(document).ready( function() {
     $( 'body' ).on( 'click', '.contactModal-btn', function(e) {
@@ -10744,6 +10746,22 @@ module.exports = function () {
 }
 
 },{}],6:[function(require,module,exports){
+module.exports = function () {
+  $(document).ready(function(){
+    $('.founder').hover(
+      function() {
+        var $el = $( this ).find('.founder__about');
+        $el.removeClass('fadeOutDown');
+        $(this).addClass('founder-hover');
+      }, function() {
+        $(this).removeClass('.founder-hover');
+        $( this ).find('.founder__about').addClass('fadeOutDown');
+      }
+    );
+  });
+}
+
+},{}],7:[function(require,module,exports){
 module.exports = function () {
 
   $( document ).ready( function() {
@@ -10773,7 +10791,7 @@ module.exports = function () {
   });
 }
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 module.exports = function () {
 
   var introText = $('#home-intro-text-main').html();
@@ -10828,11 +10846,20 @@ module.exports = function () {
 
     }
 
+    $('body').on('click', '#arrowDown', function(e) {
+      e.preventDefault();
+      $('html,body').animate({
+          scrollTop: $("#belowFold").offset().top},
+       'slow');
+    });
+
   });
+
+
 
 }
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 module.exports = function () {
 
   var blob = function(x, y, ran) {
@@ -10853,7 +10880,7 @@ module.exports = function () {
 
 }
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 module.exports = function () {
 
   $(document).ready( function () {
@@ -10875,7 +10902,7 @@ module.exports = function () {
 
 }
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 module.exports = function () {
 
   $(document).ready(function() {
@@ -10885,14 +10912,10 @@ module.exports = function () {
 
     $(window).on("scroll", function() {
       var fromTop = $("body").scrollTop();
-      console.log(winHeight)
-      console.log(fromTop)
       if (fromTop > winHeight) {
         $('.header').addClass("header-belowfold");
-        console.log('if')
       } else {
         $('.header').removeClass("header-belowfold");
-        console.log('else')
       }
     });
 

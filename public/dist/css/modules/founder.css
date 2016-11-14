@@ -1,0 +1,9 @@
+.founder-hover .founder__about {
+  display: block;
+}
+@media screen and (min-width: 48em) {
+  .founder__about {
+    display: none;
+    -vendor-animation-duration: 500ms;
+  }
+}
