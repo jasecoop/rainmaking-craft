@@ -22,13 +22,16 @@
               <div class="w-100 h-100 relative border-white border-{{ colour }}-hover">
 
                 <div class="relative absolute-ns w-100 h8 h-100-ns top-0 left-0 z-0 cover" style="background-image: url({{ img.getUrl() }})">
-                  <div class="absolute w-100 pa4 f3 bottom-0 left-0 z-2 white">
-                    {{ entry.title }}
-                  </div>
                   <div class="absolute w-100 h-100 top-0 left-0 bg-trans-to-black z-1"></div>
+                </div>
+                <div class="absolute w-100 dn db-ns pa4 f3 bottom-0 left-0 z-2 white">
+                  {{ entry.title }}
                 </div>
                 <div class="founder__about animated fadeInUp relative absolute-ns w-100 h-100-ns top-0 left-0 bg-{{colour}} white z-1 pa4">
                   <div>
+                    <div class="db dn-ns f2">
+                      {{ entry.title }}
+                    </div>
                     {{ entry.body }}
                   </div>
                   {% if entry.twitterUrl %}
