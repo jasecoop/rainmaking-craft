@@ -32,15 +32,17 @@
       <div class="w-100 w-40-ns fr-ns fl">
 
         <div class="tc mb5">
-          <div class="authorPhoto roundPhoto roundPhoto-150 dib ba b--white bw2">
-            <img src="{{ entry.author.photoUrl(200) }}" />
+          <div class="w-80 m-auto">
+            <div class="authorPhoto roundPhoto roundPhoto-150 dib ba b--white bw2">
+              <img src="{{ entry.author.photoUrl(200) }}" />
+            </div>
+            <div class="f4 rm-text-2 mb0">
+              By {{ entry.author.firstName }} {{ entry.author.lastName }}
+            </div>
+            <div class="rm-text-2">
+              {{ entry.author.body }}
+            </div>
           </div>
-         <div class="f4 rm-text-2 mb0">
-           By {{ entry.author.firstName }} {{ entry.author.lastName }}
-         </div>
-         <div class="rm-text-2">
-            {{ entry.author.body }}
-         </div>
         </div>
 
         {% include '_includes/_stickyNewsletter.html' %}

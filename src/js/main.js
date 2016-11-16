@@ -9,6 +9,7 @@ var balancedGallery = require('./lib/balancedGallery');
 var contactModal    = require('./scripts/contactModal');
 var stickyAside     = require('./scripts/stickyAside');
 var founder         = require('./scripts/founder');
+var blogAnchor      = require('./scripts/blogAnchor');
 
 jquery();
 
@@ -21,3 +22,4 @@ balancedGallery();
 contactModal();
 stickyAside();
 founder();
+blogAnchor();

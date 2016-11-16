@@ -5,7 +5,7 @@
 {% block content %}
 <div class="js-ajax-wrapper">
 
-  <div class="pageContainer bg-grey pb5">
+  <div class="pageContainer bg-grey overflow-hidden">
 
     <div class="container">
       <div class="w-60-ns mb5 lead">
@@ -27,6 +27,8 @@
           {% include '_includes/_eventPostSmall.html' with { 'entry' : entry, 'color' : colour } %}
         {% endfor %}
       </div>
+
+      {% include '_includes/_pagination.html' with { 'pageInfo' : pageInfo } %}
     </div>
   </div>
 </div>

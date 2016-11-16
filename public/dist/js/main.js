@@ -10708,6 +10708,7 @@ var balancedGallery = require('./lib/balancedGallery');
 var contactModal    = require('./scripts/contactModal');
 var stickyAside     = require('./scripts/stickyAside');
 var founder         = require('./scripts/founder');
+var blogAnchor      = require('./scripts/blogAnchor');
 
 jquery();
 
@@ -10720,8 +10721,21 @@ balancedGallery();
 contactModal();
 stickyAside();
 founder();
+blogAnchor();
 
-},{"./lib/balancedGallery":1,"./lib/jquery":2,"./scripts/contactModal":4,"./scripts/craft-ajax":5,"./scripts/founder":6,"./scripts/menu":7,"./scripts/pillarbox":8,"./scripts/rain":9,"./scripts/stickyAside":10,"./scripts/stickyHeader":11}],4:[function(require,module,exports){
+},{"./lib/balancedGallery":1,"./lib/jquery":2,"./scripts/blogAnchor":4,"./scripts/contactModal":5,"./scripts/craft-ajax":6,"./scripts/founder":7,"./scripts/menu":8,"./scripts/pillarbox":9,"./scripts/rain":10,"./scripts/stickyAside":11,"./scripts/stickyHeader":12}],4:[function(require,module,exports){
+module.exports = function () {
+// Make sure any offsite links (non js/mailtos) open in a new window
+// from https://css-tricks.com/snippets/jquery/open-external-links-in-new-window/ - comment at end.
+  $(document).on('mousedown', '.content a:not([href*="mailto:"],[href*="javascript"])', function(e) {
+      var isInternalLink = new RegExp('/' + window.location.host + '/');
+      if (!isInternalLink.test(this.href)) {
+          $(this).attr('target', '_blank');
+      }
+  });
+}
+
+},{}],5:[function(require,module,exports){
 module.exports = function () {
   $(document).ready( function() {
     $( 'body' ).on( 'click', '.contactModal-btn', function(e) {
@@ -10738,14 +10752,14 @@ module.exports = function () {
   });
 }
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 module.exports = function () {
 
 
 
 }
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 module.exports = function () {
   $(document).ready(function(){
     $('.founder').hover(
@@ -10761,7 +10775,7 @@ module.exports = function () {
   });
 }
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 module.exports = function () {
 
   $( document ).ready( function() {
@@ -10791,7 +10805,7 @@ module.exports = function () {
   });
 }
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 module.exports = function () {
 
   var introText = $('#home-intro-text-main').html();
@@ -10808,7 +10822,7 @@ module.exports = function () {
     // $('#home-intro-text-main').html(text);
     // $(target).addClass('pillarbox-active');
     // $('.intro-logo-active').show();
-    $(target).fadeIn(100);
+    $(target).fadeIn(500);
     $('body').addClass('pillarActive');
   }
 
@@ -10858,7 +10872,7 @@ module.exports = function () {
 
 }
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 module.exports = function () {
 
   var blob = function(x, y, ran) {
@@ -10898,7 +10912,7 @@ module.exports = function () {
   // alert('1')
 }
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 module.exports = function () {
 
   $(document).ready( function () {
@@ -10921,7 +10935,7 @@ module.exports = function () {
 
 }
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 module.exports = function () {
 
   $(document).ready(function() {
@@ -10931,7 +10945,7 @@ module.exports = function () {
 
     $(window).on("scroll", function() {
       var fromTop = $("body").scrollTop();
-      if (fromTop > winHeight) {
+      if (fromTop > winHeight - 300) {
         $('.header').addClass("header-belowfold");
       } else {
         $('.header').removeClass("header-belowfold");

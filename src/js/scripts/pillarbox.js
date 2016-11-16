@@ -14,7 +14,7 @@ module.exports = function () {
     // $('#home-intro-text-main').html(text);
     // $(target).addClass('pillarbox-active');
     // $('.intro-logo-active').show();
-    $(target).fadeIn(100);
+    $(target).fadeIn(500);
     $('body').addClass('pillarActive');
   }
 

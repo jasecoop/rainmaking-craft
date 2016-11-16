@@ -1,0 +1,12 @@
+<div class="w-100 fl pv5">
+  <div class="fl">
+    {% if pageInfo.prevUrl %}
+      <a class="a-plain fl f2 rm-text-2 rm-text-hover" href="{{ pageInfo.prevUrl }}"><span>Previous Page</span></a>
+    {% endif %}
+  </div>
+  <div class="fr">
+    {% if pageInfo.nextUrl %}
+      <a class="a-plain f2 rm-text-2 rm-text-hover" href="{{ pageInfo.nextUrl }}"><span>Next Page</span></a>
+    {% endif %}
+  </div>
+</div>

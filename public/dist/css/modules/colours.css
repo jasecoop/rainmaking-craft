@@ -12,6 +12,8 @@
 
 .rm-orange { color: #F99B30; }
 
+.rm-text-hover:hover   { color: #062D40; }
+
 .rm-teal-hover:hover   { color: #69C7D3; }
 
 .rm-red-hover:hover     { color: #FF856D; }
@@ -22,16 +24,18 @@
 
 .rm-orange-hover:hover  { color: #F99B30; }
 
-.bg-grey { background: #EBEDF0; }
+.bg-grey    { background-color: #EBEDF0; }
 
-.bg-teal    { background: #69C7D3; }
+.bg-grey-2  { background-color: #68767C; }
 
-.bg-red     { background: #FF856D; }
+.bg-teal    { background-color: #69C7D3; }
 
-.bg-blue    { background: #86BFEF; }
+.bg-red     { background-color: #FF856D; }
 
-.bg-green   { background: #83B309;  }
+.bg-blue    { background-color: #86BFEF; }
 
-.bg-orange  { background: #F99B30; }
+.bg-green   { background-color: #83B309;  }
 
-.bg-dark  { background: #151B1E; }
+.bg-orange  { background-color: #F99B30; }
+
+.bg-dark  { background-color: #151B1E; }

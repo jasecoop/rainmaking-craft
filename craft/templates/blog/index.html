@@ -2,19 +2,20 @@
 {% set title = "Blog" %}
 {% set posts = craft.entries.section('blog') %}
 {% set copy = craft.entries.section('blogIndexCopy').first() %}
+{% paginate craft.entries.section('blog').limit(7) as pageInfo, pageEntries %}
 
 {% block content %}
 <div class="js-ajax-wrapper">
 
-  <div class="pageContainer bg-grey">
+  <div class="pageContainer bg-grey overflow-hidden">
     <div class="container">
       <div class="w-60-ns mb5 lead">
         <h1 class="fxl">{{ copy.title }}</h1>
       </div>
 
 
-      <div class="flex posts bg-grey pb5">
-        {% for entry in craft.entries.section('blog').find() %}
+      <div class="flex posts bg-grey">
+        {% for entry in pageEntries %}
           {% if loop.first %}
             {% set colour = cycle(['teal', 'red', 'blue', 'green', 'orange'], loop.index0) %}
             {% include '_includes/_blogPostFeaturedCard.html' with { 'entry' : entry, 'color' : colour } %}
@@ -23,7 +24,11 @@
             {% include '_includes/_blogPostCard.html' with { 'entry' : entry, 'color' : colour } %}
           {% endif %}
         {% endfor %}
+
       </div>
+
+      {% include '_includes/_pagination.html' with { 'pageInfo' : pageInfo } %}
+
     </div>
   </div>
 </div>

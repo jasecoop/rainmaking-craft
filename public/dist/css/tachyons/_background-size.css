@@ -14,8 +14,11 @@
 */
 .cover { background-size: cover; }
 .contain { background-size: contain; }
-.bg-center { background-size: center; }
+.bg-center { background-position: center; }
 .bg-fixed { background-attachment: fixed; }
+.bg-no-repeat {background-repeat: no-repeat;}
+.bg-size-80 { background-size: 80%; }
+.bg-size-60 { background-size: 60%; }
 @media screen and (min-width: 48em) {
   .cover-ns { background-size: cover; }
   .contain-ns { background-size: contain; }

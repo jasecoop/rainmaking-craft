@@ -19,16 +19,18 @@
 .rm-green  { color: var(--rm-green);  }
 .rm-orange { color: var(--rm-orange); }
 
+.rm-text-hover:hover   { color: var(--rm-text); }
 .rm-teal-hover:hover   { color: var(--rm-teal); }
 .rm-red-hover:hover     { color: var(--rm-red); }
 .rm-blue-hover:hover    { color: var(--rm-blue); }
 .rm-green-hover:hover   { color: var(--rm-green);  }
 .rm-orange-hover:hover  { color: var(--rm-orange); }
 
-.bg-grey { background: var(--rm-grey); }
-.bg-teal    { background: var(--rm-teal); }
-.bg-red     { background: var(--rm-red); }
-.bg-blue    { background: var(--rm-blue); }
-.bg-green   { background: var(--rm-green);  }
-.bg-orange  { background: var(--rm-orange); }
-.bg-dark  { background: var(--rm-dark); }
+.bg-grey    { background-color: var(--rm-grey); }
+.bg-grey-2  { background-color: var(--rm-text-2); }
+.bg-teal    { background-color: var(--rm-teal); }
+.bg-red     { background-color: var(--rm-red); }
+.bg-blue    { background-color: var(--rm-blue); }
+.bg-green   { background-color: var(--rm-green);  }
+.bg-orange  { background-color: var(--rm-orange); }
+.bg-dark  { background-color: var(--rm-dark); }
