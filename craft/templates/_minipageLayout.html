@@ -16,8 +16,8 @@
   <div class="container h-100 relative">
     {% include '_includes/_pagePillars.html' %}
 
-    <div class="w-100 w-50-ns absolute right-0 top-0 fr-ns mb4 z-4">
-      <div class="w-70 m-auto pa4 bg-white intro-hover-text bt bw2 border-{{colour}}">
+    <div class="w-100 w-50-ns relative absolute-ns right-0 top-0 fr-ns mb4 z-4 pt6 pt0-ns">
+      <div class="w-100 w-70-ns m-auto pa4 bg-white intro-hover-text bt bw2 border-{{colour}}">
         <section>
           {% block content %}
             <p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>

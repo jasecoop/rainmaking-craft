@@ -135,4 +135,11 @@ body {
     font-size: 60px;
     line-height: 1.2em;
   }
+
+  .fxl-ns {
+    font-family: undefined;
+    font-weight: 200;
+    font-size: 43px;
+    line-height: 1.2em;
+  }
 }

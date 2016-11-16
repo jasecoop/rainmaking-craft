@@ -5,40 +5,55 @@
   <div class="js-ajax-wrapper">
 
     <div class="pageContainer">
+      <div class="w-100 ph4 w-60-ns m-auto pt5">
+        <h2 class="f1 tl white">Get in touch</h2>
+        <div class="w-100 pr4 w-70-ns fl">
+          {% macro errorList(errors) %}
+              {% if errors %}
+                  <ul class="errors">
+                      {% for error in errors %}
+                          <li>{{ error }}</li>
+                      {% endfor %}
+                  </ul>
+              {% endif %}
+          {% endmacro %}
 
-      <div class="pa4-ns pt6 pa4 pb0">
-        <div class="w-60-ns mb3 fl-ns">
-          <div class="lead">
-            {{ entry.pageIntroduction }}
-          </div>
+          {% from _self import errorList %}
+          <form method="post" action="" accept-charset="UTF-8" class="tl">
+              {{ getCsrfInput() }}
+              <input type="hidden" name="action" value="contactForm/sendMessage">
+              <input type="hidden" name="redirect" value="contact/thanks">
+
+              <label class="caps-small-f tl white" for="fromName">Your Name</label>
+              <input class="rm-text-2 w-100 mb3 ph2" id="fromName" type="text" name="fromName" value="{% if message is defined %}{{ message.fromName }}{% endif %}">
+              {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
+
+              <label class="caps-small-f tl white" for="fromEmail">Your Email</label>
+              <input class="rm-text-2 w-100 mb3 ph2" id="fromEmail" type="email" name="fromEmail" value="{% if message is defined %}{{ message.fromEmail }}{% endif %}">
+              {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
+
+              <label class="caps-small-f tl white" for="subject">Subject</label>
+              <input class="rm-text-2 w-100 mb3 ph2" id="subject" type="text" name="subject" value="{% if message is defined %}{{ message.subject }}{% endif %}">
+              {{ message is defined and message ? errorList(message.getErrors('subject')) }}
+
+              <label class="caps-small-f tl white" for="message">Message</label>
+              <textarea class="rm-text-2 w-100 mb3 ph4" rows="4" cols="10" id="message" name="message">{% if message is defined %}{{ message.message }}{% endif %}</textarea>
+              {{ message is defined and message ? errorList(message.getErrors('message')) }}
+
+              <input class="btn btn-small w-100" type="submit" value="Send">
+          </form>
         </div>
-        <div class="w-40-ns w-100 fl-ns ph4 overflow-hidden mb5">
-          <div class="w-100 tl fl">
-            <div class="caps-small-f lh-solid">General enquires</div>
-            <div class="rm-text-2 f2">{{ contact.generalEmailAddress }}</div>
+        <div class="w-30 fr tl mt4">
+          <div>
+            <div class="rm-text-2 caps-small-f lh-solid">General enquires</div>
+            <div class="white lead mb4">{{ contact.generalEmailAddress }}</div>
           </div>
-          <div class="w-100 tl fl pt4">
-            <div class="caps-small-f lh-solid">Press enquires</div>
-            <div class="rm-text-2 f2">{{ contact.pressEmailAddress }}</div>
+          <div>
+            <div class="rm-text-2 caps-small-f lh-solid">Press enquires</div>
+            <div class="white lead">{{ contact.pressEmailAddress }}</div>
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="w-100 pt4 ph4 overflow-hidden">
-      {% for entry in craft.entries.section('locations') %}
-        <div class="w-25 tl fl pt4">
-          <div class="caps-small-f lh-solid">{{ entry.title }}</div>
-          <div class="text-small rm-text-2 ">{{ entry.address}}</div>
-
-        </div>
-      {% endfor %}
-    </div>
-
-    <div class="gallery w-100 pt5">
-      {% for img in entry.image %}
-        <div style="background-image: url('{{ img.getUrl() }}')"></div>
-      {% endfor %}
     </div>
 
   </div>

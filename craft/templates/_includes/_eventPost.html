@@ -1,5 +1,5 @@
 {% set img = entry.headerImg.first() %}
-<div class="w-100 cover relative flex-ns flex-row-ns items-stretch-ns fl-ns h6 mb4 bg-white border-white border-{{ colour }}-hover pointer-none" style="background-image: url({{ img.getUrl() }});">
+<div class="w-100 bg-grey cover relative flex-ns flex-row-ns items-stretch-ns fl-ns h6-ns mb4 bg-white border-white border-{{ colour }}-hover pointer-none" style="background-image: url({{ img.getUrl() }});">
   <div class="pa4 w-100 h-100 cover z-1 relative">
     <div class="z-1 relative h-100 flex flex-column justify-between">
       <div>
@@ -11,10 +11,10 @@
       </div>
       <div>
         <a href="{{ entry.url }}" class="pointer-auto bg-{{ colour }} db fl">
-          <div class="rm-text caps-small-f pa4 bg-white fl">
+          <div class="w-100 w-auto-ns rm-text caps-small-f tc pa4 bg-white fl">
             {{ entry.timeAndDate|date("F d Y H:i") }}
           </div>
-          <div class="white caps-small-f fl pa4 center h-100 cover relative">
+          <div class="w-100 w-auto-ns tc white caps-small-f fl pa4 center h-100 cover relative">
             GET TICKETS
           </div>
         </a>

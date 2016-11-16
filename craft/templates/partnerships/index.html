@@ -18,19 +18,19 @@
     <div class="w-100 h-100">
       <div class="container h-100 relative">
         {% include '_includes/_pagePillars.html' %}
-        <div class="w-100 w-50-ns absolute right-0 top-0 fr-ns mb4 z-5">
-          <div class="w-70 m-auto pa4 bg-white intro-hover-text bt bw2 border-green">
+        <div class="w-100 w-50-ns relative absolute-ns right-0 top-0 fl fr-ns mb4 z-5 pt6 pt0-ns">
+          <div class="w-100 w-70-ns m-auto pa4 bg-white intro-hover-text bt bw2 border-green">
             <h1 class="f2">{{ copy.title }}</h1>
             {{ copy.pageIntroduction }}
             <div class="mt3">
-              <a id="arrowDown"><img src="dist/images/arrow-down.svg" /></a>
+              <a id="arrowDown" class="dn db-ns"><img src="dist/images/arrow-down.svg" /></a>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="bg-grey relative z-5" id="belowFold">
+    <div class="bg-grey relative z-4" id="belowFold">
       <div class="container bg-grey overflow-hidden grid-pad-2x1 pt4">
         {% for entry in craft.entries.section('partnerships').find() %}
           {% set colour = cycle(['teal', 'red', 'blue', 'green', 'orange'], loop.index0) %}
