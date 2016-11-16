@@ -129,3 +129,12 @@ body {
 .text-secondary {
   color:
 }
+
+@media (--breakpoint-not-small) {
+  .fxxl-ns {
+    font-family: var(--futura-font-family);
+    font-weight: 200;
+    font-size: 60px;
+    line-height: 1.2em;
+  }
+}

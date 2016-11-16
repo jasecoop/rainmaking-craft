@@ -50,7 +50,7 @@ transition: all 500ms linear;
 }*/
 
 .pillar {
-  z-index: 2;
+  z-index: 3;
   position: relative;
 }
 

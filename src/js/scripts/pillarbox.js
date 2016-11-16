@@ -20,8 +20,7 @@ module.exports = function () {
 
   $(document).ready(function(){
 
-    if ($('body').hasClass('has-intro-text')) {
-
+    if ($('body').hasClass('has-intro-text') && $(window).width() > 800) {
       var introPos = $('#intro-links').offset();
       var introTop = introPos.top;
 

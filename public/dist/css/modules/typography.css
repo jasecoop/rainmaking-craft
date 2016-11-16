@@ -128,3 +128,11 @@ body {
 .text-secondary {
   color:
 }
+@media screen and (min-width: 48em) {
+  .fxxl-ns {
+    font-family: undefined;
+    font-weight: 200;
+    font-size: 60px;
+    line-height: 1.2em;
+  }
+}

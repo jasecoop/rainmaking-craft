@@ -27,16 +27,16 @@
 
 <div class="h-100 flex items-center bg-grad-vert-trans-white relative">
   <div id="intro-home" class="container-size w-100">
-    <div class="w-100 w-40-ns fl mb3">
+    <div class="w-100 w-40-ns fl mb3 mt4 mt0-ns">
       <div id="intro-links">
-        <div><a class="pillar dib fxxl mb2-ns a-plain rm-text rm-teal-hover" data-type="accelerators" href="/accelerator">Accelerators</a></div>
-        <div><a class="pillar dib fxxl mb2-ns a-plain rm-text rm-red-hover" data-type="spaces" href="/spaces">Spaces</a></div>
-        <div><a class="pillar dib fxxl mb2-ns a-plain rm-text rm-blue-hover" data-type="companies" href="/companies">Startups</a></div>
-        <div><a id="partnershipsScroll" class="pillar dib fxxl mb2-ns a-plain rm-text rm-green-hover" data-type="partnerships" href="/partnerships">Partnerships</a></div>
+        <div><a class="pillar dib f2 fxxl-ns mb2-ns a-plain rm-text-2 rm-teal-hover" data-type="accelerators" href="/accelerator">Accelerators</a></div>
+        <div><a class="pillar dib f2 fxxl-ns mb2-ns a-plain rm-text-2 rm-red-hover" data-type="spaces" href="/spaces">Spaces</a></div>
+        <div><a class="pillar dib f2 fxxl-ns mb2-ns a-plain rm-text-2 rm-blue-hover" data-type="companies" href="/companies">Startups</a></div>
+        <div><a id="partnershipsScroll" class="pillar dib f2 fxxl-ns mb2-ns a-plain rm-text-2 rm-green-hover" data-type="partnerships" href="/partnerships">Partnerships</a></div>
       </div>
     </div>
-    <div id="home-intro-text" class="w-100 w-50-ns fr-ns home-intro-text relative z-4">
-      <div class="w-90 m-auto pa4 bg-white lead">
+    <div id="home-intro-text" class="w-100 w-50-ns fl fr-ns home-intro-text relative z-4 mt4 mt0-ns">
+      <div class="w-90-ns m-auto mt5 mt0-ns pa4-ns bg-white lead">
         {{ entry.intro}}
         <div class="mt3">
           <a id="arrowDown"><img src="dist/images/arrow-down.svg" /></a>
@@ -74,8 +74,8 @@
   </div>
 </div>
 
-<div class="pa5-ns pa4 fl w-100 bg-white">
-  <div class="overflow-hidden">
+<div class="pv4 pv5-ns fl w-100 bg-white">
+  <div class="container">
     <div class="w-100 overflow-hidden">
 
       {% for image in entry.partnershipLogos %}
@@ -94,14 +94,21 @@
   </div>
 </div>
 
-<div class="pa5-ns pa4 fl w-100 bg-white">
-  <div>
-    <div class="w-50 fl mt4">
+<div class="pv4 pv5-ns fl w-100 bg-white">
+  <div class="container overflow-hidden">
+
+    <div class="w-100 w-50-ns tc fr-ns">
+      <div class="roundPhoto roundPhoto-400 dib">
+        {% set outroImg = entry.outroQuotePhoto.first() %}
+        <img src="{{ outroImg.getUrl('roundPortrait')}}" />
+      </div>
+    </div>
+
+    <div class="w-100 w-50-ns fl-ns mt4">
       <div class="fl mt2">
-        <div class="speechmarks">
           {% for block in founderQuote.textBlock %}
             {% if block.type == "header2" %}
-              <h2 class="f2">
+              <h2 class="f2 speechmarks">
                 {{ block.headerSmall }}
               </h2>
             {% elseif block.type == "body" %}
@@ -116,14 +123,8 @@
 
           <a href="/blog" class="btn btn-small btn-teal mt3">{{ founderQuote.callToAction }}</a>
         </div>
-      </div>
     </div>
-    <div class="w-50 tc fl">
-      <div class="roundPhoto roundPhoto-400 dib">
-        {% set outroImg = entry.outroQuotePhoto.first() %}
-        <img src="{{ outroImg.getUrl('roundPortrait')}}" />
-      </div>
-    </div>
+
   </div>
 </div>
 
