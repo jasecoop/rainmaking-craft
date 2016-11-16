@@ -4,9 +4,9 @@
 {% block content %}
   <div class="js-ajax-wrapper">
 
-    <div class="pageContainer">
-      <div class="w-100 ph4 w-60-ns m-auto pt5">
-        <h2 class="f1 tl white">Get in touch</h2>
+    <div class="pageContainer mb5">
+      <div class="w-100 ph4 w-60-ns m-auto">
+        <h2 class="f1 tl ">Get in touch</h2>
         <div class="w-100 pr4 w-70-ns fl">
           {% macro errorList(errors) %}
               {% if errors %}
@@ -24,38 +24,38 @@
               <input type="hidden" name="action" value="contactForm/sendMessage">
               <input type="hidden" name="redirect" value="contact/thanks">
 
-              <label class="caps-small-f tl white" for="fromName">Your Name</label>
+              <label class="caps-small-f tl " for="fromName">Your Name</label>
               <input class="rm-text-2 w-100 mb3 ph2" id="fromName" type="text" name="fromName" value="{% if message is defined %}{{ message.fromName }}{% endif %}">
               {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
 
-              <label class="caps-small-f tl white" for="fromEmail">Your Email</label>
+              <label class="caps-small-f tl " for="fromEmail">Your Email</label>
               <input class="rm-text-2 w-100 mb3 ph2" id="fromEmail" type="email" name="fromEmail" value="{% if message is defined %}{{ message.fromEmail }}{% endif %}">
               {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
 
-              <label class="caps-small-f tl white" for="subject">Subject</label>
+              <label class="caps-small-f tl " for="subject">Subject</label>
               <input class="rm-text-2 w-100 mb3 ph2" id="subject" type="text" name="subject" value="{% if message is defined %}{{ message.subject }}{% endif %}">
               {{ message is defined and message ? errorList(message.getErrors('subject')) }}
 
-              <label class="caps-small-f tl white" for="message">Message</label>
+              <label class="caps-small-f tl " for="message">Message</label>
               <textarea class="rm-text-2 w-100 mb3 ph4" rows="4" cols="10" id="message" name="message">{% if message is defined %}{{ message.message }}{% endif %}</textarea>
               {{ message is defined and message ? errorList(message.getErrors('message')) }}
 
               <input class="btn btn-small w-100" type="submit" value="Send">
           </form>
         </div>
-        <div class="w-30 fr tl mt4">
-          <div>
+        <div class="w-100 w-30-ns fr tl mt4">
+          <div class="w-50 w-100-ns">
             <div class="rm-text-2 caps-small-f lh-solid">General enquires</div>
-            <div class="white lead mb4">{{ contact.generalEmailAddress }}</div>
+            <div class=" lead mb4">{{ contact.generalEmailAddress }}</div>
           </div>
-          <div>
+          <div class="w-50 w-100-ns">
             <div class="rm-text-2 caps-small-f lh-solid">Press enquires</div>
-            <div class="white lead">{{ contact.pressEmailAddress }}</div>
+            <div class=" lead">{{ contact.pressEmailAddress }}</div>
           </div>
         </div>
       </div>
     </div>
 
   </div>
-{% include '_includes/_footerSimple.html' %}
+{% include '_includes/_footer.html' %}
 {% endblock %}
