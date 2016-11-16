@@ -10709,6 +10709,7 @@ var contactModal    = require('./scripts/contactModal');
 var stickyAside     = require('./scripts/stickyAside');
 var founder         = require('./scripts/founder');
 var blogAnchor      = require('./scripts/blogAnchor');
+var borderHover     = require('./scripts/borderHover');
 
 jquery();
 
@@ -10722,8 +10723,9 @@ contactModal();
 stickyAside();
 founder();
 blogAnchor();
+borderHover();
 
-},{"./lib/balancedGallery":1,"./lib/jquery":2,"./scripts/blogAnchor":4,"./scripts/contactModal":5,"./scripts/craft-ajax":6,"./scripts/founder":7,"./scripts/menu":8,"./scripts/pillarbox":9,"./scripts/rain":10,"./scripts/stickyAside":11,"./scripts/stickyHeader":12}],4:[function(require,module,exports){
+},{"./lib/balancedGallery":1,"./lib/jquery":2,"./scripts/blogAnchor":4,"./scripts/borderHover":5,"./scripts/contactModal":6,"./scripts/craft-ajax":7,"./scripts/founder":8,"./scripts/menu":9,"./scripts/pillarbox":10,"./scripts/rain":11,"./scripts/stickyAside":12,"./scripts/stickyHeader":13}],4:[function(require,module,exports){
 module.exports = function () {
 // Make sure any offsite links (non js/mailtos) open in a new window
 // from https://css-tricks.com/snippets/jquery/open-external-links-in-new-window/ - comment at end.
@@ -10736,6 +10738,26 @@ module.exports = function () {
 }
 
 },{}],5:[function(require,module,exports){
+module.exports = function () {
+  $(document).ready(function () {
+    $('.border-hover a').hover(
+        function(e){
+          var $parent = $(this).closest('.border-hover');
+          var colour = $parent.data('colour');
+          var colorClass = 'border-'+colour+'-hover';
+          $parent.addClass(colorClass);
+        },
+        function(e){
+          var $parent = $(this).closest('.border-hover');
+          var colour = $parent.data('colour');
+          var colorClass = 'border-'+colour+'-hover';
+          $parent.removeClass(colorClass);
+        }
+    );
+  });
+}
+
+},{}],6:[function(require,module,exports){
 module.exports = function () {
   $(document).ready( function() {
     $( 'body' ).on( 'click', '.contactModal-btn', function(e) {
@@ -10752,14 +10774,14 @@ module.exports = function () {
   });
 }
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 module.exports = function () {
 
 
 
 }
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 module.exports = function () {
   $(document).ready(function(){
     $('.founder').hover(
@@ -10775,7 +10797,7 @@ module.exports = function () {
   });
 }
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 module.exports = function () {
 
   $( document ).ready( function() {
@@ -10805,7 +10827,7 @@ module.exports = function () {
   });
 }
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 module.exports = function () {
 
   var introText = $('#home-intro-text-main').html();
@@ -10872,18 +10894,25 @@ module.exports = function () {
 
 }
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 module.exports = function () {
 
-  var blob = function(x, y, ran) {
-    var html = '<div class="rain-content-mouse rain-content-mouse-'+ran+' fadeOut" style="top:'+y+'px; left:'+x+'px;"></div>';
-    $(html).appendTo('.rain-content').delay(2000).fadeOut(1);
-  }
+  var colours = [
+    '#69C7D3',
+    '#71C4DB',
+    '#86BFEF',
+    '#85BDCF',
+    '#83B309',
+    '#B9A81B',
+    '#F99B30',
+    '#FC914B',
+    '#FF856D'
+  ]
 
   var counter = {};
   counter.count = 1;
   var Boom = function() {
-    if (counter.count === 6) {
+    if (counter.count === 10) {
       counter.count = 1
       // return period;
     } else {
@@ -10895,24 +10924,32 @@ module.exports = function () {
   setInterval(Boom, 2000)
 
 
+  var blob = function(x, y, ran) {
+    var colour = colours[ran];
+    var style = {
+      "top": y,
+      "left": x,
+    };
+    console.log(style);
+    var html = '<div class="rain-content-mouse fadeOut"></div>';
+    $(html).css(style).addClass('rain-content-mouse-' + counter.count).appendTo('.rain-content').delay(2000).fadeOut(1);
+  }
 
 
   $(window).on('mousemove', function(e) {
     if ( $('.rain').hasClass('rain-mousemove') && $(window).width() > 800 ) {
-        // if (e.clientX % 2 == 0) {
+        if (e.clientX % 2 == 0) {
         var x = e.clientX - 350;
         var y = e.clientY - 350;
         var ran = counter.count;
         blob(x, y, ran);
-        // var html = '<div class="rain-content-mouse rain-content-mouse-'+ran+' fadeOut" style="top:'+y+'px; left:'+x+'px;"></div>';
-        // $(html).appendTo('.rain-content').delay(3000).fadeOut(1);
-        // }
+      }
     }
   });
   // alert('1')
 }
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 module.exports = function () {
 
   $(document).ready( function () {
@@ -10935,7 +10972,7 @@ module.exports = function () {
 
 }
 
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 module.exports = function () {
 
   $(document).ready(function() {

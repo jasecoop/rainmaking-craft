@@ -7,8 +7,8 @@
 {% endif %}
 
 {% set img = entry.partnershipHeaderImage.first() %}
-<div class="w-100 relative flex-ns flex-row-ns items-stretch-ns fl-ns h-auto pointer-none">
-  <div class="border-white border-{{ colour }}-hover pointer-none w-100 h-100 bg-white flex-ns">
+<div class="w-100 relative flex-ns flex-row-ns items-stretch-ns fl-ns h-auto">
+  <div data-colour="{{colour}}" class="border-hover border-white w-100 h-100 bg-white flex-ns">
     <div class="w-100 w-50-ns {{ linkAlign }} pointer-auto">
       <div class="pa4 w-100 h-100 cover z-1 relative" style="background-image: url({{ img.getUrl() }});">
         <div class="z-1 relative h-100 flex flex-column justify-between">

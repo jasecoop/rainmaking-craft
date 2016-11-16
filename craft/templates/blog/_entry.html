@@ -34,7 +34,8 @@
         <div class="tc mb5">
           <div class="w-80 m-auto">
             <div class="authorPhoto roundPhoto roundPhoto-150 dib ba b--white bw2">
-              <img src="{{ entry.author.photoUrl(200) }}" />
+              {% set avatar = entry.author.image.first() %}
+              <img src="{{ avatar.getUrl() }}" />
             </div>
             <div class="f4 rm-text-2 mb0">
               By {{ entry.author.firstName }} {{ entry.author.lastName }}

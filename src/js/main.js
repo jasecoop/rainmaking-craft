@@ -10,6 +10,7 @@ var contactModal    = require('./scripts/contactModal');
 var stickyAside     = require('./scripts/stickyAside');
 var founder         = require('./scripts/founder');
 var blogAnchor      = require('./scripts/blogAnchor');
+var borderHover     = require('./scripts/borderHover');
 
 jquery();
 
@@ -23,3 +24,4 @@ contactModal();
 stickyAside();
 founder();
 blogAnchor();
+borderHover();

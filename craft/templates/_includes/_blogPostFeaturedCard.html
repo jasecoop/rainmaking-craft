@@ -1,7 +1,7 @@
 {% set img = entry.headerImage.first() %}
 <div class="w-100 cover mb4" style="background-image: url({{ img.getUrl() }});">
-  <div class="pa3 pa5-ns pa4 w-100 fl pointer-none">
-    <div class="pa3 pa5-ns bg-3x3 border-white border-{{ colour }}-hover w-100 h-100">
+  <div class="pa3 pa5-ns pa4 w-100 fl">
+    <div data-colour="{{colour}}" class="border-hover pa3 pa5-ns bg-3x3 border-white w-100 h-100">
       <div class="mb5">
         <a class="f2 fxl-ns mb5 a-plain rm-text rm-{{ colour }}-hover pointer-auto" href="{{ entry.url }}">{{ entry.title }}</a>
       </div>

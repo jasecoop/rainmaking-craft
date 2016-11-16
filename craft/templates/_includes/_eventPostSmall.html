@@ -1,8 +1,7 @@
 <div class="w-100 w-33-ns pa3-ns mb3 mb0-ns">
-  <div class="border-white border-{{ colour }}-hover pointer-none">
+  <div data-colour="{{colour}}" class="border-hover border-white">
     {% set img2 = entry.headerImg.first() %}
     <a href="{{entry.url}}" class="post__img cover" style="background-image: url('{{ img2.getUrl() }}');"></a>
-
 
     <div class="post__content pa4 pb0">
 
