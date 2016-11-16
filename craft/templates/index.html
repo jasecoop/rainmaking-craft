@@ -45,8 +45,8 @@
     </div>
   </div>
 
-  <div class="absolute top-0 left-0 w-100 h-100 z-3 bg-2x2 pointer-none rain rain-mousemove"></div>
-  <div class="rain-content left-0"></div>
+  <div class="absolute top-0 left-0 w-100 h-100 z-3 bg-2x2 pointer-none"></div>
+  <div class="rain-content left-0 rain rain-mousemove"></div>
 </div>
 
 <div class="fl w-100 pt0 bg-gradient-grey pointer" id="belowFold">
@@ -86,8 +86,7 @@
           quality: 100,
           position: 'center'
       } %}
-        <div class="w-50 w-25-ns tc fl h3 mb5 v-mid">
-          <span class="v-mid dib h-100"></span>
+        <div class="w-50 w-25-ns tc fl mb2 v-mid">
           <img class="v-mid" src="{{ image.getUrl()}}">
         </div>
       {% endfor %}
