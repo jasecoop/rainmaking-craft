@@ -10864,7 +10864,7 @@ module.exports = function () {
 
   var blob = function(x, y, ran) {
     var html = '<div class="rain-content-mouse rain-content-mouse-'+ran+' fadeOut" style="top:'+y+'px; left:'+x+'px;"></div>';
-    $(html).appendTo('.rain-content').delay(2000).fadeOut(1).delay(1000).remove();
+    $(html).appendTo('.rain-content').delay(2000).fadeOut(1);
   }
 
   $(window).on('mousemove', function(e) {
