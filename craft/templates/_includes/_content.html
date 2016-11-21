@@ -59,7 +59,6 @@
     </div>
 
   {% elseif block.type == "videoBlock" %}
-
     <div class="w-100 pv4 pv6-ns tc relative fl">
       <div class="container">
         <div class="w-100 w-60-ns m-auto">
@@ -67,9 +66,10 @@
             <iframe class="relative z-3" width="560" height="315" src="https://www.youtube.com/embed/{{ block.youtubeVideoId }}" frameborder="0" allowfullscreen></iframe>
           </div>
         </div>
-        <div class="absolute top-0 left-0 w-100 h-100 bg-3x3 z-1"></div>
-        <div class="videoBlock__gradient absolute top-0 left-0 w-100 h-100 z-0"></div>
+        <div class="absolute w-100 h-100 bg-3x3 top-0 left-0 z-1"></div>
+        <div class="absolute w-100 h-100 top-0 left-0 z-0 o-100 cover" style="background-image: url('https://img.youtube.com/vi/{{ block.youtubeVideoId }}/0.jpg');"></div>
       </div>
+      <div class="top-0 absolute w-100 h-100 bg-white-trans-white"></div>
     </div>
 
   {% elseif block.type == "textBlockWithImages" %}
