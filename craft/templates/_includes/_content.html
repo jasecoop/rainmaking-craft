@@ -1,88 +1,90 @@
-{% for block in entry.pageContent %}
-  {% if block.type == "soundbyteBlock" %}
-    {% set img = block.image.first() %}
-    <div class="w-100 relative fl">
-      <div class="container">
-        <div class="w-100 pv6 w-70-ns m-auto">
-          <span class="f1 fw3 relative z-2">
-            {{ block.text }}
-          </span>
+<div class="content">
+  {% for block in entry.pageContent %}
+    {% if block.type == "soundbyteBlock" %}
+      {% set img = block.image.first() %}
+      <div class="w-100 relative fl">
+        <div class="container">
+          <div class="w-100 pv6 w-70-ns m-auto">
+            <span class="f1 fw3 relative z-2">
+              {{ block.text }}
+            </span>
+            <div class="absolute w-100 h-100 bg-3x3 top-0 left-0 z-1"></div>
+            <div class="absolute w-100 h-100 top-0 left-0 z-0 o-100 cover" style="background-image: url('{{ img.getUrl() }}');"></div>
+          </div>
+        </div>
+        <div class="top-0 absolute w-100 h-100 bg-white-trans-white"></div>
+      </div>
+
+    {% elseif block.type == "textBlock" %}
+      {% set text = block.text  %}
+      <div class="w-100 pt5 textBlock fl">
+        <div class="container">
+          <div class="w-100 w-60-ns m-auto">
+            <h2 class="f2">{{ block.header }}</h2>
+            <div>
+              {{ text|raw }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+  {% elseif block.type == "quoteBlock" %}
+
+        <div class="container">
+
+          <div class="w-100 w-60-ns m-auto pv5 border-top-grey border-bottom-grey overflow-hidden">
+            <div class="w-100 tc">
+              <div class="quoteBlock-photo mb4 roundPhoto-100 roundPhoto-200-ns dib">
+                {% set quotePhoto = block.image.first() %}
+                <img src="{{ quotePhoto.getURL('roundPortrait') }}" />
+              </div>
+            </div>
+            <div class="speechmarks">
+              <div class="w-100 mt0 fl db">
+                  <div class="lead-xl">
+                    {{ block.text }}
+                  </div>
+                  <div class="lh-solid f4 mt3">{{ block.quoteName }}</div>
+                  <div class="caps-small-f">{{ block.role }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+  {% elseif block.type == "imageBlock" %}
+
+      <div class="gallery w-100 fl">
+        {% for img in block.images %}
+          <div style="background-image: url('{{ img.getUrl() }}')"></div>
+        {% endfor %}
+      </div>
+
+    {% elseif block.type == "videoBlock" %}
+      <div class="w-100 pv4 pv6-ns tc relative fl">
+        <div class="container">
+          <div class="w-100 w-60-ns m-auto">
+            <div class="videoBlock__wrapper">
+              <iframe class="relative z-3" width="560" height="315" src="https://www.youtube.com/embed/{{ block.youtubeVideoId }}" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
           <div class="absolute w-100 h-100 bg-3x3 top-0 left-0 z-1"></div>
-          <div class="absolute w-100 h-100 top-0 left-0 z-0 o-100 cover" style="background-image: url('{{ img.getUrl() }}');"></div>
+          <div class="absolute w-100 h-100 top-0 left-0 z-0 o-100 cover" style="background-image: url('https://img.youtube.com/vi/{{ block.youtubeVideoId }}/0.jpg');"></div>
         </div>
+        <div class="top-0 absolute w-100 h-100 bg-white-trans-white"></div>
       </div>
-      <div class="top-0 absolute w-100 h-100 bg-white-trans-white"></div>
-    </div>
 
-  {% elseif block.type == "textBlock" %}
-    {% set text = block.text  %}
-    <div class="w-100 pv5 textBlock fl">
-      <div class="container">
-        <div class="w-100 w-60-ns m-auto">
-          <h2 class="f2">{{ block.header }}</h2>
-          <div>
-            {{ text|raw }}
-          </div>
-        </div>
-      </div>
-    </div>
-
-{% elseif block.type == "quoteBlock" %}
-
-      <div class="container">
-
-        <div class="w-100 w-60-ns m-auto pv5 border-top-grey border-bottom-grey overflow-hidden">
-          <div class="w-100 tc">
-            <div class="quoteBlock-photo mb4 roundPhoto-100 roundPhoto-200-ns dib">
-              {% set quotePhoto = block.image.first() %}
-              <img src="{{ quotePhoto.getURL('roundPortrait') }}" />
-            </div>
-          </div>
-          <div class="speechmarks">
-            <div class="w-100 mt0 fl db">
-                <div class="lead-xl">
-                  {{ block.text }}
-                </div>
-                <div class="lh-solid f4 mt3">{{ block.quoteName }}</div>
-                <div class="caps-small-f">{{ block.role }}</div>
+    {% elseif block.type == "textBlockWithImages" %}
+      {% set text = block.text %}
+      <div class="w-100 textBlock fl relative">
+        <div class="container">
+          <div class="w-100 pv5 w-60-ns m-auto">
+            <h2 class="f2">{{ block.header }}</h2>
+            <div>
+              {{ text|raw }}
             </div>
           </div>
         </div>
       </div>
-
-{% elseif block.type == "imageBlock" %}
-
-    <div class="gallery w-100 fl">
-      {% for img in block.images %}
-        <div style="background-image: url('{{ img.getUrl() }}')"></div>
-      {% endfor %}
-    </div>
-
-  {% elseif block.type == "videoBlock" %}
-    <div class="w-100 pv4 pv6-ns tc relative fl">
-      <div class="container">
-        <div class="w-100 w-60-ns m-auto">
-          <div class="videoBlock__wrapper">
-            <iframe class="relative z-3" width="560" height="315" src="https://www.youtube.com/embed/{{ block.youtubeVideoId }}" frameborder="0" allowfullscreen></iframe>
-          </div>
-        </div>
-        <div class="absolute w-100 h-100 bg-3x3 top-0 left-0 z-1"></div>
-        <div class="absolute w-100 h-100 top-0 left-0 z-0 o-100 cover" style="background-image: url('https://img.youtube.com/vi/{{ block.youtubeVideoId }}/0.jpg');"></div>
-      </div>
-      <div class="top-0 absolute w-100 h-100 bg-white-trans-white"></div>
-    </div>
-
-  {% elseif block.type == "textBlockWithImages" %}
-    {% set text = block.text %}
-    <div class="w-100 textBlock fl relative">
-      <div class="container">
-        <div class="w-100 pv5 w-60-ns m-auto">
-          <h2 class="f2">{{ block.header }}</h2>
-          <div>
-            {{ text|raw }}
-          </div>
-        </div>
-      </div>
-    </div>
-  {% endif %}
-{% endfor %}
+    {% endif %}
+  {% endfor %}
+</div>
