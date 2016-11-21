@@ -33,7 +33,7 @@ module.exports = function () {
       "top": y,
       "left": x,
     };
-    console.log(style);
+    // console.log(style);
     var html = '<div class="rain-content-mouse fadeOut"></div>';
     $(html).css(style).addClass('rain-content-mouse-' + counter.count).appendTo('.rain-content').delay(2000).fadeOut(1);
   }
