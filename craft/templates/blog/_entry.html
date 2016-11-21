@@ -10,23 +10,19 @@
 <div class="js-ajax-wrapper">
 
   {% set img = entry.headerImage.first() %}
-  <div class="w-100 h8 fl cover relative z-1" style="background-image: url( '{{img.getUrl('slashHeader') }}' );">
-    <div class="container">
-      <h1 class="fxl mb4 z-1 absolute bottom-0 blogpost-margin-bottom pb4 w-80-ns">
-        {{ entry.title }}
-      </h1>
+  <div class="w-100 h9 cover relative overflow-hidden" style="background-image: url( '{{img.getUrl('slashHeader') }}' );">
+    <div class="container relative h-100 z-3 flex">
+      <h1 class="fxl self-end w-70-ns">{{ entry.title }}</h1>
     </div>
-    <div class="absolute top-0 w-100 h-100 left-0 bg-2x2 z-0"></div>
+    <div class="absolute top-0 w-100 h-100 left-0 bg-trans-to-white z-2"></div>
+    <div class="absolute top-0 w-100 h-100 left-0 bg-2x2 z-0 z-1"></div>
   </div>
 
-  <div class="w-100 fl z-3 relative bg-grey">
-    <div class="container container-mobile-padding">
-      <div class="w-100 w-60-ns fl-ns slashHeader-content-m">
-        <div class="h1 w-100 bg-{{color}} db"></div>
-        <div class="content bg-white pa4">
-          {% set text = entry.post  %}
-          {{ text|raw }}
-        </div>
+  <div class="w-100 fl z-3 relative">
+    <div class="container">
+      <div class="w-100 w-60-ns fl-ns content">
+        {% set text = entry.post  %}
+        {{ text|raw }}
       </div>
 
       <div class="w-100 w-40-ns fr-ns fl">
@@ -52,7 +48,7 @@
     </div>
     {% set bg = prev.headerImage.first() %}
     <div class="w-100 pv6 cover relative tc fl mt5" style="background-image: url({{ bg.getUrl() }});">
-      <div class="w-60 z-2 relative m-auto">
+      <div class="w-80 z-2 relative m-auto">
         <div class="caps-small-f">
           Next article
         </div>
