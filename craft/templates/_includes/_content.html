@@ -3,7 +3,7 @@
     {% set img = block.image.first() %}
     <div class="w-100 relative fl">
       <div class="container">
-        <div class="w-100 pv6 w-60-ns m-auto">
+        <div class="w-100 pv6 w-70-ns m-auto">
           <span class="f1 fw3 relative z-2">
             {{ block.text }}
           </span>
@@ -29,21 +29,22 @@
 
 {% elseif block.type == "quoteBlock" %}
 
-      <div class="w-100 m-auto overflow-hidden fl pv5">
-        <div class="container">
-          <div class="w-100 w-20-ns fl tc mb3 tr-ns">
-            {% set quotePhoto = block.image.first() %}
-            <div class="roundPhoto roundPhoto-l dib">
+      <div class="container">
+
+        <div class="w-100 w-60-ns m-auto pv5 border-top-grey border-bottom-grey overflow-hidden">
+          <div class="w-100 tc">
+            <div class="quoteBlock-photo mb4 roundPhoto-100 roundPhoto-200-ns dib">
+              {% set quotePhoto = block.image.first() %}
               <img src="{{ quotePhoto.getURL('roundPortrait') }}" />
             </div>
           </div>
-          <div class="w-80-ns pl5-ns fr">
-            <div class="speechmarks">
-              <div class="lead mb3">
-                {{ block.text }}
-              </div>
-              <div class="lh-solid">{{ block.quoteName }}</div>
-              <div class="caps-small-f">{{ block.role }}</div>
+          <div class="speechmarks">
+            <div class="w-100 mt0 fl db">
+                <div class="lead-xl">
+                  {{ block.text }}
+                </div>
+                <div class="lh-solid f4 mt3">{{ block.quoteName }}</div>
+                <div class="caps-small-f">{{ block.role }}</div>
             </div>
           </div>
         </div>
