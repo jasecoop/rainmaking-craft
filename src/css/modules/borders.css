@@ -1,4 +1,5 @@
 @custom-media --breakpoint-not-small screen and (min-width: 48em);
+@custom-media --breakpoint-medium screen and (max-width: 48em);
 @custom-media --breakpoint-medium screen and (min-width: 48em) and (max-width: 64em);
 @custom-media --breakpoint-large screen and (min-width: 64em);
 
@@ -26,6 +27,14 @@
     border-right: solid 1px #9498A0;
   }
 }
+
+@media (--breakpoint-small) {
+  .border-right-top-s {
+    border-top: solid 1px #9498A0;
+  }
+}
+
+
 
 .border-teal  { border-color: #69C7D3; }
 .border-red      { border-color: #FF856D; }
