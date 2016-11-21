@@ -83,6 +83,12 @@ body {
   font-size: 18px;
   line-height: 31px;
 }
+.lead-xl {
+  font-family: undefined;
+  font-weight: 100;
+  font-size: 25px;
+  line-height: 40px;
+}
 @media screen and (min-width: 64em) {
   .lead {
     font-size: 18px;

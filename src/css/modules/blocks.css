@@ -57,15 +57,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b93a2', end
 	height: 100%;
 }
 
-
-@media (--breakpoint-large) {
-  .quoteBlock-photo {
-    margin-top: -90px;
-  }
-}
-
 .quoteBlock-photo {
-  display: block;
+  display: inline-block;
   width: 300px;
   height: 300px;
   overflow: hidden;

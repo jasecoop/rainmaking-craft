@@ -76,6 +76,13 @@ body {
   line-height: 31px;
 }
 
+.lead-xl {
+  font-family: var(--futura-font-family);
+  font-weight: 100;
+  font-size: 25px;
+  line-height: 40px;
+}
+
 @media (--breakpoint-large) {
   .lead {
     font-size: 18px;

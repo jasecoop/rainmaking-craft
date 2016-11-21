@@ -9,6 +9,14 @@
   border-left: solid 1px #9498A0;
 }
 
+.border-top-grey {
+  border-top: solid 1px #9498A0;
+}
+
+.border-bottom-grey {
+  border-bottom: solid 1px #9498A0;
+}
+
 .border-white {
   border: solid 1px #fff;
 }

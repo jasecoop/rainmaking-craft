@@ -4,45 +4,44 @@
 {% block content %}
   <div class="pageContainer">
 
-    <div class="container">
-      {% set img = entry.partnershipHeaderImage.first() %}
-      <div class="w-100 cover relative mb5 overflow-hidden" style="background-image: url( '{{img.getUrl('slashHeader') }}' );">
-        <div class="pa-4 pa6-ns relative z-1 tc bg-2x2">
-          <h1 class="fxl">{{ entry.title }}</h1>
-        </div>
-        <!-- <div class="absolute top-0 w-100 h-100 left-0 bg-2x2 z-0 ma5"></div> -->
+    {% set img = entry.partnershipHeaderImage.first() %}
+    <div class="w-100 h8 cover relative overflow-hidden" style="background-image: url( '{{img.getUrl('slashHeader') }}' );">
+      <div class="container relative h-100 z-3 flex">
+        <h1 class="fxl self-end w-70-ns">{{ entry.title }}</h1>
+      </div>
+      <div class="absolute top-0 w-100 h-100 left-0 bg-trans-to-white z-2"></div>
+      <div class="absolute top-0 w-100 h-100 left-0 bg-2x2 z-0 z-1"></div>
+    </div>
+
+    <div class="container overflow-hidden relative flex-ns">
+      <div class="w-100 w-50-ns fl pr4 lead-xl border-right-grey self-center">
+        {{entry.pageIntroduction}}
+      </div>
+      <div class="w-100 w-50-ns tc fl v-mid h-100 self-center">
+        {% set logo = entry.partnershipLogo.first() %}
+        <span class="v-mid dib h-100"></span>
+        <img class="v-mid" width="220" src="{{ logo.getURL() }}" />
       </div>
     </div>
 
-    <div class="container">
 
-      <div class="w-100 w-40-ns fr-ns relative tc z-3">
-        <div class="dib relative">
-          <div class="quoteBlock-photo roundPhoto-100 roundPhoto-300-ns">
-            {% set quotePhoto = entry.partnershipQuotePhoto.first() %}
-            <img src="{{ quotePhoto.getURL('roundPortrait') }}" />
-          </div>
-        </div>
-      </div>
+    <div class="mt5">
+      <div class="container">
 
-      <div class="w-100 w-60-ns fl-ns">
-        <div class="speechmarks">
-          <div class="w-100 lead mt0 fl db">
-              {{ entry.partnershipQuote }}
-          </div>
-
-          <div class="relative w-100 mb4 fl">
-            <div class="w-100 w-50-ns fl h4 v-mid">
-              <span class="v-mid dib h-100"></span>
-              <div class="v-mid dib">
-                <div class="lh-solid">{{ entry.partnershipQuoteName }}</div>
-                <div class="caps-small-f">{{ entry.partnershipQuoteJobRole }}</div>
-              </div>
+        <div class="w-100 w-60-ns m-auto pv5 border-top-grey border-bottom-grey overflow-hidden">
+          <div class="w-100 tc">
+            <div class="quoteBlock-photo mb4 roundPhoto-100 roundPhoto-200-ns dib">
+              {% set quotePhoto = entry.partnershipQuotePhoto.first() %}
+              <img src="{{ quotePhoto.getURL('roundPortrait') }}" />
             </div>
-            <div class="w-100 w-50-ns fl border-left-grey tc h4 v-mid">
-              {% set logo = entry.partnershipLogo.first() %}
-              <span class="v-mid dib h-100"></span>
-              <img class="v-mid" width="220" src="{{ logo.getURL() }}" />
+          </div>
+          <div class="speechmarks">
+            <div class="w-100 mt0 fl db">
+                <div class="lead-xl">
+                  {{ entry.partnershipQuote }}
+                </div>
+                <div class="lh-solid f4 mt3">{{ entry.partnershipQuoteName }}</div>
+                <div class="caps-small-f">{{ entry.partnershipQuoteJobRole }}</div>
             </div>
           </div>
         </div>
