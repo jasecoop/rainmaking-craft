@@ -10,7 +10,7 @@ var jsFolderName     = 'js';
 var cssFolderName    = 'css';
 
 // Glob patterns by file type
-var cssPattern         = '/**/*.css';
+var cssPattern         = '/**/*.scss';
 var jsPattern          = '/main.js';
 var imagePattern       = '/**/*.+(jpg|JPG|jpeg|JPEG|png|PNG|svg|SVG|gif|GIF|webp|WEBP|tif|TIF|mp4)';
 var fontPatterns       = '/**.*';
@@ -64,7 +64,8 @@ var gulp = require('gulp'),
     debug = require('gulp-debug'),
     concat = require('gulp-concat'),
     size = require('gulp-size'),
-    run = require('gulp-run');
+    run = require('gulp-run'),
+    sass = require('gulp-sass');
 
 
 
@@ -78,6 +79,7 @@ gulp.task('build:styles', function() {
       at2x(),
   ];
   gulp.src(srcCssFilesGlob)
+    .pipe(sass().on('error', sass.logError))
     .pipe(postcss(processors))
     .pipe(gulp.dest(distCssFiles))
     .pipe(browserSync.stream())

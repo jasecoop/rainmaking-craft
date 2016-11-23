@@ -1,11 +1,8 @@
 .a-plain {
-  text-decoration: none;
-}
+  text-decoration: none; }
 
 .pointer-none {
-  pointer-events: none;
-}
+  pointer-events: none; }
 
 .pointer-auto {
-  pointer-events: auto;
-}
+  pointer-events: auto; }

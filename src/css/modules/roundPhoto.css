@@ -19,6 +19,15 @@
   height: 200px;
 }
 
+.quoteBlock-border {
+  border: solid 15px #fff;
+}
+
+.quoteBlock-border-teal   { border-color: #CDE8EC; }
+.quoteBlock-border-red    { border-color: #F5D8D3; }
+.quoteBlock-border-blue   { border-color: #DEEDFA; }
+.quoteBlock-border-green  { border-color: #E0ECC1;  }
+.quoteBlock-border-orange { border-color: #FEE6CB; }
 
 .roundPhoto-400 {
   width: 400px;

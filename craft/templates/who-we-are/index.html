@@ -5,49 +5,43 @@
 {% block content %}
   <div class="js-ajax-wrapper">
 
-    <div class="pageContainer bg-gradient-grey pb5 overflow-hidden">
+    <div class="pageContainer-xl bg-gradient-grey pb5 overflow-hidden">
 
       <div class="container">
-        <div class="w-60-ns mb5">
-          <div class="lead">
+        <div class="w-80-ns mb5">
+          <div class="lead-xl">
             {{ entry.pageIntroduction }}
           </div>
         </div>
 
-        <div class="w-100 grid-pad-2-ns">
+        <div class="w-100">
           {% for entry in craft.entries.section('founders') %}
             {% set colour = cycle(['teal', 'red', 'blue', 'green', 'orange'], loop.index0) %}
             {% set img = entry.founderPhoto.first() %}
-            <div class="founder w-100 w-50-ns relative h-auto h9-ns mb3 mt3 overflow-hidden fl overflow-hidden">
-              <div class="w-100 h-100 relative border-white border-{{ colour }}-hover">
-
-                <div class="relative absolute-ns w-100 h8 h-100-ns top-0 left-0 z-0 cover" style="background-image: url({{ img.getUrl() }})">
-                  <div class="absolute w-100 h-100 top-0 left-0 bg-trans-to-black z-1"></div>
+            <div class="w-100 mb3 mt3 overflow-hidden flex-ns">
+                <div class="w-40-ns w-100 fl tc self-center">
+                  <div class="quoteBlock-photo quoteBlock-border quoteBlock-border-{{colour}} mt3 mb2 mb4-ns roundPhoto-300 roundPhoto-300-ns dib">
+                    <img src="{{ img.getURL('roundPortrait') }}" />
+                  </div>
                 </div>
-                <div class="absolute w-100 dn db-ns pa4 f3 bottom-0 left-0 z-2 white">
-                  {{ entry.title }}
-                </div>
-                <div class="founder__about animated fadeInUp relative absolute-ns w-100 h-100-ns top-0 left-0 bg-{{colour}} white z-1 pa4">
+                <div class="fl pl5-ns w-60-ns w-100 self-center">
                   <div>
-                    <div class="db dn-ns f2">
+                    <div class="f2 rm-{{colour}} tc tl-ns">
                       {{ entry.title }}
                     </div>
                     {{ entry.body }}
                   </div>
                   {% if entry.twitterUrl %}
-                    <a class="icon mr2" href="{{ entry.twitterUrl }}" target="_blank" >
-                      <img src="dist/images/icon-twitter.png" data-rjs="3" />
-                    </a>
+                    <a class="icon mr2" href="{{ entry.twitterUrl }}" target="_blank"><img src="dist/images/icon-twitter.png" data-rjs="2"/></a>
                   {% endif %}
                   {% if entry.linkedinUrl %}
                     <a class="icon" href="{{ entry.linkedinUrl }}" target="_blank">
-                      <img src="dist/images/icon-linkedin.png" data-rjs="3" />
+                      <img src="dist/images/icon-linkedin.png" data-rjs="2" />
                     </a>
                   {% endif %}
                 </div>
 
               </div>
-            </div>
           {% endfor %}
         </div>
 
