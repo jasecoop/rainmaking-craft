@@ -3,12 +3,18 @@
 {% set founders = craft.entries.section('founders') %}
 
 {% block content %}
-  <div class="js-ajax-wrapper">
+  <div class="js-ajax-wrapper pageContainer bg-gradient-grey">
 
-    <div class="pageContainer-xl bg-gradient-grey pb5 overflow-hidden">
-
+      {% set img = entry.headerImg.first() %}
+      <div class="w-100 h9 cover relative overflow-hidden" style="background-image: url( '{{img.getUrl('slashHeader') }}' );">
+        <div class="container relative h-100 z-3 flex">
+          <h1 class="fxl self-end m-auto w-70-ns pb3">{{ entry.pageTitle }}</h1>
+        </div>
+        <div class="absolute top-0 w-100 h-100 left-0 bg-trans-to-white z-2"></div>
+        <div class="absolute top-0 w-100 h-100 left-0 bg-2x2 z-0 z-1"></div>
+      </div>
       <div class="container">
-        <div class="w-80-ns mb5">
+        <div class="w-70-ns m-auto pb5">
           <div class="lead-xl">
             {{ entry.pageIntroduction }}
           </div>
@@ -18,28 +24,33 @@
           {% for entry in craft.entries.section('founders') %}
             {% set colour = cycle(['teal', 'red', 'blue', 'green', 'orange'], loop.index0) %}
             {% set img = entry.founderPhoto.first() %}
-            <div class="w-100 mb3 mt3 overflow-hidden flex-ns">
-                <div class="w-40-ns w-100 fl tc self-center">
-                  <div class="quoteBlock-photo quoteBlock-border quoteBlock-border-{{colour}} mt3 mb2 mb4-ns roundPhoto-300 roundPhoto-300-ns dib">
-                    <img src="{{ img.getURL('roundPortrait') }}" />
-                  </div>
+            <div class="w-100 mb2 mt2 overflow-hidden flex-ns">
+
+              <div class="w-40-ns w-100 tc tl-ns self-center">
+                <div class="quoteBlock-photo quoteBlock-border quoteBlock-border-{{colour}} mt3 mb2 mb4-ns roundPhoto-300 roundPhoto-300-ns dib">
+                  <img src="{{ img.getURL('roundPortrait') }}" />
                 </div>
-                <div class="fl pl5-ns w-60-ns w-100 self-center">
-                  <div>
-                    <div class="f2 rm-{{colour}} tc tl-ns">
-                      {{ entry.title }}
-                    </div>
-                    {{ entry.body }}
+              </div>
+
+              <div class="w-60-ns w-100 self-center">
+                <div>
+                  {% if loop.first %}
+                    <h1 class="caps-small-f">OUR PARTNERS</h1>
+                  {% endif %}
+                  <div class="f2 rm-{{colour}} tl tl-ns">
+                    {{ entry.title }}
                   </div>
-                  {% if entry.twitterUrl %}
-                    <a class="icon mr2" href="{{ entry.twitterUrl }}" target="_blank"><img src="dist/images/icon-twitter.png" data-rjs="2"/></a>
-                  {% endif %}
-                  {% if entry.linkedinUrl %}
-                    <a class="icon" href="{{ entry.linkedinUrl }}" target="_blank">
-                      <img src="dist/images/icon-linkedin.png" data-rjs="2" />
-                    </a>
-                  {% endif %}
+                  {{ entry.body }}
                 </div>
+                {% if entry.twitterUrl %}
+                  <a class="icon mr2" href="{{ entry.twitterUrl }}" target="_blank"><img src="dist/images/icon-twitter.png" data-rjs="2"/></a>
+                {% endif %}
+                {% if entry.linkedinUrl %}
+                  <a class="icon" href="{{ entry.linkedinUrl }}" target="_blank">
+                    <img src="dist/images/icon-linkedin.png" data-rjs="2" />
+                  </a>
+                {% endif %}
+              </div>
 
               </div>
           {% endfor %}
@@ -48,6 +59,5 @@
       </div>
 
     </div>
-  </div>
 {% include '_includes/_footer.html' %}
 {% endblock %}
