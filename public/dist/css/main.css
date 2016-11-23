@@ -10428,6 +10428,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b93a2', end
 }
 
 
+.btn-continue-100 {
+  background-color: #86BFEF;
+  background-image: url('/dist/images/arrow-white-right.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+
 .btn-teal   { background-color: #69C7D3; }
 
 
