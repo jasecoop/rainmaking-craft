@@ -3,14 +3,26 @@
 {% set copy = craft.entries.section('eventsPageCopy').first() %}
 {% set events = craft.entries.section('events').order('timeAndDate') %}
 {% block content %}
-<div class="js-ajax-wrapper">
+<div class="js-ajax-wrapper pageContainer overflow-hidden">
 
-  <div class="pageContainer bg-grey overflow-hidden">
-
-    <div class="container">
-      <div class="w-60-ns mb5 lead">
-        <h1 class="fxl">{{ copy.title }}</h1>
+    {% set img = copy.headerImg.first() %}
+    <div class="w-100 h8 cover relative overflow-hidden" style="background-image: url( '{{img.getUrl('slashHeader') }}' );">
+      <div class="container relative h-100 z-3 flex">
+        <h1 class="fxl self-end w-70-ns mb0">{{ copy.pageTitle }}</h1>
       </div>
+      <div class="absolute top-0 w-100 h-100 left-0 bg-trans-to-white z-2"></div>
+      <div class="absolute top-0 w-100 h-100 left-0 bg-2x2 z-0 z-1"></div>
+    </div>
+    <div class="container">
+      <div class="w-70-ns pb5">
+        <div class="lead-xl">
+          {{ copy.pageIntroduction }}
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-gradient-grey">
+    <div class="container">
 
       {% for entry in events if entry.timeAndDate > now %}
         {% set img = entry.headerImg.first() %}
@@ -31,6 +43,6 @@
       {% include '_includes/_pagination.html' with { 'pageInfo' : pageInfo } %}
     </div>
   </div>
-</div>
+  </div>
 {% include '_includes/_footer.html' %}
 {% endblock %}

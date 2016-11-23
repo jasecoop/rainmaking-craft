@@ -1,11 +1,9 @@
 .btn-menu {
-  width: 60px;
-  height: 60px;
-  background-image: url('/dist/images/menuToggleIcon.png') at-2x;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 80%;
   cursor: pointer;
+}
+
+.btn-menu:hover {
+  opacity: .5;
 }
 
 .btn-menu-close {

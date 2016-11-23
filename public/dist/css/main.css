@@ -7023,13 +7023,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   opacity: .5;
 }
 .btn-menu {
-  width: 60px;
-  height: 60px;
-  background-image: url('/dist/images/menuToggleIcon.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 80%;
   cursor: pointer;
+}
+.btn-menu:hover {
+  opacity: .5;
 }
 .btn-menu-close {
   background-image: url('/dist/images/menuToggleIconClose-white.png');
@@ -7853,12 +7850,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b93a2', end
   pointer-events: none; }
 .pointer-auto {
   pointer-events: auto; }
-@media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-  .btn-menu {
-    background-image: url('/dist/images/menuToggleIcon@2x.png');
-    background-size: 80%;
-  }
-}
 @media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .btn-menu-close {
     background-image: url('/dist/images/menuToggleIconClose-white@2x.png');
