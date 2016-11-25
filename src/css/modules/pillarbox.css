@@ -36,6 +36,11 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 }
 
+@media (--breakpoint-not-small) {
+.home-intro-text {
+  margin-top: -16px;
+}
+}
 
 #home-intro-text-main {
   -webkit-transition: all 500ms linear;

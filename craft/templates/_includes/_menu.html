@@ -2,46 +2,34 @@
   <div class="header overflow-hidden absolute w-100 left-0 z-4">
     <div class="container flex flex-row justify-end">
       <a class="menuToggle menuToggle-close btn-menu" href="">
-        <svg width="25px" height="60px" viewBox="0 0 20 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <defs></defs>
-            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
-                <g id="Menu" transform="translate(-963.000000, -40.000000)" stroke="#FFFFFF" stroke-width="2">
-                    <g id="close" transform="translate(965.000000, 42.000000)">
-                        <path d="M15.6666667,0.333333333 L0.633370288,15.3666293" id="Line"></path>
-                        <path d="M15.0332959,15.0332964 L0,0" id="Line-Copy"></path>
-                    </g>
-                </g>
-            </g>
-        </svg>
+        {% include '_includes/_svg_menuButtonClose.html' %}
       </a>
     </div>
   </div>
   <div class="container relative h-100">
     <div class="h-100 flex items-center relative">
-      <div class="w-100">
-        <div class="w-100 w-40-ns fl mb3">
+      <div class="w-100 flex items-center">
+        <div class="w-100 w-50-ns fl mb3 ">
           <div id="menu-pillars">
             <div><a class="pillar dib f2 fxxl-ns mb2-ns a-plain rm-text-2 rm-teal-hover" data-type="accelerators" href="/accelerator">Accelerators</a></div>
             <div><a class="pillar dib f2 fxxl-ns  mb2-ns a-plain rm-text-2 rm-red-hover" data-type="spaces" href="/spaces">Spaces</a></div>
-            <div><a class="pillar dib f2 fxxl-ns  mb2-ns a-plain rm-text-2 rm-blue-hover" data-type="companies" href="/companies">Startups</a></div>
-            <div><a id="partnershipsScroll" class="pillar dib f2 fxxl-ns mb2-ns a-plain rm-text-2 rm-green-hover" href="/partnerships">Partnerships</a></div>
+            <div><a class="pillar dib f2 fxxl-ns  mb2-ns a-plain rm-text-2 rm-blue-hover" data-type="companies" href="/startups">Startups</a></div>
+            <div><a class="pillar dib f2 fxxl-ns a-plain rm-text-2 rm-green-hover" href="/partnerships">Partnerships</a></div>
           </div>
         </div>
-        <div id="home-intro-text" class="w-100 w-50-ns fr-ns home-intro-text relative mt2 z-4 bl-ns b--white-30">
-          <div class="w-100 w-70-ns m-auto">
+        <div id="home-intro-text" class="w-100 w-50-ns fr-ns home-intro-text relative mt2 z-4">
+          <div class="w-100 w-50-ns pl5">
             <div><a class="white a-plain dib caps-small-f mb2 mb3-ns fade-menu"  href="/our-story">Our Story</a></div>
             <div><a class="white a-plain dib caps-small-f mb2 mb3-ns fade-menu"  href="/who-we-are">Who We Are</a></div>
             <div><a class="white a-plain dib caps-small-f mb3 mb3-ns fade-menu"  href="/blog">Blog</a></div>
             <div><a class="white a-plain dib caps-small-f mb3 mb3-ns fade-menu"  href="/events">Events</a></div>
             <div><a class="white a-plain dib caps-small-f mb3 mb3-ns fade-menu"  href="/contact">Contact</a></div>
             <div>
-              {% include '_includes/_socials.html' %}
+            {% include '_includes/_socials.html' with { 'colour' : 'white' } %}
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="absolute top-0 left-0 w-100 h-100 z-3 bg-2x2-dark pointer-none"></div>
-
 </div>

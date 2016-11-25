@@ -137,6 +137,10 @@ a {
   color: #61A0D6;
 }
 
+a:hover {
+  color: #5188B6;
+}
+
 @media (--breakpoint-not-small) {
   .fxxl-ns {
     font-family: var(--futura-font-family);

@@ -14,7 +14,7 @@
 }
 
 .btn:hover {
-  /*background: var(--rm-blue-dark);*/
+  background-color: #8698A0;
 }
 
 .btn-small {
@@ -33,11 +33,11 @@
 }
 
 .btn-continue {
-  background-color: #86BFEF;
+  background-color: #68767C;
   background-image: url('/dist/images/arrow-white-right.svg');
   background-position: center;
   background-repeat: no-repeat;
-  width: 68px;
+  min-width: 68px;
 }
 
 .btn-continue-100 {

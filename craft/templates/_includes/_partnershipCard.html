@@ -7,8 +7,12 @@
           {{ entry.title }}
         </a>
       </div>
-      <div>
+      <div class="flex flex-row justify-between">
         <a href="{{ entry.url }}" class="btn btn-continue btn-{{ colour }} pointer-auto"></a>
+        <div class="self-center">
+          {% set logo = entry.partnershipLogo.first() %}
+          <img class="v-mid pv5 pv0-ns" width="150" src="{{ logo.getURL() }}" />
+        </div>
       </div>
     </div>
     <div class="bg-mesh"></div>

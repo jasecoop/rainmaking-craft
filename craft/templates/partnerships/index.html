@@ -22,8 +22,8 @@
           <div class="w-100 w-70-ns m-auto pa4 bg-white intro-hover-text bt bw2 border-green">
             <h1 class="f2">{{ copy.title }}</h1>
             {{ copy.pageIntroduction }}
-            <div class="mt3">
-              <a id="arrowDown" class="dn db-ns"><img src="dist/images/arrow-down.svg" /></a>
+            <div class="mt3 tc">
+              <a id="arrowDown" class="dn db-ns pointer"><img src="dist/images/arrow-down.svg" /></a>
             </div>
           </div>
         </div>
@@ -31,6 +31,14 @@
     </div>
 
     <div class="bg-grey relative z-4" id="belowFold">
+
+      <div class="w-70-ns m-auto pb5 pt5">
+        <div class="lead-xl">
+          <h1 class="f2 ma0">{{ copy.secondaryHeader }}</h1>
+          {{ copy.secondaryBody }}
+        </div>
+      </div>
+
       <div class="container bg-grey overflow-hidden grid-pad-2x1 pt4">
         {% for entry in craft.entries.section('partnerships').find() %}
           {% set colour = cycle(['teal', 'red', 'blue', 'green', 'orange'], loop.index0) %}

@@ -1,6 +1,7 @@
 {% extends (craft.request.isAjax and not craft.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
 {% set title = "Our Story" %}
 {% set partnerships = craft.entries.section('partnerships') %}
+{% set startups = craft.entries.section('rainmakingstartups') %}
 
 {% block content %}
   <div class="js-ajax-wrapper pageContainer">
@@ -23,6 +24,30 @@
       </div>
 
       {% include '_includes/_content.html' with { 'entry' : entry } %}
+
+      <div class="w-100 pt5 textBlock fl">
+        <div class="container">
+          <div class="w-100 w-60-ns m-auto">
+            <h2 class="f2">Our startups</h2>
+            <div>
+              Creating companies and bringing them to market is our first love. Together, we’ve built over 25 of our own startups, achieved 5 notable exits and participated in more than 350 investments. Here are just a few active companies that we have built.
+            </div>
+          </div>
+          <div class="w-100">
+            {% for startup in startups %}
+              <div class="w-50 w-33-ns fl mb2 v-mid mb4 pa4">
+                <div class="h4 flex">
+                  {% set image = startup.image.first() %}
+                  <img class="v-mid self-center" src="{{ image.getUrl()}}">
+                </div>
+                <div class="tc">
+                  {{ startup.body }}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
 
     </div>
 

@@ -6,3 +6,6 @@
 
 .pointer-auto {
   pointer-events: auto; }
+
+.hover-50:hover {
+  opacity: 50%; }

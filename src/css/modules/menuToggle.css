@@ -38,3 +38,7 @@
   align-items: center;
   height: 100%;
 }
+
+.menu a:hover {
+  opacity: .5;
+}

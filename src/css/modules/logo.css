@@ -17,6 +17,10 @@
   cursor: pointer;
 }
 
+a.logo:hover {
+  opacity: .5;
+}
+
 .logo-menu {
   line-height: 60px;
   margin: 0;

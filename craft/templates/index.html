@@ -29,18 +29,15 @@
   <div id="intro-home" class="container-size w-100">
     <div class="w-100 w-40-ns fl mb3 mt4 mt0-ns">
       <div id="intro-links">
-        <div><a class="pillar dib f2 fxxl-ns mb2-ns a-plain rm-text-2 rm-teal-hover" data-type="accelerators" href="/accelerator">Accelerators</a></div>
-        <div><a class="pillar dib f2 fxxl-ns mb2-ns a-plain rm-text-2 rm-red-hover" data-type="spaces" href="/spaces">Spaces</a></div>
-        <div><a class="pillar dib f2 fxxl-ns mb2-ns a-plain rm-text-2 rm-blue-hover" data-type="companies" href="/companies">Startups</a></div>
-        <div><a id="partnershipsScroll" class="pillar dib f2 fxxl-ns mb2-ns a-plain rm-text-2 rm-green-hover" data-type="partnerships" href="/partnerships">Partnerships</a></div>
+        <div><a class="pillar dib f2 fxxl-ns mb2-ns a-plain rm-text rm-teal-hover" data-type="accelerators" href="/accelerator">Accelerators</a></div>
+        <div><a class="pillar dib f2 fxxl-ns mb2-ns a-plain rm-text rm-red-hover" data-type="spaces" href="/coworking">Co-working</a></div>
+        <div><a class="pillar dib f2 fxxl-ns mb2-ns a-plain rm-text rm-blue-hover" data-type="companies" href="/startups">Startups</a></div>
+        <div><a id="partnershipsScroll" class="pillar dib f2 fxxl-ns mb2-ns a-plain rm-text rm-green-hover" data-type="partnerships" href="/partnerships">Partnerships</a></div>
       </div>
     </div>
     <div id="home-intro-text" class="w-100 w-50-ns fl fr-ns home-intro-text relative z-4 mt4 mt0-ns">
       <div class="w-90-ns m-auto mt5 mt0-ns pa4-ns bg-white">
-        <h2 class="lead">{{ entry.intro}}</h2>
-        <div class="mt3">
-          <a id="arrowDown"><img src="dist/images/arrow-down.svg" /></a>
-        </div>
+        <h2 class="lead-xl ma0">{{ entry.intro}}</h2>
       </div>
     </div>
   </div>
@@ -49,7 +46,7 @@
   <div class="rain-content left-0 rain rain-mousemove"></div>
 </div>
 
-<div class="fl w-100 pt0 bg-gradient-grey pointer" id="belowFold">
+<div class="fl w-100 pt0 bg-gradient-grey" id="belowFold">
   <div class="container">
     <div class="w-100 w-70-ns mb5">
       <h2 class="f1">{{ entry.partnershipsHeadline }}</h2>
@@ -74,8 +71,8 @@
   </div>
 </div>
 
-<div class="pv4 pv5-ns fl w-100 bg-white">
-  <div class="container">
+<div class="pv4 pv5-ns fl w-100 bg-gradient-grey-to-white relative">
+  <div class="container z-1">
     <div class="w-100 overflow-hidden">
 
       {% for image in entry.partnershipLogos %}
@@ -86,7 +83,7 @@
           quality: 100,
           position: 'center'
       } %}
-        <div class="w-50 w-25-ns tc fl mb2 v-mid">
+        <div class="w-50 w-25-ns tc fl mb2 v-mid h5">
           <img class="v-mid" src="{{ image.getUrl()}}">
         </div>
       {% endfor %}
@@ -132,7 +129,7 @@
   <div class="w-100 w-60-ns m-auto z-4 relative fxl tc">
     {{ outro.body }}
   </div>
-  <a href="" class="contactModal-btn btn mt3 relative z-3">{{ outro.callToAction }}</a>
+  <a href="" class="contactModal-btn btn mt3 relative z-3 btn-continue"></a>
   <div class="absolute w-100 h-100 bg-2x2 z-2 top-0 left-0"></div>
   <div class="rain-content left-0"></div>
 </div>
