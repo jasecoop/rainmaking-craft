@@ -1,8 +1,7 @@
 {% extends (craft.request.isAjax and not craft.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
 {% set title = "Blog" %}
-{% set posts = craft.entries.section('blog') %}
+{% set posts = craft.entries.section('blog').limit(7).order('postDate desc') %}
 {% set copy = craft.entries.section('blogIndexCopy').first() %}
-{% paginate craft.entries.section('blog').limit(7) as pageInfo, pageEntries %}
 
 {% block content %}
 <div class="js-ajax-wrapper pageContainer bg-grey">
@@ -16,27 +15,43 @@
     <div class="absolute top-0 w-100 h-100 left-0 bg-2x2 z-0 z-1"></div>
   </div>
   <div class="container">
-    <div class="w-70-ns pb5">
+    <div class="w-70-ns">
       <div class="lead-xl">
         {{ copy.pageIntroduction }}
       </div>
     </div>
   </div>
 
-  <div class="container">
-    <div class="flex posts bg-grey">
-      {% for entry in pageEntries %}
-        {% if loop.first %}
-          {% set colour = cycle(['teal', 'red', 'blue', 'green', 'orange'], loop.index0) %}
-          {% include '_includes/_blogPostFeaturedCard.html' with { 'entry' : entry, 'color' : colour } %}
-        {% else %}
-          {% set colour = cycle(['teal', 'red', 'blue', 'green', 'orange'], loop.index0) %}
-          {% include '_includes/_blogPostCard.html' with { 'entry' : entry, 'color' : colour } %}
-        {% endif %}
-      {% endfor %}
+  <div class="container flex">
 
-      {% include '_includes/_pagination.html' with { 'pageInfo' : pageInfo } %}
+    <div class="flex posts mb6 blogPostsLayout" id="postContainer">
+
+      {% paginate posts as entriesOnPage %}
+
+        {% for entry in entriesOnPage %}
+
+          {% if loop.first %}
+            {% set colour = cycle(['teal', 'red', 'blue', 'green', 'orange'], loop.index0) %}
+            {% include '_includes/_blogPostFeaturedCard.html' with { 'entry' : entry, 'color' : colour } %}
+          {% else %}
+            {% set colour = cycle(['teal', 'red', 'blue', 'green', 'orange'], loop.index0) %}
+            {% include '_includes/_blogPostCard.html' with { 'entry' : entry, 'color' : colour } %}
+          {% endif %}
+
+        {% endfor %}
+
+        {{ paginate|infinitescroll(containerSelector="#postContainer", itemSelector=".post", loadingImage="dist/images/loading_grey2.gif", loadingMessage="Loading more articles") }}
+
+      {% endpaginate %}
+
     </div>
+
+    <div class="fr pagination">
+      <!-- {% if pageInfo.nextUrl %} -->
+        <a class="a-plain f2 rm-text-2 rm-text-hover" href="{{ pageInfo.nextUrl }}"><span>Next Page</span></a>
+      <!-- {% endif %} -->
+    </div>
+
   </div>
 </div>
 
