@@ -29,9 +29,10 @@
               <div class="mb4">
                 <div class="caps-small-f">Where</div>
                 <div class="f4 mb0">{{ entry.eventLocation }}</div>
+                <a class="caps-small-f rm-text-2" href="{{ entry.eventGoogleMapsUrl }}">Google Maps</a>
               </div>
             </div>
-            <a href="{{ eventbriteUrl }}" class="w-100 btn btn-nopad">Get tickets</a>
+            <a href="{{ entry.eventbriteUrl }}" class="w-100 btn btn-nopad">Get tickets</a>
           </div>
         </div>
       </div>

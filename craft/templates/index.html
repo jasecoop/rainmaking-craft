@@ -60,12 +60,10 @@
 <div class="bg-grey">
   <div class="container overflow-hidden">
     <div class="partnershipTestimonials w-100 fl grid-pad-1">
-      {% for entry in craft.entries.section('partnerships').find() %}
-        {% if entry.featurePartnershipOnHomePage %}
+      {% for entry in craft.entries.section('partnerships').featurePartnershipOnHomePage('1').find() %}
           {% set colour = cycle(['teal', 'red', 'blue', 'green', 'orange'], loop.index0) %}
-          {% set align = cycle(['right', 'left'], loop.index0) %}
+          {% set align = cycle(['right', 'left'], loop.index) %}
           {% include '_includes/_partnershipCardLarge.html' with { 'entry' : entry, 'color' : colour, 'align': align } %}
-        {% endif %}
       {% endfor %}
     </div>
   </div>
@@ -102,18 +100,10 @@
     </div>
 
     <div class="w-100 w-50-ns fl-ns mt4">
-      <div class="fl mt2">
-          {% for block in founderQuote.textBlock %}
-            {% if block.type == "header2" %}
-              <h2 class="f2 speechmarks">
-                {{ block.headerSmall }}
-              </h2>
-            {% elseif block.type == "body" %}
-              <div>
-                {{ block.bodyText }}
-              </div>
-            {% endif %}
-          {% endfor %}
+      <div class="fl mt2 speechmarks">
+          <h2 class="lead-xl mt0">
+            {{ entry.outroQuote }}
+          </h2>
 
           <div class="mt3 lh-solid">{{ entry.outroQuoteFounderName }}</div>
           <div class="caps-small-f">Rainmaking Founder</div>

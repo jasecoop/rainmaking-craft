@@ -6940,8 +6940,16 @@ a:hover {
 .bg-3x3 {
   background-image: url('/dist/images/bg-3x3.png');
 }
-.bg-2x2 {
+/*.bg-2x2 {
   background-image: url('/dist/images/bg-2x2.png');
+}*/
+@media
+not screen and (-webkit-min-device-pixel-ratio: 2), not screen and (   min--moz-device-pixel-ratio: 2), not screen and (     -o-min-device-pixel-ratio: 2/1), not screen and (        min-device-pixel-ratio: 2), not screen and (                min-resolution: 192dpi), not screen and (                min-resolution: 2dppx) {
+
+  .bg-2x2 {
+    background-image: url('/dist/images/bg-1x1.png');
+  }
+
 }
 .bg-2x2-dark {
   background-image: url('/dist/images/bg-2x2-dark.png');
@@ -7671,8 +7679,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b93a2', end
   display: flex;
   flex-flow: row wrap;
 }
-.posts > div {
-  /*flex: 3;*/
+.shadowhover {
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+.shadowhover:hover {
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
 }
 .post:hover .post__img {
   background-size: 105%;
@@ -7767,6 +7782,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b93a2', end
 }
 .btn:hover {
   background-color: #8698A0;
+  color: #fff;
 }
 .btn-small {
   padding: 10px 20px;

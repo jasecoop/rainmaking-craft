@@ -1,6 +1,6 @@
 {% set locations = craft.entries.section('locations') %}
 
-<div class="bg-white z-5 relative footer w-100 ph5 pr2-m pt5 pb5 fl">
+<div class="bg-white z-5 relative footer w-100 ph5 pr2-m pt5 pb0 fl">
     <div class="w-100">
       <div class="tc">
         <a href="/">
@@ -9,9 +9,9 @@
       </div>
     </div>
 
-    <div class="w-100 pt4">
+    <div class="w-100 pb5 overflow-hidden">
       {% for entry in craft.entries.section('locations') %}
-        <div class="w-100 w-25-ns tc fl pt4">
+        <div class="w-100 w-25-ns tc fl pt5">
           <div class="caps-small-f lh-solid">{{ entry.title }}</div>
           <div class="text-small rm-text-2 ">{{ entry.address}}</div>
         </div>

@@ -3,8 +3,16 @@
   flex-flow: row wrap;
 }
 
-.posts > div {
-  /*flex: 3;*/
+.shadowhover {
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+.shadowhover:hover {
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .post:hover .post__img {

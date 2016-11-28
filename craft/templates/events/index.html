@@ -32,15 +32,14 @@
 
       {% endfor %}
 
-      <div class="tc caps-small-f">Previous events</div>
-      <div class="flex posts">
+      <div class="tc caps-small-f mt5">Previous events</div>
+      <div class="flex posts pb5">
         {% for entry in craft.entries.section('events') if entry.timeAndDate < now %}
           {% set colour = cycle(['teal', 'red', 'blue', 'green', 'orange'], loop.index0) %}
           {% include '_includes/_eventPostSmall.html' with { 'entry' : entry, 'color' : colour } %}
         {% endfor %}
       </div>
 
-      {% include '_includes/_pagination.html' with { 'pageInfo' : pageInfo } %}
     </div>
   </div>
   </div>
