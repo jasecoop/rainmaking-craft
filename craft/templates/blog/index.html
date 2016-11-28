@@ -5,32 +5,40 @@
 {% paginate craft.entries.section('blog').limit(7) as pageInfo, pageEntries %}
 
 {% block content %}
-<div class="js-ajax-wrapper">
+<div class="js-ajax-wrapper pageContainer bg-grey">
 
-  <div class="pageContainer bg-grey overflow-hidden">
-    <div class="container">
-      <div class="w-60-ns mb5 lead">
-        <h1 class="fxl">{{ copy.title }}</h1>
+  {% set img = copy.headerImg.first() %}
+  <div class="w-100 h8 cover relative overflow-hidden" style="background-image: url( '{{img.getUrl('slashHeader') }}' );">
+    <div class="container relative h-100 z-3 flex">
+      <h1 class="fxl self-end w-70-ns mb0">{{ copy.pageTitle }}</h1>
+    </div>
+    <div class="absolute top-0 w-100 h-100 left-0 bg-trans-to-grey z-2"></div>
+    <div class="absolute top-0 w-100 h-100 left-0 bg-2x2 z-0 z-1"></div>
+  </div>
+  <div class="container">
+    <div class="w-70-ns pb5">
+      <div class="lead-xl">
+        {{ copy.pageIntroduction }}
       </div>
+    </div>
+  </div>
 
-
-      <div class="flex posts bg-grey">
-        {% for entry in pageEntries %}
-          {% if loop.first %}
-            {% set colour = cycle(['teal', 'red', 'blue', 'green', 'orange'], loop.index0) %}
-            {% include '_includes/_blogPostFeaturedCard.html' with { 'entry' : entry, 'color' : colour } %}
-          {% else %}
-            {% set colour = cycle(['teal', 'red', 'blue', 'green', 'orange'], loop.index0) %}
-            {% include '_includes/_blogPostCard.html' with { 'entry' : entry, 'color' : colour } %}
-          {% endif %}
-        {% endfor %}
-
-      </div>
+  <div class="container">
+    <div class="flex posts bg-grey">
+      {% for entry in pageEntries %}
+        {% if loop.first %}
+          {% set colour = cycle(['teal', 'red', 'blue', 'green', 'orange'], loop.index0) %}
+          {% include '_includes/_blogPostFeaturedCard.html' with { 'entry' : entry, 'color' : colour } %}
+        {% else %}
+          {% set colour = cycle(['teal', 'red', 'blue', 'green', 'orange'], loop.index0) %}
+          {% include '_includes/_blogPostCard.html' with { 'entry' : entry, 'color' : colour } %}
+        {% endif %}
+      {% endfor %}
 
       {% include '_includes/_pagination.html' with { 'pageInfo' : pageInfo } %}
-
     </div>
   </div>
 </div>
+
 {% include '_includes/_footer.html' %}
 {% endblock %}

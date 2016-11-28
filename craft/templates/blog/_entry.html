@@ -8,7 +8,7 @@
 {% set backTo = 'blog' %}
 
 {% block content %}
-<div class="js-ajax-wrapper">
+<div class="js-ajax-wrapper pageContainer">
 
   {% set img = entry.headerImage.first() %}
   <div class="w-100 h9 cover relative overflow-hidden" style="background-image: url( '{{img.getUrl('slashHeader') }}' );">

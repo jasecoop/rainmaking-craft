@@ -5,8 +5,21 @@
       <div class="mb5">
         <a class="f2 fxl-ns mb5 a-plain rm-text rm-{{ colour }}-hover pointer-auto" href="{{ entry.url }}">{{ entry.title }}</a>
       </div>
-      <div class="w-100">
-        <a href="{{ entry.url }}" class="btn btn-continue btn-{{ colour }} pointer-auto"></a>
+      <div class="w-100 flex-ns justify-between">
+        <div class="w-100 w-auto-ns flex items-center">
+          <div>
+            <span class="roundPhoto roundPhoto-80 dib ba b--white bw2">
+                {% set avatar = entry.author.image.first() %}
+                <img src="{{ avatar.getUrl() }}" />
+            </span>
+          </div>
+          <div class="ml3 caps-small-f">
+            By {{ entry.author.firstName }} {{ entry.author.lastName }}
+          </div>
+        </div>
+        <div class="w-100 w-auto-ns flex items-center">
+          <a href="{{ entry.url }}" class="w-100 w-auto-ns btn btn-continue btn-{{ colour }} pointer-auto"></a>
+        </div>
       </div>
     </div>
   </div>

@@ -62,10 +62,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 
 .bg-trans-to-grey {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f2f5f6+0,f2f5f6+100&0+0,1+100 */
-  background: -moz-linear-gradient(top,  rgba(242,245,246,0) 0%, #EBEDF0 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  rgba(242,245,246,0) 0%,#EBEDF0 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  rgba(242,245,246,0) 0%,#EBEDF0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00f2f5f6', endColorstr='#EBEDF0',GradientType=0 ); /* IE6-9 */
+  background: -moz-linear-gradient(top,  rgba(242,245,246,0) 0%, #F2F5F6 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(242,245,246,0) 0%,#F2F5F6 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(242,245,246,0) 0%,#F2F5F6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00f2f5f6', endColorstr='#F2F5F6',GradientType=0 ); /* IE6-9 */
 }
 
 .bg-trans-to-black {

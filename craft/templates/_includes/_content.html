@@ -53,7 +53,7 @@
 
   {% elseif block.type == "imageBlock" %}
 
-      <div class="gallery w-100 fl">
+      <div class="gallery w-100 fl pt5">
         {% for img in block.images %}
           <div style="background-image: url('{{ img.getUrl() }}')"></div>
         {% endfor %}
