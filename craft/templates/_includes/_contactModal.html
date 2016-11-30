@@ -1,6 +1,10 @@
 <div class="contactModal fixed top-0 left-0 right-0 bottom-0 w-100 h-100 z-999 bg-dark overflow-y-scroll dn">
-  <div class="header pa3 ph4 overflow-hidden absolute w-100 left-0">
-    <a class="contactClose btn-menu btn-menu-close fr db rm-grey-bg" href=""></a>
+  <div class="header overflow-hidden absolute w-100 left-0 z-4">
+    <div class="container flex flex-row justify-end">
+      <a class="contactClose btn-menu" href="">
+        {% include '_includes/_svg_menuButtonClose.html' %}
+      </a>
+    </div>
   </div>
   <div class="w-100 ph4 w-60-ns m-auto pt5">
     <h2 class="f1 tl white">Get in touch</h2>
