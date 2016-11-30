@@ -6712,6 +6712,20 @@ body, html, main {
     top: 0;
     margin-top: 80px;
   }
+
+  .stickyAside-bottom {
+    position: absolute;
+  }
+
+  .stickyAside {
+    -moz-transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  .blogpost .stickyAside-bottom {
+    bottom: 420px !important;
+  }
 }
 @font-face {
   font-family: 'Futura';
@@ -7689,8 +7703,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b93a2', end
 .shadowhover:hover {
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
 }
-.post:hover .post__img {
-  background-size: 105%;
+.post__img:hover {
+  background-size: 120%;
 }
 .post:hover .post__gradient  {
   background-size: 205%;
@@ -7699,7 +7713,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b93a2', end
   display: block;
   width: 100%;
   height: 200px;
-  background-size: 110%;
+  background-size: 130%;
   background-position: center;
   background-repeat: no-repeat;
   cursor: pointer;
@@ -7780,10 +7794,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b93a2', end
   padding: 2rem 2rem;
   outline: none;
 }
-.btn:hover {
-  background-color: #8698A0;
-  color: #fff;
-}
 .btn-small {
   padding: 10px 20px;
 }
@@ -7815,6 +7825,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b93a2', end
 .btn-blue   { background-color: #86BFEF; }
 .btn-green  { background-color: #83B309;  }
 .btn-orange { background-color: #F99B30; }
+.btn-teal:hover   { background-color: #58A8B2 !important; }
+.btn-red:hover     { background-color: #E9725A !important; }
+.btn-blue:hover    { background-color: #66A2D4 !important; }
+.btn-green:hover   { background-color: #6D9509 !important;  }
+.btn-orange:hover  { background-color: #D57E1A !important; }
+.btn:hover {
+  background-color: #8698A0;
+  color: #fff;
+}
 .icon {
   opacity: .6;
 }
@@ -7913,6 +7932,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b93a2', end
   width: 100%;
   text-align: center;
 }
+.pagination a {
+  font-family: Futura, 'avenir next', avenir, helvetica, 'helvetica neue', sans-serif;
+  font-weight: 200;
+  line-height: 2rem;
+  float: right;
+  text-decoration: none;
+  color: #68767C;
+}
 .a-plain {
   text-decoration: none; }
 .pointer-none {
@@ -7921,6 +7948,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b93a2', end
   pointer-events: auto; }
 .hover-50:hover {
   opacity: 50%; }
+a {
+  cursor: pointer; }
 @media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .btn-menu-close {
     background-image: url('/dist/images/menuToggleIconClose-white@2x.png');

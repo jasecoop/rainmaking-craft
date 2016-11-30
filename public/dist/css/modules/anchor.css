@@ -9,3 +9,6 @@
 
 .hover-50:hover {
   opacity: 50%; }
+
+a {
+  cursor: pointer; }

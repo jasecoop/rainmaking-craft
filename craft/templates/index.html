@@ -49,8 +49,8 @@
 <div class="fl w-100 pt0 bg-gradient-grey" id="belowFold">
   <div class="container">
     <div class="w-100 w-70-ns mb5">
-      <h2 class="f1">{{ entry.partnershipsHeadline }}</h2>
-      <div class="lead rm-text-2 mr5-ns">
+      <h2 class="f1 mb1">{{ entry.partnershipsHeadline }}</h2>
+      <div class="lead-xl rm-text-2 mr5-ns">
         {{ entry.secondaryIntroduction }}
       </div>
     </div>
@@ -62,14 +62,14 @@
     <div class="partnershipTestimonials w-100 fl grid-pad-1">
       {% for entry in craft.entries.section('partnerships').featurePartnershipOnHomePage('1').find() %}
           {% set colour = cycle(['teal', 'red', 'blue', 'green', 'orange'], loop.index0) %}
-          {% set align = cycle(['right', 'left'], loop.index) %}
+          {% set align = cycle(['left', 'right'], loop.index) %}
           {% include '_includes/_partnershipCardLarge.html' with { 'entry' : entry, 'color' : colour, 'align': align } %}
       {% endfor %}
     </div>
   </div>
 </div>
 
-<div class="pv4 pv5-ns fl w-100 bg-gradient-grey-to-white relative">
+<div class="pv4 fl w-100 bg-gradient-grey-to-white relative">
   <div class="container z-1">
     <div class="w-100 overflow-hidden">
 
@@ -81,7 +81,7 @@
           quality: 100,
           position: 'center'
       } %}
-        <div class="w-50 w-25-ns tc fl mb2 v-mid h5">
+        <div class="w-50 w-25-ns tc fl mb0 v-mid h5">
           <img class="v-mid" src="{{ image.getUrl()}}">
         </div>
       {% endfor %}
@@ -89,17 +89,17 @@
   </div>
 </div>
 
-<div class="pv4 pv5-ns fl w-100 bg-white">
+<div class="pv4 pv4-ns fl w-100 bg-white">
   <div class="container overflow-hidden">
 
     <div class="w-100 w-50-ns tc fr-ns">
-      <div class="roundPhoto roundPhoto-400 dib">
+      <div class="quoteBlock-border quoteBlock-border-blue roundPhoto roundPhoto-300 dib">
         {% set outroImg = entry.outroQuotePhoto.first() %}
         <img src="{{ outroImg.getUrl('roundPortrait')}}" />
       </div>
     </div>
 
-    <div class="w-100 w-50-ns fl-ns mt4">
+    <div class="w-100 w-50-ns fl-ns mt4 mt0-ns">
       <div class="fl mt2 speechmarks">
           <h2 class="lead-xl mt0">
             {{ entry.outroQuote }}
@@ -119,7 +119,7 @@
   <div class="w-100 w-60-ns m-auto z-4 relative fxl tc">
     {{ outro.body }}
   </div>
-  <a href="" class="contactModal-btn btn mt3 relative z-3 btn-continue"></a>
+  <a href="" class="contactModal-btn btn btn-orange mt3 relative z-3 btn-continue"></a>
   <div class="absolute w-100 h-100 bg-2x2 z-2 top-0 left-0"></div>
   <div class="rain-content left-0"></div>
 </div>

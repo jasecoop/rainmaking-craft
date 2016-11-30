@@ -13,11 +13,6 @@
   outline: none;
 }
 
-.btn:hover {
-  background-color: #8698A0;
-  color: #fff;
-}
-
 .btn-small {
   padding: 10px 20px;
 }
@@ -54,3 +49,14 @@
 .btn-blue   { background-color: #86BFEF; }
 .btn-green  { background-color: #83B309;  }
 .btn-orange { background-color: #F99B30; }
+
+.btn-teal:hover   { background-color: #58A8B2 !important; }
+.btn-red:hover     { background-color: #E9725A !important; }
+.btn-blue:hover    { background-color: #66A2D4 !important; }
+.btn-green:hover   { background-color: #6D9509 !important;  }
+.btn-orange:hover  { background-color: #D57E1A !important; }
+
+.btn:hover {
+  background-color: #8698A0;
+  color: #fff;
+}

@@ -21,7 +21,7 @@
 
   <div class="w-100 fl z-3 relative">
     <div class="container">
-      <div class="w-100 w-60-ns fl-ns content">
+      <div class="w-100 w-60-ns fl-ns content" id="content">
         {% set text = entry.post  %}
         {{ text|raw }}
       </div>
@@ -47,23 +47,23 @@
 
       </div>
     </div>
-    {% set bg = prev.headerImage.first() %}
-    <div class="w-100 pv6 cover relative tc fl mt5" style="background-image: url({{ bg.getUrl() }});">
-      <div class="w-80 z-2 relative m-auto">
-        <div class="caps-small-f">
-          Next article
+      {% set bg = prev.headerImage.first() %}
+      <div id="outro" class="w-100 pv6 cover relative tc fl mt5" style="background-image: url({{ bg.getUrl() }});">
+        <div class="w-80 z-2 relative m-auto">
+          <div class="caps-small-f">
+            Next article
+          </div>
+          <div class="f1">
+            {{ prev.title }}
+          </div>
+          <div>
+            <a class="btn mt4 btn-continue btn-{{ colour }} pointer-auto" href="{{ prev.url }}"></a>
+          </div>
         </div>
-        <div class="f1">
-          {{ prev.title }}
-        </div>
-        <div>
-          <a class="btn mt4 btn-continue btn-{{ colour }} pointer-auto" href="{{ prev.url }}"></a>
-        </div>
+        <div class="absolute top-0 left-0 w-100 h-100 z-0 bg-3x3"></div>
+        <div class="absolute top-0 left-0 w-100 h-100 z-1 bg-white-to-trans"></div>
       </div>
-      <div class="absolute top-0 left-0 w-100 h-100 z-0 bg-3x3"></div>
-      <div class="absolute top-0 left-0 w-100 h-100 z-1 bg-white-to-trans"></div>
     </div>
-  </div>
 </div>
 {% include '_includes/_footer.html' %}
 {% endblock %}

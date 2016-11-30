@@ -1,60 +1,58 @@
 {% extends "_layout" %}
 {% set title = "Partnerships" %}
 {% set backTo = 'partnerships' %}
-
+{% set colors = ['teal', 'red', 'blue', 'green', 'orange'] %}
+{% set color = shuffle(colors) | first %}
 {% block content %}
   <div class="pageContainer">
 
     {% set img = entry.partnershipHeaderImage.first() %}
     <div class="w-100 h8 cover relative overflow-hidden" style="background-image: url( '{{img.getUrl('slashHeader') }}' );">
       <div class="container relative h-100 z-3 flex">
-        <h1 class="fxl self-end w-70-ns">{{ entry.title }}</h1>
+        <h1 class="fxl self-end mb0 w-70-ns">{{ entry.title }}</h1>
       </div>
       <div class="absolute top-0 w-100 h-100 left-0 bg-trans-to-white z-2"></div>
       <div class="absolute top-0 w-100 h-100 left-0 bg-2x2 z-0 z-1"></div>
     </div>
 
     <div class="container overflow-hidden relative flex-ns">
-      <div class="w-100 w-50-ns fl pr4 lead-xl border-right-grey-ns self-center">
+      <div class="w-100 w-70-ns fl pr4 lead-xl self-center">
         {{entry.pageIntroduction}}
-      </div>
-      <div class="w-100 w-50-ns tc fl v-mid mt4 mt0-ns border-top-grey-s h-100-ns self-center">
-        {% set logo = entry.partnershipLogo.first() %}
-        <span class="v-mid dib h-100"></span>
-        <img class="v-mid pv5 pv0-ns" width="w-50" src="{{ logo.getURL() }}" />
       </div>
     </div>
 
-
-    <div class="mt5-ns">
-      <div class="container">
-
-        <div class="w-100 w-60-ns m-auto pb5 border-bottom-grey overflow-hidden">
-          <div class="w-100 tc">
-            <div class="quoteBlock-photo mb4 roundPhoto-100 roundPhoto-200-ns dib">
-              {% set quotePhoto = entry.partnershipQuotePhoto.first() %}
-              <img src="{{ quotePhoto.getURL('roundPortrait') }}" />
-            </div>
+    <div class="pv4">
+      <div class="container flex-ns items-center">
+        <div class="w-100 w-20-ns fl tc">
+          <div class="quoteBlock-photo quoteBlock-border quoteBlock-border-{{color}} mb4 mb0-ns roundPhoto-200 roundPhoto-150-ns dib">
+            {% set quotePhoto = entry.partnershipQuotePhoto.first() %}
+            <img src="{{ quotePhoto.getURL('roundPortrait') }}" />
           </div>
-          <div class="speechmarks">
-            <div class="w-100 mt0 fl db">
-                <div class="lead-xl">
-                  {{ entry.partnershipQuote }}
-                </div>
-                <div class="lh-solid f4 mt3">{{ entry.partnershipQuoteName }}</div>
-                <div class="caps-small-f">{{ entry.partnershipQuoteJobRole }}</div>
-            </div>
+        </div>
+        <div class="w-100 w-80-ns fl">
+          <div class="speechmarks speechmarks-{{color}} lead">
+            {{ entry.partnershipQuote }}
           </div>
+          <div class='flex-ns items-center mt3'>
+            <div class="w-100 w-auto-ns pr4 pb4 pb0-ns  mr4 border-right-grey-ns border-bottom-grey-s bn-ns">
+              <div class="lh-solid f4 mt3">{{ entry.partnershipQuoteName }}</div>
+              <div class="caps-small-f">{{ entry.partnershipQuoteJobRole }}</div>
+            </div>
+            <div class="w-100 w-auto-ns tc border-bottom-grey bn-ns">
+              {% set logo = entry.partnershipLogo.first() %}
+              <img class="v-mid pv5 pv0-ns" src="{{ logo.getURL() }}" />
+            </div>
         </div>
       </div>
     </div>
 
+
     {% include '_includes/_content.html' with { 'entry' : entry } %}
 
-    <div class="w-100 pv5 fl">
+    <div class="w-100 pb5 fl">
       <div class="container tc">
         <h2 class="f2">{{ entry.partnershipOutroTitle }}</h2>
-        <a href="" class="dib contactModal-btn btn mt3 relative z-3">
+        <a href="" class="dib contactModal-btn btn mt3 relative z-3 btn-{{color}}">
           {{ entry.partnershipOutroCallToActionButton}}
         </a>
       </div>

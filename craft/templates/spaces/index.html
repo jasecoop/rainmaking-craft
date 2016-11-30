@@ -5,7 +5,9 @@
 {% set bodyClass = 'has-intro-text' %}
 
 {% block content %}
-  <h1 class="f2 mt0">{{ entry.title }}</h1>
+  <div class="tc w-100 mb3">
+    <img src="dist/images/rainmaking_loft_logo.png"  class="w-80"/>
+  </div>
   {{ entry.body }}
   <a class="btn btn-continue w-100 btn-nopad btn-{{ colour }} w-100" href="http://rainmakingloft.com" target="_blank"></a>
 {% endblock %}

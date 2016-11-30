@@ -13,11 +13,11 @@
       <div class="pa4 w-100 h-100 cover z-1 relative" style="background-image: url({{ img.getUrl() }});">
         <div class="z-1 relative h-100 flex flex-column justify-between">
           <div>
-            <a href="{{ entry.url }}" class="f2 db mb4 mb0-ns a-plain rm-text rm-{{ colour }}-hover pointer-auto">
+            <a href="{{ entry.url }}" class="fxl db mb4 mb0-ns a-plain rm-text rm-{{ colour }}-hover pointer-auto">
               {{ entry.title }}
             </a>
           </div>
-          <div class="flex flex-row justify-between">
+          <div class="flex flex-row justify-between mt4">
             <a href="{{ entry.url }}" class="btn btn-continue btn-{{ colour }} pointer-auto"></a>
             <div class="self-center">
               {% set logo = entry.partnershipLogo.first() %}
@@ -29,18 +29,20 @@
       </div>
     </div>
     <div class="w-100 w-50-ns fl-ns {{ quoteAlign }} relative dn db-ns pointer-auto">
-      <div class="w-100 fl pa4 overflow-hidden h-100">
-        <div class="speechmarks speechmarks-{{colour}}">
-
-          <div class="pb4 pl3">
+      <div class="w-100 fl pa4 overflow-hidden h-100 flex items-center">
+        <div>
+          <div class="pb3 speechmarks speechmarks-{{colour}}">
+            <!-- <img class="pr2 fl mt1" src="dist/images/speechmarks-{{colour}}.svg" /> -->
             {{ entry.partnershipQuote }}
           </div>
           <div class="pl3">
-            <div class="roundPhoto roundPhoto-80 dib fl">
-              {% set quotePhoto = entry.partnershipQuotePhoto.first() %}
-              <img src="{{ quotePhoto.getURL('roundPortrait') }}" />
+            <div class="fl w-30">
+              <div class="roundPhoto roundPhoto-100 dib">
+                {% set quotePhoto = entry.partnershipQuotePhoto.first() %}
+                <img src="{{ quotePhoto.getURL('roundPortrait') }}" />
+              </div>
             </div>
-            <div class="ml3 fl">
+            <div class="w-70 fl">
               <div class="mt3 lh-copy w-100">{{ entry.partnershipQuoteName }}</div>
               <div class="caps-small-f lh-copy w-100">{{ entry.partnershipQuoteJobRole }}</div>
               <div class="caps-small-f lh-copy w-100">{{ entry.companyName }}</div>

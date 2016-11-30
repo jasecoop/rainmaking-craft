@@ -18,3 +18,12 @@
   width: 100%;
   text-align: center;
 }
+
+.pagination a {
+  font-family: var(--futura-font-family);
+  font-weight: 200;
+  line-height: 2rem;
+  float: right;
+  text-decoration: none;
+  color: #68767C;
+}

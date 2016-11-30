@@ -42,4 +42,18 @@ body, html, main {
     top: 0;
     margin-top: 80px;
   }
+
+  .stickyAside-bottom {
+    position: absolute;
+  }
+
+  .stickyAside {
+    -moz-transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  .blogpost .stickyAside-bottom {
+    bottom: 420px !important;
+  }
 }

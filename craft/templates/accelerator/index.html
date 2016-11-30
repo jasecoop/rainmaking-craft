@@ -5,13 +5,12 @@
 {% set bodyClass = 'has-intro-text' %}
 
 {% block content %}
-  <h1 class="f2 mt0">{{ entry.title }}</h1>
+<div class="tc w-100">
+  <a href="http://startupbootcamp.org" target="_blank">
+    <img src="dist/images/sbc-logo.png"  class="w-80"/>
+  </a>
+</div>
   {{ entry.body }}
-  <div class="tc w-100">
-    <a href="http://startupbootcamp.org" target="_blank">
-      <img src="dist/images/sbc-logo.png"  class="w-80"/>
-    </a>
-  </div>
   <a class="btn btn-continue w-100 btn-nopad btn-{{ colour }} w-100" href="http://startupbootcamp.org" target="_blank"></a>
 
 {% endblock %}
