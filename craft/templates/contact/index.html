@@ -6,7 +6,7 @@
 
     <div class="pageContainer mb5 overflow-hidden">
       <div class="w-100 ph4 pt5 w-60-ns m-auto">
-        <h2 class="f1 tl ">Get in touch</h2>
+        <h2 class="f1 tl ">Contact us.</h2>
         <div class="w-100 pr4 w-70-ns fl">
           {% macro errorList(errors) %}
               {% if errors %}
@@ -53,7 +53,7 @@
             <div class=" lead">{{ contact.pressEmailAddress }}</div>
           </div>
           <div class="mt4">
-            {% include '_includes/_socials.html' %}
+            {% include '_includes/_socials.html' with {'colour' : 'grey' } %}
           </div>
         </div>
       </div>

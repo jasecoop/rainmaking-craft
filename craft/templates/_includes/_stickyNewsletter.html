@@ -13,11 +13,11 @@
       </div>
       <button class="btn btn-{{color}} btn-small w-100" type="submit">{{ newsletterSignup.callToAction }}</button>
     </form>
+  </div>
 
-    <div class="tc mt4">
-      <div class="dib">
-        {% include '_includes/_socials.html' %}
-      </div>
+  <div class="tc mt4">
+    <div class="dib">
+      {% include '_includes/_share.html' with {'url' : url } %}
     </div>
   </div>
 </div>

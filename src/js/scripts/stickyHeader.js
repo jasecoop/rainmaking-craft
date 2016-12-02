@@ -7,7 +7,7 @@ module.exports = function () {
 
     $(window).on("scroll", function() {
       var fromTop = $("body").scrollTop();
-      if (fromTop > winHeight - 300) {
+      if (fromTop > 200) {
         $('.header').addClass("header-belowfold");
       } else {
         $('.header').removeClass("header-belowfold");

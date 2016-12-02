@@ -8,7 +8,7 @@
 }
 
 .header {
-  position: absolute;
+  height: 60px;
   -webkit-transition: all 500ms linear;
   -moz-transition: all 500ms linear;
   -ms-transition: all 500ms linear;
@@ -17,6 +17,7 @@
 }
 
 .header-belowfold {
+  background: #fff;
   position: fixed;
   top: 0px;
   background: #fff;

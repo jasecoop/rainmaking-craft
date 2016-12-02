@@ -4,7 +4,7 @@
 {% set colors = ['teal', 'red', 'blue', 'green', 'orange'] %}
 {% set color = shuffle(colors) | first %}
 {% block content %}
-  <div class="pageContainer">
+  <div>
 
     {% set img = entry.partnershipHeaderImage.first() %}
     <div class="w-100 h8 cover relative overflow-hidden" style="background-image: url( '{{img.getUrl('slashHeader') }}' );">
@@ -49,7 +49,7 @@
 
     {% include '_includes/_content.html' with { 'entry' : entry } %}
 
-    <div class="w-100 pb5 fl">
+    <div class="w-100 pv5 fl bg-white">
       <div class="container tc">
         <h2 class="f2">{{ entry.partnershipOutroTitle }}</h2>
         <a href="" class="dib contactModal-btn btn mt3 relative z-3 btn-{{color}}">

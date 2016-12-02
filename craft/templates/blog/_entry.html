@@ -8,7 +8,7 @@
 {% set backTo = 'blog' %}
 
 {% block content %}
-<div class="js-ajax-wrapper pageContainer">
+<div class="js-ajax-wrapper">
 
   {% set img = entry.headerImage.first() %}
   <div class="w-100 h9 cover relative overflow-hidden" style="background-image: url( '{{img.getUrl('slashHeader') }}' );">
@@ -43,8 +43,7 @@
           </div>
         </div>
 
-        {% include '_includes/_stickyNewsletter.html' %}
-
+        {% include '_includes/_stickyNewsletter.html' with {'url' : entry.url } %}
       </div>
     </div>
       {% set bg = prev.headerImage.first() %}
@@ -57,7 +56,7 @@
             {{ prev.title }}
           </div>
           <div>
-            <a class="btn mt4 btn-continue btn-{{ colour }} pointer-auto" href="{{ prev.url }}"></a>
+            <a class="btn mt4 btn-continue btn-{{ color }} pointer-auto" href="{{ prev.url }}"></a>
           </div>
         </div>
         <div class="absolute top-0 left-0 w-100 h-100 z-0 bg-3x3"></div>

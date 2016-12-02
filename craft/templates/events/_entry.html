@@ -2,6 +2,8 @@
 {% set title = "Rainmaking" %}
 {% set bodyClass = 'blogpost' %}
 {% set backTo = 'events' %}
+{% set colors = ['teal', 'red', 'blue', 'green', 'orange'] %}
+{% set color = shuffle(colors) | first %}
 
 {% block content %}
 <div class="js-ajax-wrapper">
@@ -32,7 +34,7 @@
                 <a class="caps-small-f rm-text-2" href="{{ entry.eventGoogleMapsUrl }}">Google Maps</a>
               </div>
             </div>
-            <a href="{{ entry.eventbriteUrl }}" class="w-100 btn btn-nopad">Get tickets</a>
+            <a href="{{ entry.eventbriteUrl }}" class="w-100 btn btn-{{color}} btn-nopad">Get tickets</a>
           </div>
         </div>
       </div>

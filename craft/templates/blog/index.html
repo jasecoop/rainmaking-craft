@@ -4,7 +4,7 @@
 {% set copy = craft.entries.section('blogIndexCopy').first() %}
 
 {% block content %}
-<div class="js-ajax-wrapper pageContainer bg-grey">
+<div class="js-ajax-wrapper bg-grey">
 
   {% set img = copy.headerImg.first() %}
   <div class="w-100 h8 cover relative overflow-hidden" style="background-image: url( '{{img.getUrl('slashHeader') }}' );">

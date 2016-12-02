@@ -1,22 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
-    <title>In-White-0p5in-R Copy</title>
-    <desc>Created with Sketch.</desc>
-    <defs>
-        <rect x="7" y="7" width="26" height="26" id="rect-1"></rect>
-    </defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Desktop-Copy-4" transform="translate(-838.000000, -476.000000)">
-            <g id="In-White-0p5in-R-Copy" transform="translate(831.000000, 469.000000)">
-                <g id="Group-5">
-                    <rect id="Rectangle-14-Copy-2" x="0" y="0" width="40" height="40"></rect>
-                    <g id="FB-f-Logo__white_29">
-                        <image x="7" y="7" width="26" height="26" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAdCAYAAABWk2cPAAAABGdBTUEAA1teXP8meAAAAS1JREFUSA3tlz0KwkAQhTeiCIq9tY1g7UG8hnUukNLGo3gYb2BnqWjSifG9RMM4Gw1hN2vjwIPZv/dlZzW6Js/zCIqhK9Rl0J8cY55JlzDtHXOXqTFmDIWKjFDsN2z0wuJKmi/oBXYbaAmNoAiaQDPICh/l3cN1BR0s97LDOj5X6Bm+C+j4AchuC+pa3m0DsPZZXKE75bpG+wRxdy+pKThwx6/MAI434coyT0W7NnWF8lMq446G7pPjRe5aXm3YCOQC31D9ELXttlDuREqbyjHmQ0ieeTG/LVRDmtpzTOjrSV1D+eKw4idQa+vWY7136Fcaz02GHpdjVd71TiuQTP5QWQ3v+b+83ksqDVneTHYEyDNCkwAgiUh4reAPOe8YKf9FtAyul/q2nP7FXeYBkLqAJ5v5ZOwAAAAASUVORK5CYII="></image>
-                        <use fill="#68767C" fill-rule="evenodd" xlink:href="#rect-1"></use>
-                    </g>
-                </g>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 26 26" enable-background="new 0 0 26 26" xml:space="preserve">
+<title>In-White-0p5in-R Copy</title>
+<desc>Created with Sketch.</desc>
+<path id="Blue_1_" fill="#68767C" d="M24.5,26.1c0.8,0,1.4-0.6,1.4-1.4V1.4C26,0.6,25.3,0,24.5,0H1.3C0.5,0-0.1,0.6-0.1,1.4v23.2
+	c0,0.8,0.6,1.4,1.4,1.4H24.5z"/>
+<path id="f" fill="#FFFFFF" d="M17.9,26.1V16h3.4l0.5-3.9h-3.9V9.5c0-1.1,0.3-1.9,2-1.9l2.1,0V4.1c-0.4,0-1.6-0.2-3-0.2
+	c-3,0-5.1,1.8-5.1,5.2V12h-3.4V16h3.4v10.1H17.9z"/>
 </svg>

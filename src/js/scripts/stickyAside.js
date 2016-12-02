@@ -6,36 +6,45 @@ module.exports = function () {
       var asideOffset = $aside.offset();
       var asideTop    = asideOffset.top - 69;
       var asideRight  = asideOffset.right;
+      var asideHeight = $aside.height();
 
-      var contentOffset = $('#content').offset();
-      var contentOffset = asideOffset.top;
-      var contentBottom = contentOffset + $('#content').height() - $aside.height() - 100;
-      console.log('contentBottom', contentBottom)
+      var $content = $('#content');
+      var contentOffset = $content.offset();
+      var contentTop = contentOffset.top;
+      var contentHeight = $content.height();
+      var contentBottom = contentTop + contentHeight;
+      var contentTrigger = contentBottom - asideHeight;
+
       if ($(window).width() > 800){
         var stickyWidth = $('#stickyAside').width();
         $(window).on("scroll", function() {
           var fromTop = $("body").scrollTop();
-          $('#stickyAside').toggleClass("stickyAside-fixed", (fromTop > asideTop)).css('right', asideRight);
-          $('#stickyAside').css('width', stickyWidth + 'px');
 
-          if (fromTop > contentBottom) {
-            if ($('#outro').length) {
-              var top = $('#outro').height() + $('.footer').height();
-            } else {
-              var top = $('.footer').height();
-            }
-            $('#stickyAside').removeClass('stickyAside-fixed');
-            $('#stickyAside').addClass('stickyAside-bottom');
-            $('#stickyAside').css('bottom',  '0px');
+          if (fromTop > asideTop && fromTop < contentTrigger) {
+            $('#stickyAside').addClass("stickyAside-fixed").css('right', asideRight);
+            $('#stickyAside').css('width', stickyWidth + 'px');
           }
 
-          if (fromTop < contentBottom && fromTop > asideTop) {
-            if ($('#outro').length) {
-              var top = $('#outro').height() + $('.footer').height();
-            } else {
-              var top = $('.footer').height();
-            }
+          if (fromTop > contentTrigger) {
+            // if ($('#outro').length) {
+            //   var top = $('#outro').height() + $('.footer').height() + 1000;
+            // } else {
+            //   var top = $('.footer').height();
+            // }
+            console.log('contentTrggier')
+            $('#stickyAside').removeClass('stickyAside-fixed');
+            $('#stickyAside').addClass('stickyAside-bottom');
+            $('#stickyAside').css('bottom',  contentBottom + 'px');
+            console.log(contentBottom)
+          }
+
+          if (fromTop < contentTrigger && fromTop > asideTop) {
             $('#stickyAside').addClass('stickyAside-fixed');
+            $('#stickyAside').removeClass('stickyAside-bottom');
+          }
+
+          if (fromTop < asideTop) {
+            $('#stickyAside').removeClass('stickyAside-fixed');
             $('#stickyAside').removeClass('stickyAside-bottom');
           }
 
