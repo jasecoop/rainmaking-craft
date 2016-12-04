@@ -1,5 +1,6 @@
 var jquery          = require('./lib/jquery');
 var retina          = require('./lib/retina');
+// var paper           = require('./lib/paper');
 
 var craftAjax       = require('./scripts/craft-ajax');
 var menu            = require('./scripts/menu');
@@ -13,8 +14,10 @@ var founder         = require('./scripts/founder');
 var blogAnchor      = require('./scripts/blogAnchor');
 var borderHover     = require('./scripts/borderHover');
 
+
 jquery();
 retina();
+// paper();
 
 craftAjax();
 menu();
