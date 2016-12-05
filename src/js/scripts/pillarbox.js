@@ -26,19 +26,16 @@ module.exports = function () {
       $('body').find('.intro-hover-text').css('margin-top', introTop + 'px')
       $('#introText').fadeIn();
 
-      $( "#intro-home .pillar" ).hover(
-          function(e){
-            var type = $(this).data('type');
-            var pos = $(this).position();
-            $(e.target).addClass('pillar-active');
-            contentShow(type, pos);
-          },
-          function(e){
-            var type = $(this).data('type');
-            contentHide(type);
-            $(e.target).removeClass('pillar-active');
-          }
-      );
+      $(document).on('mouseenter', "#intro-home .pillar" , function (e) {
+        var type = $(this).data('type');
+        var pos = $(this).position();
+        $(e.target).addClass('pillar-active');
+        contentShow(type, pos);
+      }).on('mouseleave', "#intro-home .pillar", function (e) {
+        var type = $(this).data('type');
+        contentHide(type);
+        $(e.target).removeClass('pillar-active');
+      });
 
       $( "#page-pillars .pillar, #menu-pillars .pillar" ).hover(
           function(e){
