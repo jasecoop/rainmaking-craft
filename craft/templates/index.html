@@ -19,13 +19,12 @@
 {% set bodyClass = 'home has-intro-text' %}
 {% extends (craft.request.isAjax and not craft.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
 {% block content %}
-
-{% include '_includes/_introHover.html' with { 'name' : 'accelerators', color: 'teal', 'img' : entry.acceleratorHoverImage, 'text' : entry.acceleratorIntroduction } %}
-{% include '_includes/_introHover.html' with { 'name' : 'companies', color: 'blue', 'img' : entry.companiesHoverImage, 'text' : entry.companiesIntroduction } %}
-{% include '_includes/_introHover.html' with { 'name' : 'spaces', color: 'red', 'img' : entry.spacesHoverImage, 'text' : entry.spacesIntroduction } %}
-{% include '_includes/_introHover.html' with { 'name' : 'partnerships', color: 'green', 'img' : entry.partnershipHoverImage, 'text' : entry.partnershipsIntroduction } %}
-
 <div class="js-ajax-wrapper relative h-100">
+  {% include '_includes/_introHover.html' with { 'name' : 'accelerators', color: 'teal', 'img' : entry.acceleratorHoverImage, 'text' : entry.acceleratorIntroduction } %}
+  {% include '_includes/_introHover.html' with { 'name' : 'companies', color: 'blue', 'img' : entry.companiesHoverImage, 'text' : entry.companiesIntroduction } %}
+  {% include '_includes/_introHover.html' with { 'name' : 'spaces', color: 'red', 'img' : entry.spacesHoverImage, 'text' : entry.spacesIntroduction } %}
+  {% include '_includes/_introHover.html' with { 'name' : 'partnerships', color: 'green', 'img' : entry.partnershipHoverImage, 'text' : entry.partnershipsIntroduction } %}
+
 <div class="h-100 flex items-center bg-grad-vert-trans-white relative">
   <div id="intro-home" class="container-size w-100">
     <div class="w-100 w-40-ns fl mb3 mt4 mt0-ns">
