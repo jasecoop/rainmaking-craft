@@ -14,7 +14,7 @@
       <div class="absolute top-0 w-100 h-100 left-0 bg-2x2 z-0 z-1"></div>
     </div>
     <div class="container">
-      <div class="w-70-ns pb5">
+      <div class="w-70-ns">
         <div class="lead-xl">
           {{ copy.pageIntroduction }}
         </div>
@@ -32,7 +32,7 @@
 
       {% endfor %}
 
-      <div class="tc caps-small-f mt5">Previous events</div>
+      <div class="tc caps-small-f mt4">Previous events</div>
       <div class="flex posts pb5">
         {% for entry in craft.entries.section('events') if entry.timeAndDate < now %}
           {% set colour = cycle(['teal', 'red', 'blue', 'green', 'orange'], loop.index0) %}
@@ -42,6 +42,7 @@
 
     </div>
   </div>
-  </div>
-{% include '_includes/_footer.html' %}
+  {% include '_includes/_footer.html' %}
+</div>
+
 {% endblock %}

@@ -40,7 +40,7 @@
               <textarea class="rm-text-2 w-100 mb3 ph4" rows="4" cols="10" id="message" name="message">{% if message is defined %}{{ message.message }}{% endif %}</textarea>
               {{ message is defined and message ? errorList(message.getErrors('message')) }}
 
-              <input class="btn btn-small w-100" type="submit" value="Send">
+              <input class="btn btn-small btn-orange w-100" type="submit" value="Send">
           </form>
         </div>
         <div class="w-100 w-30-ns fr tl mt4">
@@ -58,7 +58,6 @@
         </div>
       </div>
     </div>
-
+    {% include '_includes/_footer.html' %}
   </div>
-{% include '_includes/_footer.html' %}
 {% endblock %}
