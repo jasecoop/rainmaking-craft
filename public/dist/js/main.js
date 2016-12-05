@@ -16689,7 +16689,7 @@ module.exports = function () {
       $('.menu').removeClass('menu-active').fadeOut('slow');
     });
 
-    $( '.menu' ).on( 'click', 'a', function(e) {
+    $( '.menu' ).on( 'click', 'a:not(.trigger)', function(e) {
       e.preventDefault();
       $('.menu').removeClass('menu-active').fadeOut('slow');
     });
