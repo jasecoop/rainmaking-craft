@@ -16640,6 +16640,10 @@ module.exports = function () {
       if (changedPage) loadPage(location.href);
     });
 
+    // $(window).on('statechange', function() {
+    //   window.location.reload();
+    // });
+
     $(document).on('click', 'a:not(.trigger)', function() {
 
       var href = $(this).attr("href");
