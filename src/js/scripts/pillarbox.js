@@ -18,13 +18,13 @@ module.exports = function () {
     $('body').addClass('pillarActive');
   }
 
-  $(document).ready(function(){
+  $(window).on('load', function() {
 
     if ($('body').hasClass('has-intro-text') && $(window).width() > 800) {
       var introPos = $('#intro-links').offset();
       var introTop = introPos.top - 16;
-
       $('body').find('.intro-hover-text').css('margin-top', introTop + 'px')
+      $('#introText').fadeIn();
 
       $( "#intro-home .pillar" ).hover(
           function(e){

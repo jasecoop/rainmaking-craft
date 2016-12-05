@@ -5,9 +5,9 @@
 </head>
 
   {% if bodyClass is defined %}
-    <body class="{{ bodyClass }}">
+    <body class="{{ bodyClass }}" style="{{ bodyStyle }}">
   {% else %}
-    <body>
+    <body style="{{ bodyStyle }}">
   {% endif %}
 
   {% if headerBelowFold is defined %}
@@ -16,15 +16,20 @@
     {% include '_includes/_header.html' %}
   {% endif %}
 
+  <div id="loading" class="dn w-100 h-100 fixed top-0 left-0 bottom-0 right-0 scroll-fixed">
+    <div class="w-100 h-100 flex items-center justify-center z-3 absolute">
+      <img src='dist/images/loading.gif' />
+    </div>
+    <!-- <div class="bg-2x2 w-100 h-100 top-0 left-0 z-2"></div> -->
+    <!-- <div class="rain z-1"></div> -->
+  </div>
+
   <main class="js-main" role="main">
     {% block content %}
 			<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
 			<p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
 		{% endblock %}
   </main>
-
-  <section class="js-mini">
-  </section>
 
   {% include '_includes/_menu.html' %}
 </body>

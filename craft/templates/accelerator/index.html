@@ -1,16 +1,28 @@
-{% extends (craft.request.isAjax and not craft.request.isLivePreview) ? "_ajax-layout" : "_minipageLayout" %}
+{% extends (craft.request.isAjax and not craft.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
 {% set title = "Accelerator" %}
-{% set bgImage = entry.headerImg %}
 {% set colour = 'teal' %}
 {% set bodyClass = 'has-intro-text' %}
 
 {% block content %}
-<div class="tc w-100">
-  <a href="http://startupbootcamp.org" target="_blank">
-    <img src="dist/images/sbc-logo.png"  class="w-80"/>
-  </a>
-</div>
-  {{ entry.body }}
-  <a class="btn btn-continue w-100 btn-nopad btn-{{ colour }} w-100" href="http://startupbootcamp.org" target="_blank"></a>
+<div class="js-ajax-wrapper h-100">
+  <div class="bg-2x2 fixed w-100 h-100 z-2"></div>
+  {% set bgImage = entry.headerImg.first() %}
+  <div class="w-100 h-100 fixed cover" style="background-image: url({{ bgImage.getUrl() }});"></div>
 
+  <div class="container h-100 relative">
+    {% include '_includes/_pagePillars.html' %}
+
+    <div id="introText" class="w-100 w-50-ns relative absolute-ns right-0 top-0 fr-ns mb4 z-4 pt6 pt0-ns">
+      <div class="w-100 w-70-ns m-auto pa4 bg-white intro-hover-text">
+        <div class="tc w-100">
+          <a href="http://startupbootcamp.org" target="_blank">
+            <img src="dist/images/sbc-logo.png"  class="w-80"/>
+          </a>
+        </div>
+        {{ entry.body }}
+        <a class="btn btn-continue w-100 btn-nopad btn-{{ colour }} w-100" href="http://startupbootcamp.org" target="_blank"></a>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}

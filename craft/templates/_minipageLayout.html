@@ -6,9 +6,9 @@
 </head>
 
   {% if bodyClass is defined %}
-    <body class="cover bg-fixed {{ bodyClass }}" style="background-image: url('{{ image.getUrl() }}')">
+    <body class="cover bg-fixed {{ bodyClass }}">
   {% else %}
-    <body class="cover bg-fixed" style="background-image: url('{{ image.getUrl() }}')">
+    <body class="cover bg-fixed">
   {% endif %}
 
   {% include '_includes/_header.html' %}
@@ -18,12 +18,12 @@
 
     <div class="w-100 w-50-ns relative absolute-ns right-0 top-0 fr-ns mb4 z-4 pt6 pt0-ns">
       <div class="w-100 w-70-ns m-auto pa4 bg-white intro-hover-text">
-        <section>
+        <main class="js-main" role="main">
           {% block content %}
             <p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
             <p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
           {% endblock %}
-        </section>
+        </div>
       </div>
     </div>
   </div>

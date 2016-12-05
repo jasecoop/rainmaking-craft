@@ -57,3 +57,12 @@ body, html, main {
     bottom: 420px !important;
   }
 }
+
+.new-results-div,
+.js-main  {
+  height: 100%;
+}
+
+#introText {
+  display: none;
+}

@@ -4,9 +4,10 @@
 {% set copy = craft.entries.section('partnershipIndex').first() %}
 {% set homepage = craft.entries.section('homepage').first() %}
 {% set bodyClass = 'has-intro-text' %}
+{% set bodyStyle = "background-image: url({{ bgImage.getUrl() }})" %}
 
 {% block content %}
-  <div class="js-ajax-wrapper h-100">
+  <div class="js-ajax-wrapper h-100" style="background-image: url({{ bgImage.getUrl() }})">
     {% set bg = homepage.partnershipHoverImage.first() %}
     <div>
       <div class="cover fixed w-100 h-100 db top-0 left-0" style="background-image: url('{{ bg.getUrl() }}');"></div>
@@ -17,7 +18,7 @@
     <div class="w-100 h-100">
       <div class="container h-100 relative">
         {% include '_includes/_pagePillars.html' %}
-        <div class="w-100 w-50-ns relative absolute-ns right-0 top-0 fl fr-ns mb4 z-5 pt6 pt0-ns">
+        <div id="introText" class="w-100 w-50-ns relative absolute-ns right-0 top-0 fl fr-ns mb4 z-5 pt6 pt0-ns">
           <div class="w-100 w-70-ns m-auto pa4 bg-white intro-hover-text bt bw2 border-green">
             <div class="tc w-100 mb3">
               <a href="http://startupbootcamp.org" target="_blank">

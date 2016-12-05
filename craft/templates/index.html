@@ -25,7 +25,7 @@
 {% include '_includes/_introHover.html' with { 'name' : 'spaces', color: 'red', 'img' : entry.spacesHoverImage, 'text' : entry.spacesIntroduction } %}
 {% include '_includes/_introHover.html' with { 'name' : 'partnerships', color: 'green', 'img' : entry.partnershipHoverImage, 'text' : entry.partnershipsIntroduction } %}
 
-
+<div class="js-ajax-wrapper relative h-100">
 <div class="h-100 flex items-center bg-grad-vert-trans-white relative">
   <div id="intro-home" class="container-size w-100">
     <div class="w-100 w-40-ns fl mb3 mt4 mt0-ns">
@@ -44,7 +44,6 @@
   </div>
 
   <div class="absolute top-0 left-0 w-100 h-100 z-3 bg-2x2 pointer-none"></div>
-  <!-- <div class="rain"></div> -->
   <div class="absolute top-50 left-0 w-100 h-50 z-3 bg-trans-to-white"></div>
 </div>
 
@@ -121,7 +120,7 @@
   <div class="w-100 w-60-ns m-auto z-4 relative fxl tc">
     {{ outro.body }}
   </div>
-  <a href="" class="contactModal-btn btn btn-orange mt3 relative z-3 btn-continue"></a>
+  <a href="" class="contactModal-btn btn btn-orange mt3 relative z-3 btn-continue trigger"></a>
   <div class="absolute w-100 h-100 bg-2x2 z-2 top-0 left-0"></div>
   <div class="rain-content left-0"></div>
 </div>
@@ -130,5 +129,5 @@
 {% include '_includes/_footer.html' %}
 
 
-
+</div>
 {% endblock %}

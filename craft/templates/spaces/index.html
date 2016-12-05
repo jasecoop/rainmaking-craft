@@ -1,13 +1,27 @@
-{% extends (craft.request.isAjax and not craft.request.isLivePreview) ? "_ajax-layout" : "_minipageLayout" %}
+{% extends (craft.request.isAjax and not craft.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
 {% set title = "Spaces" %}
-{% set bgImage = entry.headerImg %}
 {% set colour = 'red' %}
 {% set bodyClass = 'has-intro-text' %}
+{% set bodyStyle = "background-image: url({{ bgImage.getUrl() }})" %}
+{% set miniPage = 'true' %}
 
 {% block content %}
-  <div class="tc w-100 mb3">
-    <img src="dist/images/rainmaking_loft_logo.png"  class="w-80"/>
+<div class="js-ajax-wrapper h-100">
+  <div class="bg-2x2 fixed w-100 h-100 z-2"></div>
+  {% set bgImage = entry.headerImg.first() %}
+  <div class="w-100 h-100 fixed cover" style="background-image: url({{ bgImage.getUrl() }});"></div>
+  <div class="container h-100 relative z-3">
+    {% include '_includes/_pagePillars.html' %}
+
+    <div id="introText" class="w-100 w-50-ns relative absolute-ns right-0 top-0 fr-ns mb4 z-4 pt6 pt0-ns">
+      <div class="w-100 w-70-ns m-auto pa4 bg-white intro-hover-text">
+        <div class="tc w-100 mb3">
+          <img src="dist/images/rainmaking_loft_logo.png"  class="w-80"/>
+        </div>
+        {{ entry.body }}
+        <a class="btn btn-continue w-100 btn-nopad btn-{{ colour }} w-100" href="http://rainmakingloft.com" target="_blank"></a>
+      </div>
+    </div>
   </div>
-  {{ entry.body }}
-  <a class="btn btn-continue w-100 btn-nopad btn-{{ colour }} w-100" href="http://rainmakingloft.com" target="_blank"></a>
+</div>
 {% endblock %}

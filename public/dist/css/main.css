@@ -6727,6 +6727,13 @@ body, html, main {
     bottom: 420px !important;
   }
 }
+.new-results-div,
+.js-main  {
+  height: 100%;
+}
+#introText {
+  display: none;
+}
 @font-face {
   font-family: 'Futura';
   font-weight: 100;
@@ -7275,20 +7282,20 @@ transition: all 500ms linear;
   animation: AnimationName 47s ease infinite;
 }
 @-webkit-keyframes AnimationName {
-      0%{background-position:53% 0%}
-      50%{background-position:48% 100%}
-      100%{background-position:53% 0%}
-  }
+    0%{background-position:53% 0%}
+    50%{background-position:48% 100%}
+    100%{background-position:53% 0%}
+}
 @-moz-keyframes AnimationName {
-      0%{background-position:53% 0%}
-      50%{background-position:48% 100%}
-      100%{background-position:53% 0%}
-  }
+    0%{background-position:53% 0%}
+    50%{background-position:48% 100%}
+    100%{background-position:53% 0%}
+}
 @keyframes AnimationName {
-      0%{background-position:53% 0%}
-      50%{background-position:48% 100%}
-      100%{background-position:53% 0%}
-  }
+    0%{background-position:53% 0%}
+    50%{background-position:48% 100%}
+    100%{background-position:53% 0%}
+}
 .featurePost {
 
 }

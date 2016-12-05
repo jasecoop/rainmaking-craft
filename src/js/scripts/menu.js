@@ -12,12 +12,10 @@ module.exports = function () {
       $('.menu').removeClass('menu-active').fadeOut('slow');
     });
 
-    // $( '.menu' ).on( 'click', 'a', function(e) {
-    //   e.preventDefault();
-    //   if ( $(this).attr('role') !== 'minipage' ) {
-    //     $('.menu').removeClass('menu-active');
-    //   }
-    // });
+    $( '.menu' ).on( 'click', 'a', function(e) {
+      e.preventDefault();
+      $('.menu').removeClass('menu-active').fadeOut('slow');
+    });
 
     // $( 'body' ).on( 'click', '.fade-menu', function(e) {
     //   e.preventDefault();

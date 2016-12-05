@@ -1,12 +1,14 @@
 var jquery          = require('./lib/jquery');
 var retina          = require('./lib/retina');
-// var paper           = require('./lib/paper');
+var history         = require('./lib/history');
+var velocity         = require('./lib/velocity');
+var velocityUI         = require('./lib/velocity.ui');
 
 var craftAjax       = require('./scripts/craft-ajax');
 var menu            = require('./scripts/menu');
 var pillarbox       = require('./scripts/pillarbox');
 var stickyHeader    = require('./scripts/stickyHeader');
-var rain            = require('./scripts/rain');
+// var rain            = require('./scripts/rain');
 var balancedGallery = require('./lib/balancedGallery');
 var contactModal    = require('./scripts/contactModal');
 var stickyAside     = require('./scripts/stickyAside');
@@ -17,13 +19,15 @@ var borderHover     = require('./scripts/borderHover');
 
 jquery();
 retina();
-// paper();
+history();
+velocity();
+velocityUI();
 
 craftAjax();
 menu();
 pillarbox();
 stickyHeader();
-rain();
+// rain();
 balancedGallery();
 contactModal();
 stickyAside();
