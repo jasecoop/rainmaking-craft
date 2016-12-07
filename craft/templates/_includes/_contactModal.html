@@ -26,22 +26,22 @@
           <input type="hidden" name="redirect" value="contact/thanks">
 
           <label class="caps-small-f tl white" for="fromName">Your Name</label>
-          <input class="rm-text-2 w-100 mb3 ph2" id="fromName" type="text" name="fromName" value="{% if message is defined %}{{ message.fromName }}{% endif %}">
+          <input class="fieldWhiteBorder rm-text-2 w-100 mb3 ph2 pv2" id="fromName" type="text" name="fromName" value="{% if message is defined %}{{ message.fromName }}{% endif %}">
           {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
 
           <label class="caps-small-f tl white" for="fromEmail">Your Email</label>
-          <input class="rm-text-2 w-100 mb3 ph2" id="fromEmail" type="email" name="fromEmail" value="{% if message is defined %}{{ message.fromEmail }}{% endif %}">
+          <input class="fieldWhiteBorder rm-text-2 w-100 mb3 ph2 pv2" id="fromEmail" type="email" name="fromEmail" value="{% if message is defined %}{{ message.fromEmail }}{% endif %}">
           {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
 
           <label class="caps-small-f tl white" for="subject">Subject</label>
-          <input class="rm-text-2 w-100 mb3 ph2" id="subject" type="text" name="subject" value="{% if message is defined %}{{ message.subject }}{% endif %}">
+          <input class="fieldWhiteBorder rm-text-2 w-100 mb3 ph2 pv2" id="subject" type="text" name="subject" value="{% if message is defined %}{{ message.subject }}{% endif %}">
           {{ message is defined and message ? errorList(message.getErrors('subject')) }}
 
           <label class="caps-small-f tl white" for="message">Message</label>
-          <textarea class="rm-text-2 w-100 mb3 ph4" rows="4" cols="10" id="message" name="message">{% if message is defined %}{{ message.message }}{% endif %}</textarea>
+          <textarea class="fieldWhiteBorder rm-text-2 w-100 mb3 ph2 pv2" rows="4" cols="10" id="message" name="message">{% if message is defined %}{{ message.message }}{% endif %}</textarea>
           {{ message is defined and message ? errorList(message.getErrors('message')) }}
 
-          <input class="btn btn-small w-100" type="submit" value="Send">
+          <input class="btn btn-small btn-blue w-100" type="submit" value="Send">
       </form>
     </div>
     <div class="w-30 fr tl mt4">

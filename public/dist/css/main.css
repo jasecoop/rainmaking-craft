@@ -7882,6 +7882,43 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b93a2', end
   text-decoration: none;
   color: #68767C;
 }
+input[type="email"].fieldWhiteBorder,
+input[type="number"].fieldWhiteBorder,
+input[type="password"].fieldWhiteBorder,
+input[type="tel"].fieldWhiteBorder,
+input[type="text"].fieldWhiteBorder,
+input[type="url"].fieldWhiteBorder,
+input.fieldWhiteBorder,
+textarea.fieldWhiteBorder {
+  background: none;
+  border: solid 1px #fff;
+  opacity: .7;
+  outline: none;
+  color: #fff;
+}
+input[type="email"].fieldWhiteBorder:hover,
+input[type="number"].fieldWhiteBorder:hover,
+input[type="password"].fieldWhiteBorder:hover,
+input[type="tel"].fieldWhiteBorder:hover,
+input[type="text"].fieldWhiteBorder:hover,
+input[type="url"].fieldWhiteBorder:hover,
+input.fieldWhiteBorder:hover,
+textarea.fieldWhiteBorder:hover {
+  opacity: 1;
+  outline: none;
+}
+input[type="email"].fieldWhiteBorder:active,
+input[type="number"].fieldWhiteBorder:active,
+input[type="password"].fieldWhiteBorder:active,
+input[type="tel"].fieldWhiteBorder:active,
+input[type="text"].fieldWhiteBorder:active,
+input[type="url"].fieldWhiteBorder:active,
+input.fieldWhiteBorder:active,
+textarea.fieldWhiteBorder:active {
+  opacity: 1;
+  outline: none;
+  color: #fff;
+}
 .a-plain {
   text-decoration: none; }
 .pointer-none {
