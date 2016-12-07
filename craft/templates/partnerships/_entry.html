@@ -1,4 +1,4 @@
-{% extends "_layout" %}
+{% extends (craft.request.isAjax and not craft.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
 {% set title = "Partnerships" %}
 {% set backTo = 'partnerships' %}
 {% set colors = ['teal', 'red', 'blue', 'green', 'orange'] %}

@@ -1,8 +1,8 @@
 var jquery          = require('./lib/jquery');
 var retina          = require('./lib/retina');
 var history         = require('./lib/history');
-var velocity         = require('./lib/velocity');
-var velocityUI         = require('./lib/velocity.ui');
+var velo        = require('./lib/velocity');
+var veloUI         = require('./lib/velocity.ui');
 
 var craftAjax       = require('./scripts/craft-ajax');
 var menu            = require('./scripts/menu');
@@ -20,8 +20,8 @@ var borderHover     = require('./scripts/borderHover');
 jquery();
 retina();
 history();
-velocity();
-velocityUI();
+velo();
+veloUI();
 
 craftAjax();
 menu();
