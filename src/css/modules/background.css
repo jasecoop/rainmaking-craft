@@ -1,27 +1,9 @@
 .bg-3x3 {
-  background-image: url('/dist/images/bg-3x3.png');
+  background-image: url('/dist/images/rain3x3.svg');
 }
 
 .bg-2x2 {
   background-image: url('/dist/images/rain2x2.svg');
-}
-
-@media
-not screen and (-webkit-min-device-pixel-ratio: 2),
-not screen and (   min--moz-device-pixel-ratio: 2),
-not screen and (     -o-min-device-pixel-ratio: 2/1),
-not screen and (        min-device-pixel-ratio: 2),
-not screen and (                min-resolution: 192dpi),
-not screen and (                min-resolution: 2dppx) {
-
-  .bg-2x2 {
-    background-image: url('/dist/images/bg-1x1.png');
-  }
-
-}
-
-.bg-2x2-dark {
-  background-image: url('/dist/images/bg-2x2-dark.png');
 }
 
 .bg-mesh {
@@ -33,6 +15,25 @@ not screen and (                min-resolution: 2dppx) {
   background-image: url('/dist/images/rain2x2.svg');
   top: 0;
   left: 0;
+}
+
+
+@media
+not screen and (-webkit-min-device-pixel-ratio: 2),
+not screen and (   min--moz-device-pixel-ratio: 2),
+not screen and (     -o-min-device-pixel-ratio: 2/1),
+not screen and (        min-device-pixel-ratio: 2),
+not screen and (                min-resolution: 192dpi),
+not screen and (                min-resolution: 2dppx) {
+
+  .bg-2x2,
+  .bg-mesh {
+    background-image: url('/dist/images/rain3x3.svg');
+  }
+}
+
+.bg-2x2-dark {
+  background-image: url('/dist/images/bg-2x2-dark.png');
 }
 
 .bg-founder {

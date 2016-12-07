@@ -1,5 +1,7 @@
 {% extends (craft.request.isAjax and not craft.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
-{% set title = "Rainmaking" %}
+{% set title = {{ entry.title }} %}
+{% set img = entry.headerImage.first() %}
+{% set metaDataImage = {{ img.getUrl() }} %}
 {% set criteria = {section: 'blog', order: 'postDate'} %}
 {% set prev = entry.getPrev(criteria) %}
 {% set colors = ['teal', 'red', 'blue', 'green', 'orange'] %}
