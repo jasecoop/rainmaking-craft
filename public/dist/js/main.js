@@ -16563,9 +16563,15 @@ module.exports = function () {
     ajaxLoad = function(html) {
       init();
 
-      /* ----- Here you could maybe add logic to set the HTML title to the new page title ----- */
+      /* ----- Init FB share button ----- */
       console.log("FB Object initiated");
       FB.XFBML.parse(); // now we can safely call parse method
+
+      // init Linkedin share button
+      var din ='<script id="holderLink" type="IN/Share" data-url="'+window.location.href+'" data-counter="right"></script>';
+      $(".linkedinDetail").html(din);
+      IN.parse();
+
       /* ----- Used for popState event (back/forward browser buttons) ----- */
       changedPage = true;
     },
