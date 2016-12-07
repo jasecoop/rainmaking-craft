@@ -60,7 +60,7 @@ ga('send', 'pageview');
   {% set metaDescription = socialCard.body|raw %}
 {% endif %}
 
-<meta property="og:url"                content="{{ siteUrl }}">
+<meta property="og:url"                content="{{ craft.request.getUrl() }}">
 <meta property="og:title"              content="{{ metaTitle }}" >
 <meta property="og:description"        content="{{ metaDescription }}" >
 <meta property="og:image"              content="{{ metaHeaderImage }}" >
