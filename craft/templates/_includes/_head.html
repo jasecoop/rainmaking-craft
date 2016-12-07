@@ -2,7 +2,6 @@
 <title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
 <link rel="home" href="{{ siteUrl }}" />
 <link rel="stylesheet" href="/dist/css/main.css">
-<script src="/dist/js/main.js"></script>
 <meta name="viewport" content="width=device-width">
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -24,11 +23,8 @@ ga('send', 'pageview');
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
-$(document).ajaxComplete(function(){
-   console.log("FB Object initiated");
-   FB.XFBML.parse(); // now we can safely call parse method
-});
-
 </script>
 
 <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+
+<script src="/dist/js/main.js"></script>

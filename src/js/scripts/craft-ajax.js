@@ -21,7 +21,8 @@ module.exports = function () {
       init();
 
       /* ----- Here you could maybe add logic to set the HTML title to the new page title ----- */
-
+      console.log("FB Object initiated");
+      FB.XFBML.parse(); // now we can safely call parse method
       /* ----- Used for popState event (back/forward browser buttons) ----- */
       changedPage = true;
     },
