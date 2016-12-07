@@ -3,7 +3,7 @@
     "php": "^5.5.35",
      "ext-mbstring": "*",
      "ext-imagick": "*",
-     "xmlrpc": "*",
+     "ext-xmlrpc": "*",
   },
   "require-dev": {
     "vlucas/phpdotenv": "^2.4"
