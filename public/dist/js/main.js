@@ -16770,6 +16770,8 @@ module.exports = function () {
 module.exports = function () {
 
   $(document).ready( function () {
+
+
     if ($('body').hasClass('blogpost')) {
       var $aside      = $('#stickyAside');
       var asideOffset = $aside.offset();
@@ -16783,7 +16785,23 @@ module.exports = function () {
       var contentHeight = $content.height();
       var contentBottom = contentTop + contentHeight;
       var contentTrigger = contentBottom - asideHeight;
-      console.log(contentBottom);
+
+
+      $( document ).ajaxComplete(function( event, xhr, settings ) {
+        var $aside      = $('#stickyAside');
+        var asideOffset = $aside.offset();
+        var asideTop    = asideOffset.top - 69;
+        var asideRight  = asideOffset.right;
+        var asideHeight = $aside.height();
+
+        var $content = $('#content');
+        var contentOffset = $content.offset();
+        var contentTop = contentOffset.top;
+        var contentHeight = $content.height();
+        var contentBottom = contentTop + contentHeight;
+        var contentTrigger = contentBottom - asideHeight;
+      });
+
       if ($(window).width() > 800){
         var stickyWidth = $('#stickyAside').width();
         $(window).on("scroll", function() {
