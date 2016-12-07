@@ -72,7 +72,9 @@ module.exports = function () {
               /* ----- Removes the temp height from $main ----- */
               $main.css('height', '');
 
-              addMarginTopToIntro();
+              if ($('body').hasClass('has-intro-text')) {
+                  addMarginTopToIntro();
+              }
               ajaxLoad();
             }
           });

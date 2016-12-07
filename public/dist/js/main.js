@@ -16615,7 +16615,9 @@ module.exports = function () {
               /* ----- Removes the temp height from $main ----- */
               $main.css('height', '');
 
-              addMarginTopToIntro();
+              if ($('body').hasClass('has-intro-text')) {
+                  addMarginTopToIntro();
+              }
               ajaxLoad();
             }
           });
@@ -16800,6 +16802,7 @@ module.exports = function () {
         var contentHeight = $content.height();
         var contentBottom = contentTop + contentHeight;
         var contentTrigger = contentBottom - asideHeight;
+        console.log(contentTrigger);
       });
 
       if ($(window).width() > 800){

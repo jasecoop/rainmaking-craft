@@ -31,6 +31,7 @@ module.exports = function () {
         var contentHeight = $content.height();
         var contentBottom = contentTop + contentHeight;
         var contentTrigger = contentBottom - asideHeight;
+        console.log(contentTrigger);
       });
 
       if ($(window).width() > 800){
