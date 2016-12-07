@@ -25,11 +25,8 @@ ga('send', 'pageview');
 }(document, 'script', 'facebook-jssdk'));
 
 $(document).ajaxComplete(function(){
-  window.fbAsyncInit = function(){  // this gets triggered when FB object gets initialized
-     console.log("FB Object initiated");
-     FB.XFBML.parse(); // now we can safely call parse method
-  };
-
+   console.log("FB Object initiated");
+   FB.XFBML.parse(); // now we can safely call parse method
 });
 
 </script>
