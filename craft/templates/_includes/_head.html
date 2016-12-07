@@ -55,11 +55,11 @@ ga('send', 'pageview');
   {% set metaHeaderImage = '/dist/images/rainmakingTwitterHeader.png' %}
 {% endif %}
 
-<!-- <meta property="og:url"                content="{{ craft.request.getPath() }}">
-<meta property="og:title"              content="{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}" >
-<meta property="og:description"        content="Download. Circadian Rhythms - LDN based concept label. CR001 Toasty - Metal coming soon." >
-<meta property="og:image"              content="http://circadian-rhythms.com/assets/images/fh-fb.png" >
-<meta property="fb:app_id" content="133862413742331"/> -->
+<meta property="og:url"                content="{{ craft.request.getPath() }}">
+<meta property="og:title"              content="{{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}}" >
+<meta property="og:description"        content="{{ metaDataDescription }}" >
+<meta property="og:image"              content="{{metaHeaderImage}}" >
+<meta property="fb:app_id" content="133862413742331"/>
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@rainmaking_io">
