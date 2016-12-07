@@ -24,12 +24,10 @@ ga('send', 'pageview');
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
-$(document).ajaxComplete(function(){
-  console.log('ajax complete: fb')
-  try{
-      FB.XFBML.parse();
-  }catch(ex){}
-});
+window.fbAsyncInit = function(){  // this gets triggered when FB object gets initialized
+   console.log("FB Object initiated");
+   FB.XFBML.parse(); // now we can safely call parse method
+};
 
 </script>
 
