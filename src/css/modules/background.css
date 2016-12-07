@@ -3,7 +3,7 @@
 }
 
 .bg-2x2 {
-  background-image: url('/dist/images/bg-2x2.png');
+  background-image: url('/dist/images/rain2x2.svg');
 }
 
 @media
@@ -30,7 +30,7 @@ not screen and (                min-resolution: 2dppx) {
   height: 100%;
   position: absolute;
   z-index: 0;
-  background-image: url('/dist/images/bg-2x2.png');
+  background-image: url('/dist/images/rain2x2.svg');
   top: 0;
   left: 0;
 }

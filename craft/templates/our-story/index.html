@@ -37,7 +37,7 @@
             {% for startup in startups %}
               <div class="w-50 w-33-ns fl mb2 v-mid mb4 pa4">
                 <div class="h4 flex">
-                  {% set image = startup.image.first() %}
+                  {% set image = startup.logoImage.first() %}
                   <a href="{{ startup.urlLink }}">
                     <img class="v-mid self-center" src="{{ image.getUrl()}}">
                   </a>
