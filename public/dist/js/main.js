@@ -16599,6 +16599,7 @@ module.exports = function () {
         success: function(result){
           $('#loading').addClass('dn');
           $('body').removeClass('overflow-hidden');
+          console.log('success')
           /* ----- Where the new content is added ----- */
           $main.html(result);
 
