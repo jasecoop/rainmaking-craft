@@ -51,19 +51,24 @@ ga('send', 'pageview');
 
 {% if metaDataImage is defined %}
   {% set metaHeaderImage = metaDataImage %}
+  {% set metaTitle = title %}
+  {% set metaDescription = metaDataDescription %}
 {% else %}
-  {% set metaHeaderImage = '/dist/images/rainmakingTwitterHeader.png' %}
+  {% set metaImage = socialCard.image.first() %}
+  {% set metaHeaderImage = metaImage.getUrl() %}
+  {% set metaTitle = socialCard.pageTitle %}
+  {% set metaDescription = socialCard.body|raw %}
 {% endif %}
 
-<meta property="og:url"                content="{{ craft.request.getPath() }}">
-<meta property="og:title"              content="{{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}}" >
-<meta property="og:description"        content="{{ metaDataDescription }}" >
-<meta property="og:image"              content="{{metaHeaderImage}}" >
+<meta property="og:url"                content="{{ siteUrl }}">
+<meta property="og:title"              content="{{ metaTitle }}" >
+<meta property="og:description"        content="{{ metaDescription }}" >
+<meta property="og:image"              content="{{ metaHeaderImage }}" >
 <meta property="fb:app_id" content="133862413742331"/>
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@rainmaking_io">
 <meta name="twitter:creator" content="@rainmaking_io">
-<meta name="twitter:title" content="{{ title }}">
-<meta name="twitter:description" content="{{ metaDataDescription }}">
-<meta name="twitter:image" content="{{metaHeaderImage}}">
+<meta name="twitter:title" content="{{ metaTitle }}" >
+<meta name="twitter:description" content="{{ metaDescription }}" >
+<meta name="twitter:image" content="{{ metaHeaderImage }}" >

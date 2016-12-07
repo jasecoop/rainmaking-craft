@@ -3,7 +3,8 @@
 {% set title = entry.title %}
 {% set img = entry.headerImg.first() %}
 {% set metaDataImage = img.getUrl() %}
-{% set metaDataDescription = entry.body|slice(0, 140)|raw %}
+{% set post140 = entry.post|slice(0, 140) %}
+{% set metaDataDescription = post140|raw %}
 
 {% set bodyClass = 'blogpost' %}
 {% set backTo = 'events' %}
