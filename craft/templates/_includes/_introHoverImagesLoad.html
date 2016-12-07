@@ -1,0 +1,6 @@
+<div id="introHoverImagesLoad">
+  {% for image in images %}
+    {% set img = image.first() %}
+    <img src="{{img.getUrl()}}" />
+  {% endfor %}
+</div>

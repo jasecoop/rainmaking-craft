@@ -67,3 +67,9 @@ transition: all 500ms linear;
 .pillarActive #home-intro-text {
   display: none;
 }
+
+#introHoverImagesLoad img {
+  position: fixed;
+  top: -5000px;
+  left: -5000px;
+}

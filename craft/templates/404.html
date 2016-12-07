@@ -16,11 +16,27 @@
  # http://craftcms.com/docs/routing
  #}
 
-{% extends "_layout" %}
+{% extends (craft.request.isAjax and not craft.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
 {% set title = "404" %}
 
 {% block content %}
-	<h1>Page not found</h1>
-
-	<p>What’s worse, a hilarious 404 page can’t be found either.</p>
+<div class="js-ajax-wrapper overflow-hidden h-100">
+  <div class="container h-100 relative z-3">
+    <div class="w-100 h-100 flex items-center">
+      <div>
+      	<h1 class="f1">Whoops — there's nothing here!</h1>
+      	<p class="lead-xl">
+          You can head <a href="/">home</a>, or if something you're looking for is missing,
+          <a href="/contact">get in touch</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="absolute top-0 left-0 w-100 h-100 z-2 bg-2x2 pointer-none"></div>
+  <div class="absolute top-0 left-0 w-100 h-100 z-1 o-30">
+    <div class="flex items-center justify-center h-100">
+      <div class="f1" style="font-size: 500px;">404</div>
+    </div>
+  </div>
+</div>
 {% endblock %}
