@@ -16783,7 +16783,7 @@ module.exports = function () {
       var contentHeight = $content.height();
       var contentBottom = contentTop + contentHeight;
       var contentTrigger = contentBottom - asideHeight;
-
+      console.log(contentBottom);
       if ($(window).width() > 800){
         var stickyWidth = $('#stickyAside').width();
         $(window).on("scroll", function() {
@@ -16800,11 +16800,9 @@ module.exports = function () {
             // } else {
             //   var top = $('.footer').height();
             // }
-            console.log('contentTrggier')
             $('#stickyAside').removeClass('stickyAside-fixed');
             $('#stickyAside').addClass('stickyAside-bottom');
             $('#stickyAside').css('bottom',  contentBottom + 'px');
-            console.log(contentBottom)
           }
 
           if (fromTop < contentTrigger && fromTop > asideTop) {
