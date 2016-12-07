@@ -1,7 +1,10 @@
 {% extends (craft.request.isAjax and not craft.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
+
 {% set title = entry.title %}
 {% set img = entry.headerImg.first() %}
 {% set metaDataImage = img.getUrl() %}
+{% set metaDataDescription = entry.body|slice(0, 140)|raw %}
+
 {% set bodyClass = 'blogpost' %}
 {% set backTo = 'events' %}
 {% set colors = ['teal', 'red', 'blue', 'green', 'orange'] %}

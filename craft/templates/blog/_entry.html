@@ -1,7 +1,11 @@
 {% extends (craft.request.isAjax and not craft.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
+
 {% set title = entry.title %}
 {% set img = entry.headerImage.first() %}
 {% set metaDataImage = img.getUrl() %}
+{% set post140 = entry.post|slice(0, 140) %}
+{% set metaDataDescription = post140|raw %}
+
 {% set criteria = {section: 'blog', order: 'postDate'} %}
 {% set prev = entry.getPrev(criteria) %}
 {% set colors = ['teal', 'red', 'blue', 'green', 'orange'] %}
