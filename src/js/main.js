@@ -1,5 +1,6 @@
 var jquery          = require('./lib/jquery');
 var retina          = require('./lib/retina');
+var infinite        = require('./lib/infinitescroll');
 var history         = require('./lib/history');
 var velo        = require('./lib/velocity');
 var veloUI         = require('./lib/velocity.ui');
@@ -18,6 +19,7 @@ var borderHover     = require('./scripts/borderHover');
 
 
 jquery();
+infinite();
 retina();
 history();
 velo();

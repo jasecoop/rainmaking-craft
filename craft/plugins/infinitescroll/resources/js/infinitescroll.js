@@ -1,5 +1,6 @@
 $(function() {
 
+  var init = function () {
     var loadingMsg = (typeof loadingMessage != "undefined") ? loadingMessage : "Loading more posts...";
     var finishedMsg = (typeof finishedMessage != "undefined") ? finishedMessage : "";
 
@@ -20,4 +21,11 @@ $(function() {
         maxPage      : totalNumOfPages,
         bufferPx: 1500,
     });
+  }
+
+  $( document ).ajaxComplete(function( event, xhr, settings ) {
+    init();
+  });
+
+  init();
 });
