@@ -27,7 +27,7 @@
 
       <div class="w-100 pt5 textBlock fl">
         <div class="container">
-          <div class="w-100 w-60-ns m-auto">
+          <div class="w-100 w-60-ns m-auto mb4">
             <h2 class="f2">Our startups</h2>
             <div>
               Creating companies and bringing them to market is our first love. Together, we’ve built over 25 of our own startups, achieved 5 notable exits and participated in more than 350 investments. Here are just a few active companies that we have built.
@@ -35,8 +35,8 @@
           </div>
           <div class="w-100">
             {% for startup in startups %}
-              <div class="w-50 w-33-ns fl mb2 v-mid mb4 pa4">
-                <div class="h4 flex">
+              <div class="w-100 w-33-ns fl mb2 v-mid mb4 pa4 pt0">
+                <div class="flex mb4">
                   {% set image = startup.logoImage.first() %}
                   <a href="{{ startup.urlLink }}">
                     <img class="v-mid self-center" src="{{ image.getUrl()}}">

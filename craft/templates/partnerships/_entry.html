@@ -3,8 +3,9 @@
 {% set backTo = 'partnerships' %}
 {% set colors = ['teal', 'red', 'blue', 'green', 'orange'] %}
 {% set color = shuffle(colors) | first %}
+{% set bodyClass = 'hasBreadcrumb' %}
 {% block content %}
-  <div class="js-ajax-wrapper">
+  <div class="js-ajax-wrapper  hasBreadcrumb">
 
     {% set img = entry.partnershipHeaderImage.first() %}
     <div class="w-100 h8 cover relative overflow-hidden" style="background-image: url( '{{img.getUrl('slashHeader') }}' );">
