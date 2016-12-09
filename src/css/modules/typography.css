@@ -35,7 +35,7 @@ body {
 
 @media (--breakpoint-small) {
   .fxl {
-    font-size: 1.9rem; 
+    font-size: 1.9rem;
   }
 }
 
@@ -52,6 +52,10 @@ body {
 .content h1, .content h2, .content h3 {
   font-family: var(--futura-font-family);
   font-weight: 200;
+}
+
+.content img {
+  width: 100%;
 }
 
 .f1,
