@@ -169,15 +169,15 @@ module.exports = function () {
     //   window.location.reload();
     // });
 
-    $(document).on('click', 'a:not(.trigger)', function() {
-
-      var href = $(this).attr("href");
-      if (href.indexOf(document.domain) > -1 || href.indexOf(':') === -1) {
-        history.pushState({}, '', href);
-        loadPage(href);
-        return false;
-      }
-    });
+    // $(document).on('click', 'a:not(.trigger)', function() {
+    //
+    //   var href = $(this).attr("href");
+    //   if (href.indexOf(document.domain) > -1 || href.indexOf(':') === -1) {
+    //     history.pushState({}, '', href);
+    //     loadPage(href);
+    //     return false;
+    //   }
+    // });
   });
 
 

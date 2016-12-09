@@ -17543,15 +17543,15 @@ module.exports = function () {
     //   window.location.reload();
     // });
 
-    $(document).on('click', 'a:not(.trigger)', function() {
-
-      var href = $(this).attr("href");
-      if (href.indexOf(document.domain) > -1 || href.indexOf(':') === -1) {
-        history.pushState({}, '', href);
-        loadPage(href);
-        return false;
-      }
-    });
+    // $(document).on('click', 'a:not(.trigger)', function() {
+    //
+    //   var href = $(this).attr("href");
+    //   if (href.indexOf(document.domain) > -1 || href.indexOf(':') === -1) {
+    //     history.pushState({}, '', href);
+    //     loadPage(href);
+    //     return false;
+    //   }
+    // });
   });
 
 
@@ -17588,10 +17588,10 @@ module.exports = function () {
       $('.menu').removeClass('menu-active').fadeOut('slow');
     });
 
-    $( '.menu' ).on( 'click', 'a:not(.trigger)', function(e) {
-      e.preventDefault();
-      $('.menu').removeClass('menu-active').fadeOut('slow');
-    });
+    // $( '.menu' ).on( 'click', 'a:not(.trigger)', function(e) {
+    //   e.preventDefault();
+    //   $('.menu').removeClass('menu-active').fadeOut('slow');
+    // });
 
     // $( 'body' ).on( 'click', '.fade-menu', function(e) {
     //   e.preventDefault();

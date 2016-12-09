@@ -5,7 +5,7 @@
 {% endif %}
 
 {% set img = entry.headerImg.first() %}
-<div data-colour="{{colour}}" class="shadowhover border-hover w-100 bg-grey cover relative fl-ns mb4 bg-white border-white" style="background-image: url({{ img.getUrl() }});">
+<div data-colour="{{colour}}" class="border-hover w-100 bg-grey cover relative fl-ns mb4 bg-white border-white shadowhover" style="background-image: url({{ img.getUrl() }});">
   <div class="pa4 w-100 h-100 cover z-1 relative">
     <div class="z-1 relative h-100 flex-ns">
       <div class="w-100 w-60-ns self-center">
