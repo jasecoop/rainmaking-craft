@@ -16551,10 +16551,12 @@ module.exports = function () {
     },
 
     addMarginTopToIntro = function() {
-      var introPos = $('#intro-links').offset();
-      var introTop = introPos.top - 16;
-      $('body').find('.intro-hover-text').css('margin-top', introTop + 'px');
-      $('#introText').fadeIn();
+      if($('#intro-links').length) {
+        var introPos = $('#intro-links').offset();
+        var introTop = introPos.top - 16;
+        $('body').find('.intro-hover-text').css('margin-top', introTop + 'px');
+        $('#introText').fadeIn();
+      }
     },
 
     /* ----- Do this for ajax page loads ----- */
