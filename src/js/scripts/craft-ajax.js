@@ -23,7 +23,6 @@ module.exports = function () {
       init();
 
       /* ----- Init FB share button ----- */
-      console.log("FB Object initiated");
 
 
       var stickyAsideMouseMove = function (asideTop, contentTrigger, asideRight, contentBottom) {
@@ -120,7 +119,6 @@ module.exports = function () {
         success: function(result){
           $('#loading').addClass('dn');
           $('body').removeClass('overflow-hidden');
-          console.log('success')
           /* ----- Where the new content is added ----- */
           $main.html(result);
 
@@ -146,7 +144,6 @@ module.exports = function () {
           });
         },
         error: function(){
-          console.log("error.");
           location.reload();
         }
       });

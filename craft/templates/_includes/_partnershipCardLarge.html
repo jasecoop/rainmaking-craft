@@ -17,11 +17,13 @@
               {{ entry.title }}
             </a>
           </div>
-          <div class="flex flex-row justify-between mt4">
-            <a href="{{ entry.url }}" class="btn btn-continue btn-{{ colour }} pointer-auto"></a>
-            <div class="self-center">
+          <div class="flex-ns flex-row justify-between mt4">
+            <div>
+              <a href="{{ entry.url }}" class="btn btn-continue btn-continue-100-s btn-{{ colour }} pointer-auto"></a>
+            </div>
+            <div class="self-center tc">
               {% set logo = entry.partnershipLogo.first() %}
-              <img class="v-mid pv5 pv0-ns" width="150" src="{{ logo.getURL() }}" />
+              <img class="v-mid pv3 pv0-ns" width="150" src="{{ logo.getURL() }}" />
             </div>
           </div>
         </div>

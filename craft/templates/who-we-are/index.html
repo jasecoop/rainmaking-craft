@@ -38,6 +38,13 @@
                     {{ entry.title }}
                   </div>
                   {{ entry.body }}
+                  {% set blogPost = entry.blogPost.first() %}
+                  {% if blogPost %}
+                    <div class="mb2">
+                      <div class="caps-small-f">From the blog</div>
+                      <a href="{{blogPost.url}}" class="f4 rm-{{colour}}">{{blogPost.title}}</a>
+                    </div>
+                  {% endif %}
                 </div>
                 {% if entry.twitterUrl %}
                   <a class="icon mr2" href="{{ entry.twitterUrl }}" target="_blank"><img src="dist/images/icon-twitter.png" data-rjs="2"/></a>

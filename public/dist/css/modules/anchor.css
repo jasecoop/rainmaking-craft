@@ -1,14 +1,1 @@
-.a-plain {
-  text-decoration: none; }
-
-.pointer-none {
-  pointer-events: none; }
-
-.pointer-auto {
-  pointer-events: auto; }
-
-a.hover-50:hover {
-  opacity: .5; }
-
-a {
-  cursor: pointer; }
+.a-plain{text-decoration:none}.pointer-none{pointer-events:none}.pointer-auto{pointer-events:auto}a.hover-50:hover{opacity:.5}a{cursor:pointer}

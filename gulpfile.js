@@ -65,7 +65,8 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     size = require('gulp-size'),
     run = require('gulp-run'),
-    sass = require('gulp-sass');
+    sass = require('gulp-sass'),
+    cssnano = require('gulp-cssnano');
 
 
 
@@ -76,11 +77,12 @@ gulp.task('build:styles', function() {
       atImport(),
       customMedia(),
       cssvariables(),
-      at2x(),
+      at2x()
   ];
   gulp.src(srcCssFilesGlob)
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss(processors))
+    .pipe(cssnano())
     .pipe(gulp.dest(distCssFiles))
     .pipe(browserSync.stream())
     .on('error', gutil.log);
@@ -114,6 +116,7 @@ gulp.task('build:scripts', function() {
   bundleStream
     .pipe(source("srcJsFilesGlob"))
     .pipe(rename('main.js'))
+    .pipe(streamify(uglify()))
     .pipe(gulp.dest(distJsFiles))
 
 

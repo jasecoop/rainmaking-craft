@@ -33,6 +33,13 @@ body {
   line-height: 1.2em;
 }
 
+@media (--breakpoint-small) {
+  .fxl {
+    font-size: 1.9rem; 
+  }
+}
+
+
 .fxxl {
   font-family: var(--futura-font-family);
   font-weight: 200;

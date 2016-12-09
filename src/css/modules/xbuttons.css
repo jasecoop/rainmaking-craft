@@ -1,3 +1,8 @@
+@custom-media --breakpoint-not-small screen and (min-width: 48em);
+@custom-media --breakpoint-small screen and (max-width: 48em);
+@custom-media --breakpoint-medium screen and (min-width: 48em) and (max-width: 64em);
+@custom-media --breakpoint-large screen and (min-width: 64em);
+
 .btn {
   background: #68767C;
   display: inline-block;
@@ -42,6 +47,17 @@
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
+}
+@media (--breakpoint-small) {
+  .btn-continue-100-s {
+    background-color: #86BFEF;
+    background-image: url('/dist/images/arrow-white-right.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
 
 .btn-teal   { background-color: #69C7D3; }
