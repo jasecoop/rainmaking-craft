@@ -63,6 +63,9 @@ body, html, main {
   height: 100%;
 }
 
+
+@media (--breakpoint-not-small) {
 #introText {
   display: none;
+}
 }
