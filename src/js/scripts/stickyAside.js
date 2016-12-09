@@ -34,6 +34,27 @@ module.exports = function () {
     });
   }
 
+  // $( document ).ajaxComplete(function( event, xhr, settings ) {
+  //   $(document).ready( function () {
+  //     if ($('.js-ajax-wrapper').hasClass('blogIndex')) {
+  //       var $aside      = $('#stickyAside');
+  //       var asideOffset = $aside.offset();
+  //       var asideTop    = asideOffset.top - 69;
+  //       var asideRight  = asideOffset.right;
+  //       var asideHeight = $aside.height();
+  //       var $content = $('#content');
+  //       var contentOffset = $content.offset();
+  //       var contentTop = contentOffset.top;
+  //       var contentHeight = $content.height();
+  //       var contentBottom = contentTop + contentHeight;
+  //       var contentTrigger = contentBottom - asideHeight;
+  //       if ($(window).width() > 800){
+  //         stickyAsideMouseMove(asideTop, contentTrigger, asideRight, contentBottom);
+  //       }
+  //     }
+  //   });
+  // });
+
   $(document).ready( function () {
 
 
@@ -50,24 +71,6 @@ module.exports = function () {
       var contentHeight = $content.height();
       var contentBottom = contentTop + contentHeight;
       var contentTrigger = contentBottom - asideHeight;
-
-
-      $( document ).ajaxComplete(function( event, xhr, settings ) {
-        var $aside      = $('#stickyAside');
-        var asideOffset = $aside.offset();
-        var asideTop    = asideOffset.top - 69;
-        var asideRight  = asideOffset.right;
-        var asideHeight = $aside.height();
-        var $content = $('#content');
-        var contentOffset = $content.offset();
-        var contentTop = contentOffset.top;
-        var contentHeight = $content.height();
-        var contentBottom = contentTop + contentHeight;
-        var contentTrigger = contentBottom - asideHeight;
-        if ($(window).width() > 800){
-          stickyAsideMouseMove(asideTop, contentTrigger, asideRight, contentBottom);
-        }
-      });
 
       if ($(window).width() > 800){
         stickyAsideMouseMove(asideTop, contentTrigger, asideRight, contentBottom);
