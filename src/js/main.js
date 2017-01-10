@@ -16,6 +16,7 @@ var stickyAside     = require('./scripts/stickyAside');
 var founder         = require('./scripts/founder');
 var blogAnchor      = require('./scripts/blogAnchor');
 var borderHover     = require('./scripts/borderHover');
+var stickyTeam      = require('./scripts/stickyTeam');
 
 
 jquery();
@@ -24,7 +25,6 @@ retina();
 history();
 velo();
 veloUI();
-
 craftAjax();
 menu();
 pillarbox();
@@ -36,3 +36,4 @@ stickyAside();
 founder();
 blogAnchor();
 borderHover();
+stickyTeam();

@@ -1,67 +1,176 @@
 {% extends (craft.request.isAjax and not craft.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
 {% set title = "Who We Are" %}
 {% set founders = craft.entries.section('founders') %}
+{% set bodyClass = 'whoWeAre' %}
+{% set jobsCopy = craft.entries.section('jobsCopy').first() %}
+{% set jobs = craft.entries.section('jobs') %}
 
 {% block content %}
-  <div class="js-ajax-wrapper pageContainer bg-white">
+<div class="js-ajax-wrapper pageContainer bg-white">
 
-      {% set img = entry.headerImg.first() %}
-      <div class="w-100 h9 cover relative overflow-hidden" style="background-image: url( '{{img.getUrl('slashHeader') }}' );">
-        <div class="container relative h-100 z-3 flex">
-          <h1 class="fxl self-end m-auto w-70-ns pb3">{{ entry.pageTitle }}</h1>
-        </div>
-        <div class="absolute top-0 w-100 h-100 left-0 bg-trans-to-white z-2"></div>
-        <div class="absolute top-0 w-100 h-100 left-0 bg-2x2 z-0 z-1"></div>
+  {% set img = entry.headerImg.first() %}
+  <div class="w-100 h9 cover relative overflow-hidden" style="background-image: url( '{{img.getUrl('slashHeader') }}' );">
+    <div class="container relative h-100 z-3 flex">
+      <h1 class="fxl self-end w-70-ns pb0 mb0">{{ entry.pageTitle }}</h1>
+    </div>
+    <div class="absolute top-0 w-100 h-100 left-0 bg-trans-to-white z-2"></div>
+    <div class="absolute top-0 w-100 h-100 left-0 bg-2x2 z-0 z-1"></div>
+  </div>
+
+  <div class="container">
+
+    <div class="w-70-ns pb5">
+      <div class="lead-xl">
+        {{ entry.pageIntroduction }}
       </div>
-      <div class="container">
-        <div class="w-70-ns m-auto pb5">
-          <div class="lead-xl">
-            {{ entry.pageIntroduction }}
-          </div>
-        </div>
-
-        <div class="w-100">
-          {% for entry in craft.entries.section('founders') %}
-            {% set colour = cycle(['teal', 'red', 'blue', 'green', 'orange'], loop.index0) %}
-            {% set img = entry.founderPhoto.first() %}
-            <div class="w-100 mb2 mt2 overflow-hidden flex-ns">
-
-              <div class="w-40-ns w-100 tc tl-ns self-center">
-                <div class="quoteBlock-photo quoteBlock-border quoteBlock-border-{{colour}} mt3 mb2 mb4-ns roundPhoto-300 roundPhoto-300-ns dib">
-                  <img src="{{ img.getURL('roundPortrait') }}" />
-                </div>
-              </div>
-
-              <div class="w-60-ns w-100 self-center">
-                <div>
-                  <div class="f1 rm-{{colour}} tl tl-ns">
-                    {{ entry.title }}
-                  </div>
-                  {{ entry.body }}
-                  {% set blogPost = entry.blogPost.first() %}
-                  {% if blogPost %}
-                    <div class="mb2">
-                      <div class="caps-small-f">From the blog</div>
-                      <a href="{{blogPost.url}}" class="f4 rm-{{colour}}">{{blogPost.title}}</a>
-                    </div>
-                  {% endif %}
-                </div>
-                {% if entry.twitterUrl %}
-                  <a class="icon mr2" href="{{ entry.twitterUrl }}" target="_blank"><img src="dist/images/icon-twitter.png" data-rjs="2"/></a>
-                {% endif %}
-                {% if entry.linkedinUrl %}
-                  <a class="icon" href="{{ entry.linkedinUrl }}" target="_blank">
-                    <img src="dist/images/icon-linkedin.png" data-rjs="2" />
-                  </a>
-                {% endif %}
-              </div>
-
-              </div>
-          {% endfor %}
-        </div>
-
-      </div>
-      {% include '_includes/_footer.html' %}
     </div>
 
+
+    <div class="w-100 w-75-ns fl" id="content">
+
+      <div class="overflow-hidden" id="founders">
+        <h2 class="f2 db dn-ns">
+          Founders
+        </h2>
+        {% for entry in craft.entries.section('founders') %}
+          {% set colour = cycle(['teal', 'red', 'blue', 'green', 'orange'], loop.index0) %}
+          {% set img = entry.founderPhoto.first() %}
+          <div class="w-100 mb2 mt2 overflow-hidden flex-ns">
+
+            <div class="w-40-ns w-100 tc tl-ns self-center">
+              <div class="quoteBlock-photo quoteBlock-border quoteBlock-border-{{colour}} mt3 mb2 mb4-ns roundPhoto-300 roundPhoto-300-ns dib">
+                <img src="{{ img.getURL('roundPortrait') }}" />
+              </div>
+            </div>
+
+            <div class="w-60-ns w-100 self-center">
+              <div>
+                <div class="f1 rm-{{colour}} tl tl-ns">
+                  {{ entry.title }}
+                </div>
+                {{ entry.body }}
+                {% set blogPost = entry.blogPost.first() %}
+                {% if blogPost %}
+                  <div class="mb2">
+                    <div class="caps-small-f">From the blog</div>
+                    <a href="{{blogPost.url}}" class="f4 rm-{{colour}}">{{blogPost.title}}</a>
+                  </div>
+                {% endif %}
+              </div>
+              {% if entry.twitterUrl %}
+                <a class="icon mr2" href="{{ entry.twitterUrl }}" target="_blank">
+                  <img src="dist/images/icon-twitter.png" data-rjs="2"/>
+                </a>
+              {% endif %}
+              {% if entry.linkedinUrl %}
+                <a class="icon" href="{{ entry.linkedinUrl }}" target="_blank">
+                  <img src="dist/images/icon-linkedin.png" data-rjs="2" />
+                </a>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="mb5 overflow-hidden" id="leadership">
+        <h2 class="f2 db dn-ns">
+          Leadership team
+        </h2>
+        {% for teammember in craft.users.group('team') %}
+          {% if teammember.seniorLeadership %}
+            {% set colour = cycle(['teal', 'red', 'blue', 'green', 'orange'], loop.index0) %}
+            {% set img = teammember.image.first() %}
+            <div class="w-100 w-50-ns fl tc">
+              <div class="dib quoteBlock-photo quoteBlock-border quoteBlock-border-{{colour}} mt3 mb1 roundPhoto-150 roundPhoto-150-ns dib">
+                <img src="{{ img.getURL('roundPortrait') }}" />
+              </div>
+              <div class="w-100">
+                <div class="rm-{{colour}} f4 mb0">
+                  {{ teammember.firstName }}
+                  {{ teammember.lastName }}
+                </div>
+                <div class="caps-small-f">
+                  {{ teammember.body.raw }}
+                </div>
+                <div class="caps-xsmall-f">
+                  {{ teammember.email }}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <div class="mt4 overflow-hidden" id="team">
+        <h2 class="f2 db dn-ns">
+          Meet the team
+        </h2>
+        {% for teammember in craft.users.group('team') %}
+          {% if teammember.seniorLeadership == 0 %}
+            {% set colour = cycle(['teal', 'red', 'blue', 'green', 'orange'], loop.index0) %}
+            {% set img = teammember.image.first() %}
+            <div class="w-50 w-25-ns fl tc">
+              <div class="dib quoteBlock-photo quoteBlock-border quoteBlock-border-{{colour}} mt3 mb1 roundPhoto-150 roundPhoto-150-ns dib">
+                <img src="{{ img.getURL('roundPortrait') }}" />
+              </div>
+              <div class="w-100 tc f4">
+                <div class="rm-{{colour}}">
+                  {{ teammember.firstName }}
+                </div>
+                <div class="rm-{{colour}}">
+                  {{ teammember.lastName }}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <div class="overflow-hidden mt5" id="jobs">
+
+        <div class="f1">
+          {{jobsCopy.pageTitle}}
+        </div>
+        <div class="lead-xl">
+          {{ jobsCopy.lead}}
+        </div>
+
+        {% if jobs|length %}
+          <div class="mt3">
+            <div class="caps-small-f border-bottom-grey">
+              Current Vacencies
+            </div>
+            {% for job in craft.entries.section('jobs') %}
+              <div class="pv3 border-bottom-grey overflow-hidden">
+                <div class="f2 w-100 mb1">
+                  {{ job.title }}
+                </div>
+                <div>
+                  <div class="fl mr3">
+                    <a class="btn btn-small" href="{{job.specifiedPermalink}}" target="_blank">Learn more</a>
+                  </div>
+                  <div class="fl">
+                    <div class="caps-small-f">Location</div>
+                    <div>{{ job.city }}</div>
+                  </div>
+                </div>
+              <div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+  </div>
+  <div class="w-25 fr pl4 dn db-ns">
+    <div class="absolute border-left-grey pl4" id="stickyAside">
+      <div class="f4 o-20" id="foundersMenuLink">Founders</div>
+      <div class="f4 o-20" id="leadershipMenuLink">Leadership</div>
+      <div class="f4 o-20" id="teamMenuLink">Team</div>
+      <div class="f4 o-20" id="jobsMenuLink">Jobs</div>
+    </div>
+  </div>
+  {% include '_includes/_footer.html' %}
+</div>
 {% endblock %}

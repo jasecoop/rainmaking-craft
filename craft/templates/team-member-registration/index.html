@@ -1,0 +1,86 @@
+{% extends (craft.request.isAjax and not craft.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
+{% set title = "Team Member Registration" %}
+
+
+{% block content %}
+  <div class="js-ajax-wrapper pageContainer bg-white">
+    <div class="container">
+      <form method="post" accept-charset="UTF-8" enctype="multipart/form-data">
+        {{ getCsrfInput() }}
+        <input type="hidden" name="action" value="users/saveUser">
+        <input type="hidden" name="redirect" value="">
+
+        {% macro errorList(errors) %}
+            {% if errors %}
+                <ul class="errors">
+                    {% for error in errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endmacro %}
+
+        {% from _self import errorList %}
+
+        <h3><label for="username">Username (your first name)</label></h3>
+        <input id="username" type="text" name="username"
+            {%- if account is defined %} value="{{ account.username }}"{% endif -%}>
+
+        {% if account is defined %}
+          {{ errorList(account.getErrors('username')) }}
+        {% endif %}
+
+        <h3><label for="firstName">First name</label></h3>
+        <input id="firstName" type="text" name="firstName"
+            {%- if account is defined %} value="{{ account.firstName }}"{% endif -%}>
+
+        {% if account is defined %}
+          {{ errorList(account.getErrors('firstName')) }}
+        {% endif %}
+
+        <h3><label for="lastName">Lastname</label></h3>
+        <input id="lastName" type="text" name="lastName"
+            {%- if account is defined %} value="{{ account.lastName }}"{% endif -%}>
+
+        {% if account is defined %}
+          {{ errorList(account.getErrors('firstName')) }}
+        {% endif %}
+
+        <h3><label for="body">Your role e.g. Designer, Developer, Marketing etc.</label></h3>
+        <input id="body" type="text" name="fields[body]"
+            {%- if account is defined %} value="{{ account.body }}"{% endif -%}>
+        {% if account is defined %}
+          {{ errorList(account.getErrors('body')) }}
+        {% endif %}
+
+        <div class="pv4">
+          <h3><label for="body">Your photo (please make sure image is a square)</label></h3>
+          <input type="file" name="fields[image]"
+          {%- if account is defined %} value="{{ account.image }}"{% endif %}>
+          {% if account is defined %}
+          {{ errorList(account.getErrors('image')) }}
+          {% endif %}
+        </div>
+
+        <h3><label for="email">Email</label></h3>
+        <input id="email" type="text" name="email"
+            {%- if account is defined %} value="{{ account.email }}"{% endif %}>
+
+        {% if account is defined %}
+            {{ errorList(account.getErrors('email')) }}
+        {% endif %}
+
+        <h3><label for="password">Password</label></h3>
+        <input id="password" type="password" name="password">
+
+        {% if account is defined %}
+            {{ errorList(account.getErrors('password')) }}
+        {% endif %}
+
+        <div class="pb5 pt4">
+          <input class="btn" type="submit" value="Register">
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

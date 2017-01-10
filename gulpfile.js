@@ -116,7 +116,6 @@ gulp.task('build:scripts', function() {
   bundleStream
     .pipe(source("srcJsFilesGlob"))
     .pipe(rename('main.js'))
-    .pipe(streamify(uglify()))
     .pipe(gulp.dest(distJsFiles))
 
 
