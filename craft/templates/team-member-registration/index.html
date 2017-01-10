@@ -22,7 +22,7 @@
 
         {% from _self import errorList %}
 
-        <h3><label for="username">Username (your first name)</label></h3>
+        <h3><label for="username">Username</label></h3>
         <input id="username" type="text" name="username"
             {%- if account is defined %} value="{{ account.username }}"{% endif -%}>
 
