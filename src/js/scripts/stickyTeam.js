@@ -124,6 +124,31 @@ module.exports = function () {
         }
       });
     }
+
+    $('#foundersMenuLink').on('click', function(e) {
+      e.preventDefault()
+      $('html, body').animate({
+        scrollTop: foundersTopPosition + 1
+      }, 500);
+    });
+    $('#leadershipMenuLink').on('click', function(e) {
+      e.preventDefault()
+      $('html, body').animate({
+        scrollTop: leadershipTopPosition + 1
+      }, 500);
+    });
+    $('#teamMenuLink').on('click', function(e) {
+      e.preventDefault()
+      $('html, body').animate({
+        scrollTop: teamTopPosition + 1
+      }, 500);
+    });
+    $('#jobsMenuLink').on('click', function(e) {
+      e.preventDefault()
+      $('html, body').animate({
+        scrollTop: jobsTopPosition + 1
+      }, 500);
+    });
   });
 
 }
