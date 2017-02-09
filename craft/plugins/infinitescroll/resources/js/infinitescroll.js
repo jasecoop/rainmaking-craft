@@ -1,7 +1,7 @@
 $(function() {
 
     var loadingMsg = (typeof loadingMessage != "undefined") ? loadingMessage : "Loading more posts...";
-    var finishedMsg = (typeof finishedMessage != "undefined") ? finishedMessage : "There are no more items to load";
+    var finishedMsg = (typeof finishedMessage != "undefined") ? finishedMessage : "";
 
     $(containerSelector).infinitescroll({
         loading: {
