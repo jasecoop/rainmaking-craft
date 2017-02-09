@@ -1,6 +1,6 @@
 {% extends (craft.request.isAjax and not craft.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
 {% set title = "Blog" %}
-{% set posts = craft.entries.section('blog').limit(7).order('postDate desc') %}
+{% set posts = craft.entries.section('blog').limit(1).order('postDate desc') %}
 {% set copy = craft.entries.section('blogIndexCopy').first() %}
 
 {% block content %}
