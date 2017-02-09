@@ -31,7 +31,7 @@ class InfiniteScrollTwigExtension extends \Twig_Extension
 		{
 			$content .= '<div class="pagination"><a href="' . $paginate->getNextUrl() . '">Next Page</a></div>';
 		}
-		$content .= craft()->templates->includeJsResource('infinitescroll/js/jquery.infinitescroll.min.js');
+		$content .= craft()->templates->includeJsResource('infinitescroll/js/jquery.infinitescroll.js');
 
 		$script  = 'var totalNumOfPages = ' . $paginate->totalPages . ';';
 		$script .= 'var containerSelector = "' . $containerSelector . '";';
