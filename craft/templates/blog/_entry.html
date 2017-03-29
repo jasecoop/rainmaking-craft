@@ -6,8 +6,14 @@
 {% set post140 = entry.post|slice(0, 140) %}
 {% set metaDataDescription = post140|raw %}
 
-{% set criteria = {section: 'blog', order: 'postDate'} %}
-{% set prev = entry.getPrev(criteria) %}
+
+{% if not entry.nextArticle|length %}
+  {% set criteria = {section: 'blog', order: 'postDate'} %}
+  {% set prev = entry.getPrev(criteria) %}
+{% else %}
+  {% set prev = entry.nextArticle.first() %}
+{% endif %}
+
 {% set colors = ['teal', 'red', 'blue', 'green', 'orange'] %}
 {% set color = shuffle(colors) | first %}
 {% set bodyClass = 'blogpost' %}
