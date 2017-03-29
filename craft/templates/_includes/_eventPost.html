@@ -1,15 +1,9 @@
-{% if entry.specifiedPermalink is defined %}
-  {% set url = entry.specifiedPermalink %}
-{% else %}
-  {% set url = entry.url %}
-{% endif %}
-
 {% set img = entry.headerImg.first() %}
 <div data-colour="{{colour}}" class="border-hover w-100 bg-grey cover relative fl-ns mb4 bg-white border-white shadowhover">
   <div class="pa4 w-100 h-100 cover z-1 relative">
     <div class="z-1 relative h-100 flex-ns">
       <div class="w-100 w-60-ns self-center">
-        <a href="{{ url }}" class="title rm-text rm-{{ colour }}-hover fxl db mb4 pr4-ns mb0-ns a-plain pointer-auto">
+        <a href="{{ entry.url }}" class="title rm-text rm-{{ colour }}-hover fxl db mb4 pr4-ns mb0-ns a-plain pointer-auto">
           {{ entry.title }}
         </a>
       </div>
@@ -24,7 +18,7 @@
             <div class="f4 mb0">{{ entry.eventLocation }}</div>
           </div>
         </div>
-        <a href="{{ url }}" class="w-100 btn btn-continue-100 btn-{{colour}} btn-nopad"></a>
+        <a href="{{ entry.url }}" class="w-100 btn btn-continue-100 btn-{{colour}} btn-nopad"></a>
       </div>
     </div>
   </div>
