@@ -1,11 +1,17 @@
+{% if entry.specifiedPermalink is empty %}
+  {% set url =  entry.url %}
+{% else %}
+  {% set url =  entry.specifiedPermalink %}
+{% endif %}
+
 <div class="w-100 w-33-ns pa3-ns mb3 mb0-ns">
   <div data-colour="{{colour}}" class="border-hover border-white shadowhover">
     {% set img2 = entry.headerImg.first() %}
-    <a href="{{entry.url}}" class="post__img cover" style="background-image: url('{{ img2.getUrl() }}');"></a>
+    <a href="{{url}}" class="post__img cover" style="background-image: url('{{ img2.getUrl() }}');"></a>
 
     <div class="post__content pa4 pb0">
 
-      <a class="title f4 a-plain rm-text rm-{{ colour }}-hover pointer-auto" href="{{ entry.url }}">{{ entry.title }}</a>
+      <a class="title f4 a-plain rm-text rm-{{ colour }}-hover pointer-auto" href="{{ url }}">{{ entry.title }}</a>
       <div class="caps-small-f pb3">
         {{ entry.timeAndDate|date("F d Y") }}
       </div>
